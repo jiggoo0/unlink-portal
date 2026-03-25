@@ -63,9 +63,9 @@ export default function Hero() {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="text-5xl leading-[0.9] font-black tracking-tighter text-white sm:text-7xl md:text-[8.5rem] uppercase"
             >
-              ข้อความทดสอบ <br />
+              สถาปนาตัวตน <br />
               <span className="text-primary italic font-light lowercase opacity-90">
-                ข้อความทดสอบ
+                กู้คืนความเชื่อถือ
               </span>
             </motion.h1>
 
