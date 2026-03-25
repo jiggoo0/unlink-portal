@@ -1,0 +1,18 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="675" fill="#0A0F1D"/>
+  <defs>
+    <radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:#B8860B;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#0A0F1D;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#grad1)"/>
+  <path d="M600 150L750 250V450L600 550L450 450V250L600 150Z" stroke="#D4AF37" stroke-width="2" stroke-dasharray="10 5" opacity="0.5"/>
+  <path d="M600 200L700 270V430L600 500L500 430V270L600 200Z" fill="#D4AF37" fill-opacity="0.1" stroke="#D4AF37" stroke-width="4"/>
+  <path d="M600 280V420M600 420H600.01" stroke="#D4AF37" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="600" cy="350" r="150" stroke="#D4AF37" stroke-width="1" opacity="0.2">
+    <animate attributeName="r" from="150" to="200" dur="3s" repeatCount="indefinite" />
+    <animate attributeName="opacity" from="0.2" to="0" dur="3s" repeatCount="indefinite" />
+  </circle>
+  <text x="50%" y="90%" text-anchor="middle" fill="#D4AF37" font-family="monospace" font-size="12" letter-spacing="10" opacity="0.5">UNLINK-GLOBAL | OFFICIAL FRAUD ALERT PROTOCOL</text>
+</svg>

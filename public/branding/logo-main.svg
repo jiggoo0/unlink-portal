@@ -1,0 +1,20 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Shield Shape (The Vault) -->
+  <path d="M50 5L15 20V45C15 67.5 30 88.5 50 95C70 88.5 85 67.5 85 45V20L50 5Z" fill="url(#gold_gradient)" fill-opacity="0.1" stroke="url(#gold_gradient)" stroke-width="2"/>
+  
+  <!-- The 'Unlink' Symbol (Broken Link) -->
+  <g transform="translate(30, 35) scale(0.8)">
+    <path d="M12 5H7C3.68629 5 1 7.68629 1 11C1 14.3137 3.68629 17 7 17H12" stroke="url(#gold_gradient)" stroke-width="4" stroke-linecap="round"/>
+    <path d="M28 17H33C36.3137 17 39 14.3137 39 11C39 7.68629 36.3137 5 33 5H28" stroke="url(#gold_gradient)" stroke-width="4" stroke-linecap="round"/>
+    <!-- Diagonal Slash (Action/Intervention) -->
+    <path d="M25 2L15 20" stroke="url(#gold_gradient)" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 2"/>
+  </g>
+
+  <defs>
+    <linearGradient id="gold_gradient" x1="15" y1="5" x2="85" y2="95" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#D4AF37"/> <!-- Premium Gold -->
+      <stop offset="50%" stop-color="#F9E27D"/> <!-- Highlight Gold -->
+      <stop offset="100%" stop-color="#AF8917"/> <!-- Deep Gold -->
+    </linearGradient>
+  </defs>
+</svg>

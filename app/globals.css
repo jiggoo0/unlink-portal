@@ -1,0 +1,166 @@
+@import "tailwindcss";
+
+@theme {
+  /* Surface System */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  /* Action System */
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  /* Infrastructure */
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Typography */
+  --font-sans:
+    var(--font-inter), var(--font-noto-thai), ui-sans-serif, system-ui,
+    sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, monospace;
+
+  /* Global Metrics */
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  /* Animation Protocol */
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+}
+
+/* =========================================================
+   UNLINK PROTOCOL: THE CLEAR SHIELD (2026 Redesign)
+   ---------------------------------------------------------
+   Identity: Dark Navy, Amber Gold & Emerald Accents
+   ========================================================= */
+
+:root {
+  /* Deep Navy Background for cinematic readability */
+  --background: oklch(0.18 0.03 260); /* #050810 to #0a0f1a range */
+  --foreground: oklch(0.98 0 0); /* Pure White Text */
+
+  /* Dark Blue Cards with subtle edge */
+  --card: oklch(0.22 0.04 260); /* #101828 range */
+  --card-foreground: oklch(0.95 0 0);
+
+  --popover: oklch(0.22 0.04 260);
+  --popover-foreground: oklch(0.95 0 0);
+
+  /* Trust Navy / Cyan (Primary action color) */
+  --primary: oklch(0.65 0.15 250); /* Cyan / Light Blue */
+  --primary-foreground: oklch(0.1 0 0);
+
+  /* Slate/Navy for secondary items */
+  --secondary: oklch(0.3 0.05 260);
+  --secondary-foreground: oklch(0.9 0 0);
+
+  --muted: oklch(0.25 0.05 260);
+  --muted-foreground: oklch(0.7 0.02 260);
+
+  /* Amber Gold for Verification / Trust Accents */
+  --accent: oklch(0.75 0.15 70); /* Amber/Gold */
+  --accent-foreground: oklch(0.2 0.05 70);
+
+  --destructive: oklch(0.55 0.18 25);
+  --destructive-foreground: oklch(0.98 0 0);
+
+  --border: oklch(0.3 0.05 260);
+  --input: oklch(0.3 0.05 260);
+  --ring: oklch(0.65 0.15 250 / 0.4);
+
+  --radius: 1.25rem; /* Softer, friendlier corners */
+}
+
+/* Base Layer Protocols */
+@layer base {
+  *,
+  ::before,
+  ::after {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--background);
+    color-scheme: dark; /* Shifted to Dark Mode */
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.7; /* Optimized for institutional readability */
+    letter-spacing: -0.01em; /* Tighter, more professional look */
+  }
+
+  /* Institutional Heading Authority */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 800; /* Extra Bold/Black for Authority */
+    letter-spacing: -0.03em; /* Tight heading for power signal */
+    line-height: 1.1;
+    text-transform: none; /* Keep natural case for professional look */
+    color: var(--foreground);
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+  }
+  h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+  h3 {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+  }
+}
+
+/* Utility Extensions */
+@layer utilities {
+  .container {
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+    max-width: 80rem;
+  }
+
+  /* Redesigned Card for Clean Aesthetic */
+  .lab-card {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 20px -5px oklch(0 0 0 / 0.05); /* Soft, airy shadow */
+    transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .lab-card:hover {
+    border-color: color-mix(in oklch, var(--primary) 40%, transparent);
+    box-shadow: 0 12px 30px -10px
+      color-mix(in oklch, var(--primary) 15%, transparent);
+    transform: translateY(-4px);
+  }
+
+  .glow-gold {
+    filter: drop-shadow(
+      0 0 10px color-mix(in oklch, var(--accent-foreground) 30%, transparent)
+    );
+  }
+}

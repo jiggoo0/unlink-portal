@@ -1,0 +1,25 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- JP-Visual & Docs: Strategic Architecture Logo -->
+  
+  <!-- Outer Frame (Midnight Navy / Subtle Outline) -->
+  <rect x="10" y="10" width="80" height="80" stroke="#020617" stroke-width="0.5" stroke-opacity="0.2"/>
+  
+  <!-- The 'Monolith' Shape (The 'J' and 'P' abstraction) -->
+  <g id="JP_Symbol">
+    <!-- Vertical Spine (Authority) -->
+    <path d="M35 25V75" stroke="#020617" stroke-width="6" stroke-linecap="square"/>
+    
+    <!-- Top Horizontal (Vision) -->
+    <path d="M35 25H70V45H35" stroke="#020617" stroke-width="6" stroke-linejoin="miter"/>
+    
+    <!-- Bottom Hook (Support/J Logic) -->
+    <path d="M35 75H20" stroke="#B48C28" stroke-width="6" stroke-linecap="square"/>
+    
+    <!-- The Precision Point (Gold) -->
+    <rect x="70" y="25" width="6" height="6" fill="#B48C28"/>
+  </g>
+
+  <!-- Technical Grid Elements (Subtle background) -->
+  <line x1="10" y1="50" x2="90" y2="50" stroke="#020617" stroke-width="0.1" stroke-opacity="0.1"/>
+  <line x1="50" y1="10" x2="50" y2="90" stroke="#020617" stroke-width="0.1" stroke-opacity="0.1"/>
+</svg>

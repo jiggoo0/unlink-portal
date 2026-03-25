@@ -1,0 +1,41 @@
+{
+  "$schema": "https://knip.dev/schema-json",
+  "next": {
+    "entry": [
+      "app/**/page.{tsx,ts}",
+      "app/**/layout.{tsx,ts}",
+      "app/**/loading.{tsx,ts}",
+      "app/**/error.{tsx,ts}",
+      "app/**/not-found.{tsx,ts}",
+      "app/**/route.{tsx,ts}",
+      "app/**/robots.{tsx,ts}",
+      "app/**/sitemap.{tsx,ts}",
+      "app/actions/*.ts",
+      "mdx-components.tsx",
+      "middleware.ts",
+      "next.config.{ts,mjs,js}"
+    ]
+  },
+  "project": [
+    "app/**/*.{ts,tsx}",
+    "components/**/*.{ts,tsx}",
+    "lib/**/*.{ts,tsx}",
+    "constants/**/*.{ts,tsx}"
+  ],
+  "ignore": ["node_modules/**", ".next/**", ".vercel/**", "public/**"],
+  "ignoreExportsUsedInFile": true,
+  "ignoreDependencies": [
+    "@img/sharp-wasm32",
+    "@next/swc-android-arm64",
+    "@next/swc-linux-arm64-musl",
+    "dotenv",
+    "sharp"
+  ],
+  "rules": {
+    "dependencies": "error",
+    "unlisted": "warn",
+    "exports": "warn",
+    "types": "warn",
+    "files": "warn"
+  }
+}
