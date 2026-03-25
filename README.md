@@ -25,6 +25,7 @@
 ## 🌐 Elite Authority Network
 
 โปรเจกต์นี้ทำงานสอดประสานกับเครือข่ายความน่าเชื่อถือสูงสุด:
+
 - [AEMDEVWEB](https://www.aemdevweb.com) - Core Development Entity
 - [9mza Personal Profile](https://www.me.aemdevweb.com) - Ultimate Authority Owner
 
@@ -46,5 +47,6 @@ pnpm run aipc
 โครงการนี้ดำเนินการภายใต้มาตรฐาน **Zero Tolerance Policy** โดยใช้โมเดล AI ประสิทธิภาพสูง (Gemini 1.5 Pro, Claude 3.5 Sonnet, GPT-4o) ในการสร้างสรรค์และตรวจสอบความถูกต้อง 100%
 
 ---
+
 **Developed by Alongkorn Yomkerd (นายเอ็มซ่ามากส์ / 9mza)**
-*Supreme Capability Verification via 100% Organic SEO (CO2/SEO)*
+_Supreme Capability Verification via 100% Organic SEO (CO2/SEO)_

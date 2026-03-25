@@ -22,14 +22,11 @@
     "lib/**/*.{ts,tsx}",
     "constants/**/*.{ts,tsx}"
   ],
-  "ignore": ["node_modules/**", ".next/**", ".vercel/**", "public/**"],
   "ignoreExportsUsedInFile": true,
   "ignoreDependencies": [
     "@img/sharp-wasm32",
     "@next/swc-android-arm64",
-    "@next/swc-linux-arm64-musl",
-    "dotenv",
-    "sharp"
+    "@next/swc-linux-arm64-musl"
   ],
   "rules": {
     "dependencies": "error",

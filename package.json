@@ -7,22 +7,10 @@
     "dev": "next dev --webpack",
     "build": "next build --webpack",
     "start": "next start",
-    "lint": "eslint app components lib constants --cache --max-warnings 0",
-    "format": "prettier --write . --ignore-path .prettierignore",
+    "lint": "next lint",
     "type-check": "tsc --noEmit",
-    "knip": "knip",
-    "check": "pnpm run type-check",
-    "aipc": "bash scripts/aipc.sh",
-    "aisetup": "bash ../.gemini/bin/core/aisetup.sh",
-    "modedev": "echo '[DEV_MODE] Activated - Enforcing Strict Rule Compliance' && cat ../.gemini/rules/DEV_MODE.md",
-    "analyze": "ANALYZE=true next build",
-    "audit:seo": "echo 'Checking JSON-LD & Metadata Integrity...' && grep -r 'JsonLd' app components && echo 'Structure verification complete.'",
-    "db:ping": "tsx ../.gemini/domains/identity-farming/db/ping.ts",
-    "db:migrate": "tsx ../.gemini/domains/identity-farming/db/migrate.ts",
-    "ai:audit-unused": "bash ../.gemini/bin/core/audit-unused.sh",
-    "ai:verify-precision": "tsx ../.gemini/bin/core/verify-precision.ts",
-    "ai:content-guard": "tsx ../.gemini/bin/core/content-guard.ts",
-    "ai:remove-emojis": "node ../.gemini/bin/core/remove_emojis.mjs"
+    "format": "prettier . --write --ignore-path ./.prettierignore",
+    "knip": "knip"
   },
   "engines": {
     "node": ">=20.x"
@@ -54,7 +42,6 @@
     "tailwind-merge": "^3.5.0",
     "tailwindcss": "4.2.1",
     "tailwindcss-animate": "^1.0.7",
-    "vercel": "^50.37.0",
     "zod": "^4.3.6"
   },
   "devDependencies": {
@@ -72,7 +59,7 @@
     "globals": "^16.0.0",
     "knip": "^5.45.0",
     "postcss": "^8.5.3",
-    "prettier": "^3.5.2",
+    "prettier": "^3.8.1",
     "schema-dts": "^1.1.2",
     "tsx": "^4.19.3",
     "typescript": "^5.7.3",

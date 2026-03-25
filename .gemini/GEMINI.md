@@ -1,21 +1,23 @@
-# 🌐 UNLINK-GLOBAL: Portal Domain Manifest
-> **Identity & Authentication Hub**
+# 🦅 UNLINK-PORTAL: AUTHORITY FACE CORE (V.1.1)
 
-## 🎯 Domain Objective
-โฟลเดอร์ `unlink-portal/` คือหน้าด่านหลักของระบบ UNLINK-GLOBAL ทำหน้าที่เป็น Portal สำหรับการยืนยันตัวตนและการจัดการข้อมูล (Flagship Portal)
+## 🎯 ภารกิจสูงสุด (The Mission)
 
-## 🛠️ Tech Stack & Architecture
-- **Framework:** Next.js 16 (App Router), React 19
-- **Styling:** Tailwind CSS 4, Framer Motion, Radix UI
-- **Design System:** เน้นความสว่าง สะอาด โปร่งใส (Institutional Look) ห้ามใช้โทนสีมืดมนหรือดูลึกลับ
+สร้างหน้าด่านความน่าเชื่อถือระดับสถาบัน (Corporate Trust) และทำ 0 Baht SEO ขั้นสูงสุด (E-E-A-T) เพื่อให้ Google และสาธารณชนยอมรับในอำนาจการตรวจสอบตัวตนของ **Alongkorn Yomkerd (9mza)**
 
-## 💼 Business & Content Strategy
-- **Accessible Authority:** ภาษาที่ใช้ใน UI และ Content ต้องมีความเป็นมืออาชีพและน่าเชื่อถือระดับสถาบัน แต่ต้องเข้าใจง่ายสำหรับบุคคลทั่วไป (Mass Market)
-- **Insider Intelligence:** เนื้อหาหลักเน้นการแฉกลโกง (Scam Operations) เพื่อเป็นแหล่งข้อมูลที่น่าเชื่อถือ
-- **SEO & Authority Linkage:** ทุกการกระทำต้องส่งเสริม 100% Pure Organic SEO (0 Baht Ad Spend). โครงสร้างของเว็บ (เช่น Metadata, JSON-LD `sameAs`) ต้องส่งพลังกลับไปที่ AEMDEVWEB (www.aemdevweb.com) และ 9mza อย่างถูกต้อง เพื่อเชื่อมโยงและถ่ายโอนความน่าเชื่อถือ
+## 🎨 ยุทธศาสตร์ดีไซน์ (Institutional Design)
 
-## 🚨 AI Operational Guidelines (สำหรับ AI ที่ทำงานในโฟลเดอร์นี้)
-1. คุณต้องโฟกัสเฉพาะขอบเขตของ `unlink-portal` เท่านั้น
-2. ห้ามแก้ไขไฟล์ในโดเมนอื่น (`unlink-audit`, `unlink-registry`) โดยเด็ดขาด
-3. ยึดมั่นในนโยบาย 0% Error (Technical & Behavioral)
-4. อ้างอิงกฎเพิ่มเติมได้ที่ `.gemini/rules/DOMAIN_RULES.md`
+- **Theme:** Corporate Light (ขาวสะอาด / น้ำเงินองค์กร / เทาอ่อน)
+- **Concept:** "Embassy of Trust" - โปร่งใส สว่าง และมีอำนาจ
+- **Framework:** Tailwind CSS v4 (Utility-first for maximum performance)
+
+## ⚖️ มาตรฐานการปฏิบัติงาน (Operational Mandates)
+
+- **Isolated Context:** ทำงานในกรอบโฟลเดอร์นี้เท่านั้น (API Connection only)
+- **Validation:** บังคับใช้ **`bash .gemini/bin/aipc.sh`** เป็นบรรทัดฐานเดียว
+- **Pen Name:** ทุกบทความต้องถูกเขียนภายใต้ชื่อผู้เชี่ยวชาญ **'9mza'**
+
+## 🚀 แผนงานปัจจุบัน (Roadmap)
+
+- [ ] **UI Redesign:** ปรับโฉม Navbar, Hero, และ Footer ให้เป็น Corporate Light Theme
+- [ ] **Registry Linkage:** สร้างระบบดึงข้อมูล Verified Badge จาก Master API
+- [ ] **SEO Content:** วางระบบ MDX สำหรับบทความ "Insider Intelligence"

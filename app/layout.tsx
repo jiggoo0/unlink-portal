@@ -44,7 +44,7 @@ const mono = JetBrains_Mono({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#050810",
+  themeColor: "#ffffff",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -119,7 +119,7 @@ export default function RootLayout({
       className={`${inter.variable} ${notoThai.variable} ${mono.variable}`}
       suppressHydrationWarning
     >
-      <body className="bg-[#050810] text-foreground selection:bg-primary/20 selection:text-primary relative flex min-h-screen flex-col font-sans antialiased">
+      <body className="bg-background text-foreground selection:bg-primary/20 selection:text-primary relative flex min-h-screen flex-col font-sans antialiased">
         <Providers>
           <NextTopLoader
             color="oklch(var(--color-primary))"

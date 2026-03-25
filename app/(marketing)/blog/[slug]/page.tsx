@@ -14,6 +14,7 @@ import { getBlogPostSchema } from "@/lib/seo-schemas";
 import { getImageUrl } from "@/lib/utils";
 import { siteConfig } from "@/constants/site-config";
 import { Badge } from "@/components/ui/badge";
+import VerifiedBadge from "@/components/shared/VerifiedBadge";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -67,6 +68,7 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
           description: post.description,
           image: getImageUrl(post.image),
           datePublished: post.date,
+          authorName: post.author,
           url: `${siteConfig.url}/blog/${post.slug}`,
         })}
       />
@@ -231,6 +233,53 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
         {/* 3. Secure Side Interface */}
         <aside className="lg:col-span-4">
           <div className="sticky top-28 space-y-8">
+            {/* 3.1 Author Profile (E-E-A-T) */}
+            <div className="lab-card border-white/5 bg-white/[0.02] border p-8 shadow-2xl overflow-hidden relative group">
+              <div className="absolute top-0 right-0 p-4 opacity-5 transition-opacity group-hover:opacity-10">
+                <ShieldCheck size={80} className="text-primary" />
+              </div>
+
+              <div className="space-y-6 relative z-10">
+                <div className="text-primary/60 flex items-center gap-2 font-mono text-[9px] tracking-[0.3em] uppercase">
+                  <Terminal className="h-3.5 w-3.5" />
+                  <span>Verified Author Profile</span>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <div className="relative h-14 w-14 overflow-hidden rounded-xl border border-primary/20 bg-primary/5 p-1 transition-all group-hover:border-primary/40">
+                    <Image
+                      src="/branding/founder-avatar.webp"
+                      alt={post.author || "9mza"}
+                      fill
+                      className="object-cover rounded-lg"
+                    />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-black tracking-tight text-white uppercase italic">
+                      {post.author || "9mza"}
+                    </h4>
+                    <p className="text-[10px] text-primary/70 font-mono font-bold uppercase tracking-widest">
+                      Lead Architect
+                    </p>
+                  </div>
+                </div>
+
+                <div className="pt-2">
+                  <VerifiedBadge
+                    caseId={post.author_id || "UL-P-001"}
+                    variant="minimal"
+                    className="w-full"
+                  />
+                </div>
+
+                <p className="text-[11px] text-zinc-400 leading-relaxed font-light">
+                  ผู้เชี่ยวชาญด้านการจัดการข้อมูลตัวตนดิจิทัลและวิศวกรรมภาพลักษณ์
+                  ผู้วางโครงสร้างมาตรฐาน The Shield Protocol
+                  เพื่อความโปร่งใสระดับสากล
+                </p>
+              </div>
+            </div>
+
             <div className="lab-card border-white/5 bg-white/[0.02] border p-8 shadow-2xl">
               <div className="space-y-6">
                 <div className="text-primary/60 flex items-center gap-2 font-mono text-[9px] tracking-[0.3em] uppercase">

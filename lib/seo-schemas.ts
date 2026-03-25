@@ -229,38 +229,3 @@ export const getLocalBusinessSchema = (): WithContext<LocalBusiness> => {
 /**
  * 🆔 Identity Specific Schemas
  */
-export const getIdentityPersonSchema = (data: {
-  name: string;
-  jobTitle?: string;
-  description?: string;
-  url: string;
-  image?: string;
-  externalUrls?: string[];
-}): WithContext<Person> => {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: data.name,
-    jobTitle: data.jobTitle || "Verified Specialist",
-    description: data.description,
-    url: data.url,
-    image: data.image || `${siteConfig.url}/branding/icon.png`,
-    sameAs: data.externalUrls || [],
-  } as const;
-};
-
-export const getIdentityOrganizationSchema = (data: {
-  name: string;
-  description?: string;
-  url: string;
-  externalUrl?: string[];
-}): WithContext<Organization> => {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: data.name,
-    description: data.description,
-    url: data.url,
-    sameAs: data.externalUrl || [],
-  } as const;
-};

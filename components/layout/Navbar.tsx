@@ -45,40 +45,41 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="bg-background/70 sticky top-0 z-50 w-full border-b border-border backdrop-blur-2xl transition-all duration-500">
+    <header className="bg-background/80 sticky top-0 z-50 w-full border-b border-border/50 backdrop-blur-xl transition-all duration-500 hover:bg-background/95">
       <div className="container flex h-20 items-center justify-between">
         {/* --- Brand Identity Protocol --- */}
         <Link
           href="/"
-          className="group flex items-center gap-3 transition-all hover:opacity-90"
+          className="group flex items-center gap-3 transition-all"
           onClick={closeMenu}
         >
-          <div className="relative h-10 w-10">
+          <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-primary/5 border border-primary/10 transition-colors group-hover:bg-primary/10">
             <Image
               src="/branding/logo.svg"
               alt="Unlink-Global Logo"
-              fill
-              className="glow-gold transition-transform duration-500 group-hover:scale-110"
+              width={24}
+              height={24}
+              className="transition-transform duration-500 group-hover:scale-110"
               priority
             />
           </div>
           <div className="flex flex-col">
-            <span className="font-mono text-xl font-black tracking-tighter uppercase leading-none">
+            <span className="font-sans text-xl font-black tracking-tight leading-none text-foreground uppercase">
               {siteConfig.name.split("-")[0]}
-              <span className="text-primary align-top text-sm">
+              <span className="text-primary align-top text-xs ml-0.5">
                 {siteConfig.name.split("-")[1]
                   ? `-${siteConfig.name.split("-")[1]}`
                   : ""}
               </span>
             </span>
-            <span className="text-[8px] font-mono tracking-[0.3em] text-muted-foreground uppercase mt-1">
+            <span className="text-[7px] font-mono tracking-[0.4em] text-muted-foreground uppercase mt-1 font-bold">
               Reputation Engineering
             </span>
           </div>
         </Link>
 
         {/* --- Desktop Navigation Interface --- */}
-        <nav className="hidden items-center gap-2 md:flex">
+        <nav className="hidden items-center gap-1 md:flex">
           {mainNav.map((link) => {
             const isActive = pathname === link.href;
             const isServices = link.href === "/services";
@@ -93,18 +94,19 @@ export default function Navbar() {
                 <Link
                   href={link.href}
                   className={cn(
-                    "hover:text-primary group relative flex items-center gap-1.5 rounded-full px-5 py-2.5 text-xs font-bold tracking-widest uppercase transition-all duration-300",
+                    "hover:text-primary group relative flex items-center gap-1.5 rounded-full px-5 py-2 text-[10px] font-bold tracking-widest uppercase transition-all duration-300",
                     isActive
-                      ? "text-primary bg-secondary"
-                      : "text-muted-foreground hover:bg-secondary/50",
+                      ? "text-primary bg-primary/5 shadow-[inset_0_0_20px_rgba(72,135,255,0.05)]"
+                      : "text-muted-foreground/80 hover:bg-secondary/50",
                   )}
                 >
                   {link.title}
                   {isServices && (
                     <ChevronDown
                       className={cn(
-                        "h-3 w-3 transition-transform duration-300",
-                        activeDropdown === "services" && "rotate-180",
+                        "h-3 w-3 transition-transform duration-300 opacity-50",
+                        activeDropdown === "services" &&
+                          "rotate-180 opacity-100",
                       )}
                     />
                   )}
@@ -118,7 +120,7 @@ export default function Navbar() {
                         initial={{ opacity: 0, y: 10, scale: 0.95 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                        className="absolute left-1/2 top-full mt-2 w-[600px] -translate-x-1/2 overflow-hidden rounded-[2.5rem] border border-border bg-popover/95 p-8 shadow-2xl backdrop-blur-3xl"
+                        className="absolute left-1/2 top-full mt-2 w-[600px] -translate-x-1/2 overflow-hidden rounded-[1.5rem] border border-border bg-background/95 p-8 shadow-2xl backdrop-blur-xl"
                       >
                         <div className="grid grid-cols-3 gap-8">
                           {serviceCategories.map((cat, idx) => (
@@ -136,7 +138,7 @@ export default function Navbar() {
                                   <Link
                                     key={i}
                                     href={item.href}
-                                    className="text-muted-foreground hover:text-foreground group flex items-center gap-2 text-[11px] font-medium transition-colors"
+                                    className="text-muted-foreground hover:text-primary group flex items-center gap-2 text-[11px] font-semibold transition-colors"
                                   >
                                     <div className="h-1 w-1 rounded-full bg-primary/20 transition-all group-hover:w-2 group-hover:bg-primary" />
                                     {item.title}

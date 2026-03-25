@@ -1,0 +1,312 @@
+.
+├── README.md
+├── app
+│   ├── (marketing)
+│   │   ├── about
+│   │   │   └── page.tsx
+│   │   ├── blog
+│   │   │   ├── [slug]
+│   │   │   │   └── page.tsx
+│   │   │   └── page.tsx
+│   │   ├── case-studies
+│   │   │   ├── [slug]
+│   │   │   │   └── page.tsx
+│   │   │   └── page.tsx
+│   │   ├── contact
+│   │   │   └── page.tsx
+│   │   ├── download-vault
+│   │   │   └── page.tsx
+│   │   ├── editorial-policy
+│   │   │   └── page.tsx
+│   │   ├── faq
+│   │   │   └── page.tsx
+│   │   ├── layout.tsx
+│   │   ├── privacy
+│   │   │   └── page.tsx
+│   │   └── services
+│   │       ├── [slug]
+│   │       │   └── page.tsx
+│   │       └── page.tsx
+│   ├── actions
+│   │   └── cases.ts
+│   ├── api
+│   │   ├── google-index
+│   │   │   └── route.ts
+│   │   ├── line
+│   │   ├── payments
+│   │   │   └── webhook
+│   │   │       └── route.ts
+│   │   └── services
+│   │       └── submit
+│   │           └── route.ts
+│   ├── apple-icon.png
+│   ├── error.tsx
+│   ├── favicon.ico
+│   ├── global-error.tsx
+│   ├── globals.css
+│   ├── icon.png
+│   ├── layout.tsx
+│   ├── loading.tsx
+│   ├── not-found.tsx
+│   ├── page.tsx
+│   ├── providers.tsx
+│   ├── robots.ts
+│   └── sitemap.ts
+├── components
+│   ├── animated-section.tsx
+│   ├── layout
+│   │   ├── Footer.tsx
+│   │   ├── Navbar.tsx
+│   │   ├── PdpaConsent.tsx
+│   │   ├── ReputationShield.tsx
+│   │   ├── SafeAnalytics.tsx
+│   │   └── ServiceLayout.tsx
+│   ├── sections
+│   │   ├── AboutContent.tsx
+│   │   ├── CaseTrackerInfo.tsx
+│   │   ├── ContactGateway.tsx
+│   │   ├── FaqSection.tsx
+│   │   ├── Hero.tsx
+│   │   ├── LatestCaseStudies.tsx
+│   │   ├── LatestInsights.tsx
+│   │   ├── Methods.tsx
+│   │   ├── Portfolio.tsx
+│   │   ├── ProtocolStepper.tsx
+│   │   ├── SecureChannel.tsx
+│   │   └── ServicesGrid.tsx
+│   ├── services
+│   │   └── forms
+│   │       ├── ExpressBusForm.tsx
+│   │       ├── IncomeDocumentationForm.tsx
+│   │       └── StatementOptimizationForm.tsx
+│   ├── shared
+│   │   ├── CaseStudyCard.tsx
+│   │   ├── JsonLd.tsx
+│   │   ├── SectionHeader.tsx
+│   │   └── ServiceCard.tsx
+│   └── ui
+│       ├── accordion.tsx
+│       ├── badge.tsx
+│       ├── breadcrumb.tsx
+│       ├── button.tsx
+│       └── sonner.tsx
+├── components.json
+├── constants
+│   ├── navigation.ts
+│   ├── services-registry.ts
+│   └── site-config.ts
+├── content
+│   ├── blog
+│   │   ├── guides
+│   │   │   ├── dubai-remote-work-guide.mdx
+│   │   │   ├── malaysia-work-permit-guide.mdx
+│   │   │   ├── south-korea-visa-guide.mdx
+│   │   │   └── thailand-evisa-guide.mdx
+│   │   └── insights
+│   │       ├── c004-statement-analysis-2026.mdx
+│   │       ├── dangers-of-digital-footprint.mdx
+│   │       ├── expose-scam-statement-fake.mdx
+│   │       ├── freelance-mortgage-master-protocol.mdx
+│   │       ├── gds-systems-mobility.mdx
+│   │       ├── high-profile-defamation-risk.mdx
+│   │       ├── internal-audit-simulation-logic.mdx
+│   │       ├── modern-archiving-security.mdx
+│   │       ├── p004-tax-planning-2026.mdx
+│   │       ├── p007-pdpa-guide-2026.mdx
+│   │       └── sme-reputation-warfare.mdx
+│   ├── case-studies
+│   │   ├── financial
+│   │   │   ├── cross-border-financial-infrastructure-alignment.mdx
+│   │   │   └── cross-border-financial-restructuring.mdx
+│   │   ├── immigration
+│   │   │   ├── schengen-independent-worker-optimization.mdx
+│   │   │   ├── smart-women-dubai-mobility-2025.mdx
+│   │   │   └── smart-women-malaysia-mobility-2025.mdx
+│   │   ├── negotiation
+│   │   │   └── online-drama-negotiation.mdx
+│   │   └── reputation
+│   │       ├── clear-blacklist-misunderstand.mdx
+│   │       ├── extreme-digital-cleanup-vip.mdx
+│   │       ├── remove-defamation-gambling-network.mdx
+│   │       ├── remove-defamation-post.mdx
+│   │       ├── remove-leaked-content-silent-angel.mdx
+│   │       └── seo-push-negative-news.mdx
+│   └── services
+│       ├── documentation
+│       │   └── customized-income-documentation.mdx
+│       ├── financial
+│       │   ├── credit-engineering.mdx
+│       │   ├── institutional-reliability.mdx
+│       │   ├── statement-optimization.mdx
+│       │   └── transparent-investment.mdx
+│       ├── immigration
+│       │   ├── bus-itinerary-verified.mdx
+│       │   ├── flight-itinerary-visa.mdx
+│       │   ├── global-career-mobility-vip.mdx
+│       │   └── lifestyle-mobility-independent-visa.mdx
+│       └── reputation
+│           ├── blacklist-remover.mdx
+│           ├── crisis-cleanup.mdx
+│           ├── digital-detox-jobbers.mdx
+│           ├── ex-partner-eraser.mdx
+│           ├── extreme-intervention.mdx
+│           └── sme-reputation-rescue.mdx
+├── eslint.config.mjs
+├── knip.json
+├── lib
+│   ├── email.ts
+│   ├── google-sheets.ts
+│   ├── line.ts
+│   ├── mdx.ts
+│   ├── payment-utils.ts
+│   ├── seo-schemas.ts
+│   ├── services
+│   │   ├── audit-service.ts
+│   │   ├── payment-service.ts
+│   │   └── service-request-service.ts
+│   ├── shared-source
+│   │   ├── db.ts
+│   │   ├── identities.ts
+│   │   ├── index.ts
+│   │   ├── types.ts
+│   │   └── utils.ts
+│   └── utils.ts
+├── mdx-components.tsx
+├── next-env.d.ts
+├── next.config.ts
+├── package.json
+├── pnpm-lock.yaml
+├── postcss.config.mjs
+├── public
+│   ├── ads.txt
+│   ├── branding
+│   │   ├── icon.svg
+│   │   ├── icon.webp
+│   │   ├── logo-main.svg
+│   │   ├── logo-strategic.svg
+│   │   ├── logo.svg
+│   │   ├── style-reference.webp
+│   │   └── verify-badge.webp
+│   ├── favicon.ico
+│   ├── file.svg
+│   ├── globe.svg
+│   ├── images
+│   │   ├── assets
+│   │   │   ├── branding
+│   │   │   │   ├── malaysia-airlines.png
+│   │   │   │   ├── thai-airways.png
+│   │   │   │   └── transport-co.png
+│   │   │   ├── career-fresh-start.webp
+│   │   │   ├── final-delivery.webp
+│   │   │   ├── gateway-success.webp
+│   │   │   ├── global-network.webp
+│   │   │   └── privacy-restored.webp
+│   │   ├── blog
+│   │   │   ├── 9mza-digital-footprint-unlink.webp
+│   │   │   ├── 9mza-dubai-dtv-lifestyle.webp
+│   │   │   ├── 9mza-freelance-mortgage-success.webp
+│   │   │   ├── 9mza-scam-exposure-alert.webp
+│   │   │   ├── aemdevweb-blog-default-technical-insight.webp
+│   │   │   ├── aemdevweb-high-performance-infrastructure-monolith.webp
+│   │   │   ├── blog-audit-simulation.webp
+│   │   │   ├── blog-bus-itinerary.webp
+│   │   │   ├── blog-crisis-negotiation.webp
+│   │   │   ├── blog-digital-detox.webp
+│   │   │   ├── blog-digital-footprint.webp
+│   │   │   ├── blog-dubai-guide.webp
+│   │   │   ├── blog-ex-partner-eraser.webp
+│   │   │   ├── blog-exec-docs.webp
+│   │   │   ├── blog-executive-docs.webp
+│   │   │   ├── blog-financial-protocols.webp
+│   │   │   ├── blog-fresh-start.webp
+│   │   │   ├── blog-gds-mobility.webp
+│   │   │   ├── blog-high-profile-risk.svg
+│   │   │   ├── blog-high-profile-risk.webp
+│   │   │   ├── blog-korea-guide.webp
+│   │   │   ├── blog-malaysia-flight.webp
+│   │   │   ├── blog-malaysia-guide.webp
+│   │   │   ├── blog-modern-archiving.webp
+│   │   │   ├── blog-pricing-trust.webp
+│   │   │   ├── blog-security-protected.webp
+│   │   │   ├── blog-sme-warfare.webp
+│   │   │   ├── blog-thailand-guide.webp
+│   │   │   ├── blog-visual-narrative.webp
+│   │   │   ├── default-insight.webp
+│   │   │   ├── digital-ghost.webp
+│   │   │   ├── local-seo-bangkok-node-aemdevweb.webp
+│   │   │   └── technical-seo-specialist-data-infrastructure.webp
+│   │   ├── cases
+│   │   │   ├── case-blacklist.webp
+│   │   │   ├── case-cross-border-finance.webp
+│   │   │   ├── case-defamation.webp
+│   │   │   ├── case-dubai.webp
+│   │   │   ├── case-financial-victory.webp
+│   │   │   ├── case-gambling.webp
+│   │   │   ├── case-malaysia.webp
+│   │   │   ├── case-merger.webp
+│   │   │   ├── case-multinational.webp
+│   │   │   ├── case-negotiation-resolved.webp
+│   │   │   ├── case-negotiation.webp
+│   │   │   ├── case-pnr-verified.webp
+│   │   │   ├── case-reputation-cleared.webp
+│   │   │   ├── case-schengen.webp
+│   │   │   ├── case-seo-push.webp
+│   │   │   ├── case-silent-angel.webp
+│   │   │   ├── case-sme-recovery.webp
+│   │   │   ├── clear-blacklist-evidence.jpg
+│   │   │   └── default.webp
+│   │   ├── common
+│   │   │   ├── branding-network.webp
+│   │   │   ├── handover-success.webp
+│   │   │   ├── hero-main.webp
+│   │   │   ├── methodology-abstract.webp
+│   │   │   ├── operational-core.webp
+│   │   │   ├── rich-menu.png
+│   │   │   └── rich-menu.webp
+│   │   └── services
+│   │       ├── default.webp
+│   │       ├── financial.webp
+│   │       ├── security.webp
+│   │       ├── srv-bus-itinerary.webp
+│   │       ├── srv-bus-transport.webp
+│   │       ├── srv-credit-engineering.webp
+│   │       ├── srv-crisis-cleanup.webp
+│   │       ├── srv-digital-detox.webp
+│   │       ├── srv-elite-freedom.webp
+│   │       ├── srv-ex-partner-eraser.webp
+│   │       ├── srv-extreme-intervention.webp
+│   │       ├── srv-final-handover.webp
+│   │       ├── srv-financial-struct.webp
+│   │       ├── srv-financial-victory.webp
+│   │       ├── srv-flight-itinerary.webp
+│   │       ├── srv-fresh-start.webp
+│   │       ├── srv-gds-reservation.webp
+│   │       ├── srv-gds-status.webp
+│   │       ├── srv-hotel-verification.webp
+│   │       ├── srv-identity-detox.webp
+│   │       ├── srv-identity-map.webp
+│   │       ├── srv-identity-rehabilitation.webp
+│   │       ├── srv-income-documentation.webp
+│   │       ├── srv-income-grid.webp
+│   │       ├── srv-institutional-reliability.webp
+│   │       ├── srv-lifestyle-mobility.webp
+│   │       ├── srv-mobility-vip.webp
+│   │       ├── srv-secure-transit.webp
+│   │       ├── srv-security-protected.webp
+│   │       ├── srv-sme-rescue.webp
+│   │       ├── srv-statement-optimization.webp
+│   │       ├── srv-strategic-visa.webp
+│   │       └── srv-transparent-investment.webp
+│   ├── next.svg
+│   ├── og
+│   │   └── og-main.webp
+│   ├── vercel.svg
+│   └── window.svg
+├── scripts
+├── structure.txt
+├── tailwind.config.mjs
+├── tsconfig.json
+├── tsconfig.tsbuildinfo
+└── vercel.json
+
+59 directories, 251 files

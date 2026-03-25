@@ -1,7 +1,6 @@
 /** @format */
 
 import { fileURLToPath } from "url";
-const __filename = fileURLToPath(import.meta.url);
 
 const nextConfig = {
   // 🚀 NEXT.JS 16 OPTIMIZED CONFIGURATION
@@ -11,9 +10,6 @@ const nextConfig = {
   // เราใช้ pnpm run aipc ตรวจสอบแยกอยู่แล้ว จึงปิดส่วนนี้เพื่อเลี่ยง WASM bug
   typescript: {
     ignoreBuildErrors: true,
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
   },
 
   // 🛡️ SECURITY HEADERS PROTOCOL

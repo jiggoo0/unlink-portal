@@ -43,46 +43,51 @@
 }
 
 /* =========================================================
-   UNLINK PROTOCOL: THE CLEAR SHIELD (2026 Redesign)
+   🛡️ UNLINK PROTOCOL: INSTITUTIONAL AUTHORITY (CLEAN & TRUSTED)
    ---------------------------------------------------------
-   Identity: Dark Navy, Amber Gold & Emerald Accents
+   Theme: Pristine White, Corporate Trust Blue & Clean Slate
+   Strategy: 0 Baht SEO (E-E-A-T Optimized, Accessible Design)
    ========================================================= */
 
 :root {
-  /* Deep Navy Background for cinematic readability */
-  --background: oklch(0.18 0.03 260); /* #050810 to #0a0f1a range */
-  --foreground: oklch(0.98 0 0); /* Pure White Text */
+  /* 🏛️ The Foundation (Clean & Bright) */
+  --background: oklch(0.99 0 0); /* Pure White - Maximum transparency */
+  --foreground: oklch(0.2 0.02 260); /* Deep Slate Text - High readability */
 
-  /* Dark Blue Cards with subtle edge */
-  --card: oklch(0.22 0.04 260); /* #101828 range */
-  --card-foreground: oklch(0.95 0 0);
+  /* 💎 Institutional Surfaces */
+  --card: oklch(0.99 0 0);
+  --card-foreground: oklch(0.2 0.02 260);
+  --popover: oklch(0.99 0 0);
+  --popover-foreground: oklch(0.2 0.02 260);
 
-  --popover: oklch(0.22 0.04 260);
-  --popover-foreground: oklch(0.95 0 0);
+  /* 🛡️ Corporate Trust (Primary Identity) */
+  --primary: oklch(
+    0.45 0.15 250
+  ); /* Trust Blue - Like a major bank or institution */
+  --primary-foreground: oklch(0.98 0 0); /* White text on primary buttons */
 
-  /* Trust Navy / Cyan (Primary action color) */
-  --primary: oklch(0.65 0.15 250); /* Cyan / Light Blue */
-  --primary-foreground: oklch(0.1 0 0);
+  /* ⚖️ Structural Elements */
+  --secondary: oklch(0.95 0.01 260); /* Light Gray for secondary backgrounds */
+  --secondary-foreground: oklch(0.3 0.03 260);
 
-  /* Slate/Navy for secondary items */
-  --secondary: oklch(0.3 0.05 260);
-  --secondary-foreground: oklch(0.9 0 0);
+  --muted: oklch(0.96 0.01 260);
+  --muted-foreground: oklch(0.5 0.02 260);
 
-  --muted: oklch(0.25 0.05 260);
-  --muted-foreground: oklch(0.7 0.02 260);
+  /* ✨ Verification Accent */
+  --accent: oklch(0.95 0.01 260);
+  --accent-foreground: oklch(0.2 0.02 260);
 
-  /* Amber Gold for Verification / Trust Accents */
-  --accent: oklch(0.75 0.15 70); /* Amber/Gold */
-  --accent-foreground: oklch(0.2 0.05 70);
-
-  --destructive: oklch(0.55 0.18 25);
+  /* System States */
+  --destructive: oklch(0.6 0.2 25); /* Clear red for errors */
   --destructive-foreground: oklch(0.98 0 0);
+  --success: oklch(0.6 0.15 150); /* Green for verified status */
+  --success-foreground: oklch(0.98 0 0);
 
-  --border: oklch(0.3 0.05 260);
-  --input: oklch(0.3 0.05 260);
-  --ring: oklch(0.65 0.15 250 / 0.4);
+  --border: oklch(0.9 0.02 260); /* Clean, crisp borders */
+  --input: oklch(0.9 0.02 260);
+  --ring: oklch(0.45 0.15 250 / 0.3);
 
-  --radius: 1.25rem; /* Softer, friendlier corners */
+  --radius: 0.5rem; /* Professional, structured corners */
 }
 
 /* Base Layer Protocols */
@@ -96,7 +101,8 @@
   html {
     scroll-behavior: smooth;
     background-color: var(--background);
-    color-scheme: dark; /* Shifted to Dark Mode */
+    /* Explicitly forcing light mode to avoid dark aesthetics */
+    color-scheme: light;
   }
 
   body {
@@ -104,8 +110,8 @@
     color: var(--foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
-    line-height: 1.7; /* Optimized for institutional readability */
-    letter-spacing: -0.01em; /* Tighter, more professional look */
+    line-height: 1.7;
+    letter-spacing: -0.01em;
   }
 
   /* Institutional Heading Authority */
@@ -115,25 +121,25 @@
   h4,
   h5,
   h6 {
-    font-weight: 800; /* Extra Bold/Black for Authority */
-    letter-spacing: -0.03em; /* Tight heading for power signal */
-    line-height: 1.1;
-    text-transform: none; /* Keep natural case for professional look */
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
     color: var(--foreground);
+    text-wrap: balance;
   }
 
   h1 {
-    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-size: clamp(2.5rem, 7vw, 4rem);
   }
   h2 {
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(2rem, 5vw, 2.75rem);
   }
   h3 {
-    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-size: clamp(1.5rem, 3vw, 2rem);
   }
 }
 
-/* Utility Extensions */
+/* Elite Component Protocols */
 @layer utilities {
   .container {
     width: 100%;
@@ -142,25 +148,35 @@
     max-width: 80rem;
   }
 
-  /* Redesigned Card for Clean Aesthetic */
-  .lab-card {
+  /* 💎 The Clean Authority Card */
+  .authority-card {
     background-color: var(--card);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    box-shadow: 0 4px 20px -5px oklch(0 0 0 / 0.05); /* Soft, airy shadow */
-    transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 2rem;
+    box-shadow:
+      0 4px 6px -1px oklch(0 0 0 / 0.05),
+      0 2px 4px -2px oklch(0 0 0 / 0.05); /* Very light, professional shadow */
+    transition: all 300ms ease;
   }
 
-  .lab-card:hover {
-    border-color: color-mix(in oklch, var(--primary) 40%, transparent);
-    box-shadow: 0 12px 30px -10px
-      color-mix(in oklch, var(--primary) 15%, transparent);
-    transform: translateY(-4px);
+  .authority-card:hover {
+    border-color: color-mix(in oklch, var(--primary) 30%, var(--border));
+    box-shadow:
+      0 10px 15px -3px oklch(0 0 0 / 0.08),
+      0 4px 6px -4px oklch(0 0 0 / 0.05);
+    transform: translateY(-2px);
   }
 
-  .glow-gold {
-    filter: drop-shadow(
-      0 0 10px color-mix(in oklch, var(--accent-foreground) 30%, transparent)
-    );
+  /* Status Badges */
+  .badge-verified {
+    background-color: var(--success);
+    color: var(--success-foreground);
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
   }
 }
