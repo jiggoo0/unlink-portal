@@ -6,7 +6,7 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getMDXComponents } from "@/mdx-components";
 import { SecureChannel } from "@/components/sections/SecureChannel";
-import { Calendar, Clock, ShieldCheck, Lock, Terminal } from "lucide-react";
+import { Calendar, Clock, ShieldCheck, Lock, Terminal, User } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import JsonLd from "@/components/shared/JsonLd";
@@ -23,6 +23,8 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+
+/* @identity 9mza - Institutional Authority Refinement */
 
 interface BlogPageProps {
   params: Promise<{ slug: string }>;
@@ -61,7 +63,7 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
   const mdxComponents = getMDXComponents({});
 
   return (
-    <article className="pb-24">
+    <article className="pb-24 bg-background">
       <JsonLd
         data={getBlogPostSchema({
           title: post.title,
@@ -79,38 +81,28 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link href="/">Home</Link>
+                <Link href="/" className="hover:text-primary transition-colors">Home</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link href="/blog">Blog</Link>
+                <Link href="/blog" className="hover:text-primary transition-colors">Insights</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage>{post.title}</BreadcrumbPage>
+              <BreadcrumbPage className="font-bold text-foreground">{post.title}</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
       </div>
 
-      {/* 1. Protocol Intelligence Header */}
-      <header className="border-border/50 bg-muted/10 relative mb-20 overflow-hidden border-b py-24 min-h-[400px] flex items-center">
-        {/* Background Image Layer */}
+      {/* 1. Protocol Intelligence Header (Pristine Light Edition) */}
+      <header className="relative mb-20 overflow-hidden pt-24 pb-16">
         <div className="absolute inset-0 z-0">
-          {post.image && (
-            <Image
-              src={getImageUrl(post.image)}
-              alt={post.title}
-              fill
-              priority
-              className="object-cover opacity-40 saturate-[0.3]"
-            />
-          )}
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(16,185,129,0.1),transparent)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(72,135,255,0.08),transparent)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0)_0%,rgba(255,255,255,1)_100%)]" />
         </div>
 
         <div className="relative z-10 container">
@@ -118,36 +110,36 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
             <div className="flex flex-wrap items-center gap-4">
               <Badge
                 variant="outline"
-                className="border-primary/30 text-primary px-4 py-1 font-mono text-[10px] tracking-[0.2em] uppercase"
+                className="border-primary/20 bg-primary/5 text-primary px-4 py-1 font-mono text-[10px] tracking-[0.2em] uppercase font-bold"
               >
-                {post.category} Intelligence
+                {post.category} Protocol
               </Badge>
-              <span className="text-muted-foreground/60 font-mono text-[10px] tracking-widest uppercase flex items-center gap-2">
-                <Calendar className="h-3 w-3" /> {post.date}
+              <span className="text-muted-foreground font-mono text-[10px] tracking-widest uppercase flex items-center gap-2">
+                <Calendar className="h-3 w-3 text-primary/60" /> {post.date}
               </span>
-              <span className="text-muted-foreground/60 font-mono text-[10px] tracking-widest uppercase flex items-center gap-2">
-                <Clock className="h-3 w-3" /> 5 Min Read
+              <span className="text-muted-foreground font-mono text-[10px] tracking-widest uppercase flex items-center gap-2">
+                <Clock className="h-3 w-3 text-primary/60" /> 5 Min Read
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-7xl leading-[1.1] font-bold tracking-tighter text-balance text-white break-words overflow-wrap-anywhere">
+            <h1 className="text-4xl md:text-5xl lg:text-7xl leading-[1.1] font-black tracking-tighter text-foreground uppercase break-words">
               {post.title}
             </h1>
 
-            <div className="border-border/10 grid gap-8 border-t pt-8 md:grid-cols-3">
+            <div className="border-border grid gap-8 border-t pt-8 md:grid-cols-3">
               <div className="flex items-center gap-3">
-                <div className="bg-primary/5 rounded-lg p-2">
-                  <ShieldCheck className="text-primary/70 h-5 w-5" />
+                <div className="bg-primary/5 rounded-lg p-2 border border-primary/10">
+                  <ShieldCheck className="text-primary h-5 w-5" />
                 </div>
-                <span className="text-muted-foreground font-mono text-[10px] tracking-widest uppercase">
+                <span className="text-muted-foreground font-mono text-[10px] tracking-widest uppercase font-bold">
                   Verified Intelligence
                 </span>
               </div>
               <div className="flex items-center gap-3">
-                <div className="bg-primary/5 rounded-lg p-2">
-                  <Lock className="text-primary/70 h-5 w-5" />
+                <div className="bg-primary/5 rounded-lg p-2 border border-primary/10">
+                  <Lock className="text-primary h-5 w-5" />
                 </div>
-                <span className="text-muted-foreground font-mono text-[10px] tracking-widest uppercase">
+                <span className="text-muted-foreground font-mono text-[10px] tracking-widest uppercase font-bold">
                   {post.priceInfo?.model || "Educational Protocol"}
                 </span>
               </div>
@@ -159,26 +151,26 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
       {/* 2. Technical Execution Area */}
       <div className="container grid gap-20 lg:grid-cols-12">
         <main className="lg:col-span-8">
-          {/* 2.1 Auto-Generated Intelligence Summary (Key Insights) */}
-          <section className="mb-16 rounded-2xl border border-primary/10 bg-primary/5 p-10 backdrop-blur-sm shadow-2xl shadow-primary/5">
+          {/* 2.1 Strategic Analysis Summary */}
+          <section className="mb-16 rounded-[2rem] border border-border bg-secondary/30 p-10 backdrop-blur-sm shadow-sm">
             <div className="mb-6 flex items-center gap-3">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-lg shadow-primary/20">
                 <Terminal className="h-4 w-4" />
               </div>
-              <h2 className="font-mono text-[11px] font-bold uppercase tracking-[0.3em] text-white">
+              <h2 className="font-mono text-[11px] font-black uppercase tracking-[0.3em] text-foreground">
                 Intelligence Summary & Strategic Analysis
               </h2>
             </div>
-            <p className="mb-8 text-[15px] leading-relaxed text-muted-foreground/90 italic border-l-2 border-primary/30 pl-6 py-1">
+            <p className="mb-8 text-[16px] leading-relaxed text-muted-foreground italic border-l-4 border-primary/40 pl-6 py-2">
               {post.description}
             </p>
 
             {post.features && post.features.length > 0 && (
               <div className="grid gap-6 md:grid-cols-2">
                 {post.features.map((feature: string, idx: number) => (
-                  <div key={idx} className="flex items-start gap-3">
-                    <ShieldCheck className="mt-1 h-3.5 w-3.5 text-primary/60 shrink-0" />
-                    <span className="text-[13px] leading-snug text-zinc-300">
+                  <div key={idx} className="flex items-start gap-3 group">
+                    <ShieldCheck className="mt-1 h-4 w-4 text-primary shrink-0 transition-transform group-hover:scale-110" />
+                    <span className="text-[14px] leading-snug text-foreground/80 font-medium">
                       {feature}
                     </span>
                   </div>
@@ -187,78 +179,70 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
             )}
           </section>
 
-          <div className="prose prose-invert prose-headings:tracking-tighter prose-p:leading-relaxed prose-p:text-muted-foreground/90 prose-strong:text-primary prose-a:text-primary prose-a:underline prose-a:underline-offset-4 hover:prose-a:text-primary/80 prose-img:rounded-[2rem] prose-img:shadow-2xl prose-img:border prose-img:border-white/5 max-w-none w-full break-words">
-            {/* 💰 TOP_AD_PLACEMENT (AdSense Ready) */}
-            <div className="ads-placeholder my-8 h-[100px] w-full bg-white/5 border border-dashed border-white/10 flex items-center justify-center text-[10px] font-mono text-zinc-600 uppercase tracking-widest rounded-xl">
-              Commercial Intelligence Slot
+          <div className="prose prose-slate max-w-none w-full break-words prose-headings:text-foreground prose-headings:tracking-tighter prose-headings:font-black prose-p:text-muted-foreground prose-p:leading-[1.8] prose-strong:text-foreground prose-strong:font-bold prose-a:text-primary prose-a:font-bold prose-img:rounded-[2.5rem] prose-img:shadow-xl prose-img:border prose-img:border-border">
+            {/* 💰 TOP_AD_PLACEMENT */}
+            <div className="ads-placeholder my-8 h-[100px] w-full bg-secondary/50 border border-dashed border-border flex items-center justify-center text-[10px] font-mono text-muted-foreground uppercase tracking-widest rounded-2xl">
+              Commercial Intelligence Node
             </div>
 
             <MDXRemote source={post.content || ""} components={mdxComponents} />
 
-            {/* 💰 BOTTOM_AD_PLACEMENT (AdSense Ready) */}
-            <div className="ads-placeholder my-12 h-[250px] w-full bg-white/5 border border-dashed border-white/10 flex items-center justify-center text-[10px] font-mono text-zinc-600 uppercase tracking-widest rounded-2xl">
+            {/* 💰 BOTTOM_AD_PLACEMENT */}
+            <div className="ads-placeholder my-12 h-[250px] w-full bg-secondary/50 border border-dashed border-border flex items-center justify-center text-[10px] font-mono text-muted-foreground uppercase tracking-widest rounded-[2rem]">
               Strategic Network Advertisement
             </div>
           </div>
 
           {/* 2.2 Takeaways & Strategic Actions */}
-          <section className="mt-20 rounded-xl border border-white/5 bg-white/[0.02] p-8">
-            <div className="mb-6 flex items-center gap-2 font-mono text-[10px] font-bold uppercase tracking-[0.3em] text-primary/70">
-              <div className="h-1 w-4 bg-primary/40" />
+          <section className="mt-20 rounded-[2rem] border border-border bg-muted/30 p-10">
+            <div className="mb-6 flex items-center gap-2 font-mono text-[10px] font-black uppercase tracking-[0.4em] text-primary">
+              <div className="h-1.5 w-6 bg-primary" />
               Strategic Takeaways
             </div>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-4 text-sm text-zinc-400">
-                <span className="text-primary font-mono">[01]</span>
-                <span>
-                  ดำเนินการประเมินความเสี่ยงและจัดเตรียมเอกสารตามเกณฑ์มาตรฐานล่าสุด
-                </span>
-              </li>
-              <li className="flex items-start gap-4 text-sm text-zinc-400">
-                <span className="text-primary font-mono">[02]</span>
-                <span>
-                  ตรวจสอบความถูกต้องของรายการเดินบัญชีและที่มาของรายได้ให้ชัดเจน
-                </span>
-              </li>
-              <li className="flex items-start gap-4 text-sm text-zinc-400">
-                <span className="text-primary font-mono">[03]</span>
-                <span>
-                  ปรึกษาผู้เชี่ยวชาญผ่านช่องทางที่ปลอดภัยเพื่อลดความเสี่ยงในการถูกปฏิเสธ
-                </span>
-              </li>
+            <ul className="space-y-6">
+              {[
+                "ดำเนินการประเมินความเสี่ยงและจัดเตรียมเอกสารตามเกณฑ์มาตรฐานล่าสุด",
+                "ตรวจสอบความถูกต้องของรายการเดินบัญชีและที่มาของรายได้ให้ชัดเจน",
+                "ปรึกษาผู้เชี่ยวชาญผ่านช่องทางที่ปลอดภัยเพื่อลดความเสี่ยงในการถูกปฏิเสธ"
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-4 text-[15px] text-muted-foreground font-medium">
+                  <span className="text-primary font-mono font-bold">[0{i+1}]</span>
+                  <span>{item}</span>
+                </li>
+              ))}
             </ul>
           </section>
         </main>
 
-        {/* 3. Secure Side Interface */}
+        {/* 3. Secure Side Interface (Authority Panel) */}
         <aside className="lg:col-span-4">
           <div className="sticky top-28 space-y-8">
-            {/* 3.1 Author Profile (E-E-A-T) */}
-            <div className="lab-card border-white/5 bg-white/[0.02] border p-8 shadow-2xl overflow-hidden relative group">
-              <div className="absolute top-0 right-0 p-4 opacity-5 transition-opacity group-hover:opacity-10">
-                <ShieldCheck size={80} className="text-primary" />
+            {/* 3.1 Author Profile (E-E-A-T Master) */}
+            <div className="bg-white border-border border-2 rounded-[2.5rem] p-10 shadow-xl shadow-primary/5 overflow-hidden relative group transition-all hover:shadow-2xl hover:shadow-primary/10">
+              <div className="absolute top-0 right-0 p-6 opacity-[0.03] transition-opacity group-hover:opacity-[0.08]">
+                <ShieldCheck size={120} className="text-primary" />
               </div>
 
-              <div className="space-y-6 relative z-10">
-                <div className="text-primary/60 flex items-center gap-2 font-mono text-[9px] tracking-[0.3em] uppercase">
-                  <Terminal className="h-3.5 w-3.5" />
-                  <span>Verified Author Profile</span>
+              <div className="space-y-8 relative z-10">
+                <div className="text-primary flex items-center gap-2 font-mono text-[10px] font-black tracking-[0.4em] uppercase">
+                  <User className="h-4 w-4" />
+                  <span>Authority Profile</span>
                 </div>
 
-                <div className="flex items-center gap-4">
-                  <div className="relative h-14 w-14 overflow-hidden rounded-xl border border-primary/20 bg-primary/5 p-1 transition-all group-hover:border-primary/40">
+                <div className="flex items-center gap-5">
+                  <div className="relative h-20 w-20 overflow-hidden rounded-2xl border-2 border-primary/20 bg-primary/5 p-1 transition-all group-hover:border-primary/40">
                     <Image
                       src="/branding/founder-avatar.webp"
                       alt={post.author || "9mza"}
                       fill
-                      className="object-cover rounded-lg"
+                      className="object-cover rounded-xl"
                     />
                   </div>
                   <div>
-                    <h4 className="text-lg font-black tracking-tight text-white uppercase italic">
+                    <h4 className="text-2xl font-black tracking-tight text-foreground uppercase italic">
                       {post.author || "9mza"}
                     </h4>
-                    <p className="text-[10px] text-primary/70 font-mono font-bold uppercase tracking-widest">
+                    <p className="text-[11px] text-primary font-mono font-black uppercase tracking-[0.2em]">
                       Lead Architect
                     </p>
                   </div>
@@ -272,57 +256,54 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
                   />
                 </div>
 
-                <p className="text-[11px] text-zinc-400 leading-relaxed font-light">
+                <p className="text-[14px] text-muted-foreground leading-relaxed font-medium">
                   ผู้เชี่ยวชาญด้านการจัดการข้อมูลตัวตนดิจิทัลและวิศวกรรมภาพลักษณ์
-                  ผู้วางโครงสร้างมาตรฐาน The Shield Protocol
+                  ผู้วางโครงสร้างมาตรฐาน <span className="text-foreground font-bold italic">The Shield Protocol</span>
                   เพื่อความโปร่งใสระดับสากล
                 </p>
+
+                <div className="pt-4 border-t border-border">
+                  <Link href="/about" className="text-primary hover:text-foreground flex items-center justify-between text-[11px] font-black uppercase tracking-widest transition-colors">
+                    View Credentials <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
               </div>
             </div>
 
-            <div className="lab-card border-white/5 bg-white/[0.02] border p-8 shadow-2xl">
-              <div className="space-y-6">
-                <div className="text-primary/60 flex items-center gap-2 font-mono text-[9px] tracking-[0.3em] uppercase">
-                  <Terminal className="h-3 w-3" />
-                  <span>Intelligence Summary</span>
-                </div>
-
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center border-b border-white/5 pb-3">
-                    <span className="text-[10px] text-zinc-500 uppercase tracking-widest">
-                      Article ID
-                    </span>
-                    <span className="text-xs font-mono font-bold text-white">
-                      {post.id || "N/A"}
-                    </span>
-                  </div>
-                  <div className="flex justify-between items-center border-b border-white/5 pb-3">
-                    <span className="text-[10px] text-zinc-500 uppercase tracking-widest">
-                      Classification
-                    </span>
-                    <span className="text-xs font-bold text-white uppercase">
-                      {post.category}
-                    </span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-[10px] text-zinc-500 uppercase tracking-widest">
-                      Status
-                    </span>
-                    <span className="text-[10px] font-bold text-emerald-500 uppercase tracking-tighter flex items-center gap-1">
-                      <div className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                      Verified Source
-                    </span>
-                  </div>
-                </div>
-
-                <div className="pt-4">
-                  <p className="text-[9px] text-zinc-500 leading-relaxed font-light italic">
-                    *
-                    ข้อมูลนี้จัดทำขึ้นเพื่อการศึกษาและการวางแผนเชิงกลยุทธ์ภายใต้มาตรฐานความปลอดภัยระดับสูงของ{" "}
-                    {siteConfig.name}
-                  </p>
-                </div>
+            {/* 3.2 Metadata Intelligence */}
+            <div className="bg-secondary/30 border-border border rounded-[2rem] p-8 space-y-8">
+              <div className="text-muted-foreground flex items-center gap-2 font-mono text-[9px] font-black tracking-[0.4em] uppercase">
+                <Terminal className="h-3 w-3" />
+                <span>Intelligence Metadata</span>
               </div>
+
+              <div className="space-y-5">
+                {[
+                  { label: "Article ID", value: post.id || "UK-INTEL-09" },
+                  { label: "Classification", value: post.category },
+                  { label: "Status", value: "Verified Source", status: true }
+                ].map((item, i) => (
+                  <div key={i} className="flex justify-between items-center border-b border-border/50 pb-4">
+                    <span className="text-[10px] text-muted-foreground/60 uppercase tracking-widest font-bold">
+                      {item.label}
+                    </span>
+                    {item.status ? (
+                      <span className="text-[10px] font-black text-emerald-600 uppercase tracking-tighter flex items-center gap-2">
+                        <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                        {item.value}
+                      </span>
+                    ) : (
+                      <span className="text-xs font-mono font-black text-foreground uppercase">
+                        {item.value}
+                      </span>
+                    )}
+                  </div>
+                ))}
+              </div>
+
+              <p className="text-[10px] text-muted-foreground/50 leading-relaxed font-medium italic text-center">
+                * Strategic intelligence strictly managed by UNLINK-GLOBAL Infrastructure
+              </p>
             </div>
           </div>
         </aside>
@@ -334,3 +315,9 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
     </article>
   );
 }
+
+const ArrowRight = ({ className }: { className?: string }) => (
+  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+  </svg>
+);

@@ -35,6 +35,13 @@ export const getPersonSchema = (): WithContext<Person> => {
     jobTitle: siteConfig.founder.role,
     url: siteConfig.founder.url,
     sameAs: siteConfig.founder.sameAs,
+    knowsAbout: [
+      "Digital Identity Management",
+      "Reputation Engineering",
+      "Cybersecurity Audit",
+      "Strategic Intelligence",
+      "Information Privacy",
+    ],
     worksFor: {
       "@type": "Organization",
       "@id": `${siteConfig.url}/#organization`,

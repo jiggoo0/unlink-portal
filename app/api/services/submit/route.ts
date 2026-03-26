@@ -3,6 +3,7 @@ import { z } from "zod";
 import { sendServiceRequestNotification } from "@/lib/line";
 import { safeErrorLog } from "@/lib/utils";
 import { createServiceRequest } from "@/lib/services/service-request-service";
+import { reportAuditLog } from "@/lib/audit";
 
 /**
  * 🛠️ SERVICE SUBMISSION API (SECURED BY THE SHIELD PROTOCOL)
@@ -80,6 +81,12 @@ export async function POST(req: NextRequest) {
         string,
         string | number | boolean | null | undefined
       >,
+      status,
+    });
+
+    // 5. รายงานผลไปยัง Audit Sentinel (Compliance Logic)
+    await reportAuditLog("user-unlink-request", id, {
+      service_type,
       status,
     });
 

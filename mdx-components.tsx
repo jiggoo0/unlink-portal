@@ -27,19 +27,19 @@ import {
 import { siteConfig } from "@/constants/site-config";
 
 /**
- * UNLINK-GLOBAL | Root MDX Architecture
+ * UNLINK-GLOBAL | Root MDX Architecture (Institutional Light Refinement)
  * -------------------------------------------------------------------------
- * ไฟล์ศูนย์กลางสำหรับจัดการคอมโพเนนต์ที่ใช้ใน MDX ทั้งหมด
- * เป็นไปตามมาตรฐาน Next.js App Router
+ * ปรับปรุงให้เป็น Corporate Light Theme (Pristine White)
+ * เน้นความสะอาด อ่านง่าย และดูเป็นทางการระดับสถาบัน
  */
 
 export function getMDXComponents(components: MDXComponents): MDXComponents {
   return {
-    // 1. Base HTML Element Overrides
+    // 1. Base HTML Element Overrides (Light Theme Optimized)
     h1: ({ className, ...props }: React.ComponentPropsWithoutRef<"h1">) => (
       <h1
         className={cn(
-          "mt-16 mb-10 text-3xl font-black tracking-tighter text-white uppercase md:text-5xl flex items-center flex-wrap gap-4",
+          "mt-16 mb-10 text-3xl font-black tracking-tighter text-foreground uppercase md:text-5xl flex items-center flex-wrap gap-4",
           className,
         )}
         {...props}
@@ -48,7 +48,7 @@ export function getMDXComponents(components: MDXComponents): MDXComponents {
     h2: ({ className, ...props }: React.ComponentPropsWithoutRef<"h2">) => (
       <h2
         className={cn(
-          "mt-20 mb-10 border-b border-white/5 pb-8 text-2xl font-bold tracking-tight text-white uppercase md:text-3xl flex items-center flex-wrap gap-3",
+          "mt-20 mb-10 border-b border-border pb-8 text-2xl font-bold tracking-tight text-foreground uppercase md:text-3xl flex items-center flex-wrap gap-3",
           className,
         )}
         {...props}
@@ -66,7 +66,7 @@ export function getMDXComponents(components: MDXComponents): MDXComponents {
     p: ({ className, ...props }: React.ComponentPropsWithoutRef<"p">) => (
       <p
         className={cn(
-          "mb-12 text-sm leading-[1.8] font-light tracking-wide text-zinc-400 md:text-lg/9",
+          "mb-12 text-sm leading-[1.8] font-normal tracking-wide text-muted-foreground md:text-lg/9",
           className,
         )}
         {...props}
@@ -77,14 +77,14 @@ export function getMDXComponents(components: MDXComponents): MDXComponents {
       ...props
     }: React.ComponentPropsWithoutRef<"strong">) => (
       <strong
-        className={cn("font-bold text-white italic", className)}
+        className={cn("font-bold text-foreground italic", className)}
         {...props}
       />
     ),
     a: ({ className, ...props }: React.ComponentPropsWithoutRef<"a">) => (
       <a
         className={cn(
-          "text-primary bg-primary/5 px-1 py-0.5 rounded underline decoration-primary/40 underline-offset-[4px] transition-all hover:decoration-primary hover:bg-primary/20 hover:text-white font-bold inline-flex items-center",
+          "text-primary bg-primary/5 px-1 py-0.5 rounded underline decoration-primary/40 underline-offset-[4px] transition-all hover:decoration-primary hover:bg-primary/20 hover:text-primary-foreground font-bold inline-flex items-center",
           className,
         )}
         {...props}
@@ -113,7 +113,7 @@ export function getMDXComponents(components: MDXComponents): MDXComponents {
       return (
         <li
           className={cn(
-            "relative pl-10 font-light tracking-wide text-zinc-300 md:text-base",
+            "relative pl-10 font-normal tracking-wide text-muted-foreground md:text-base",
             "before:absolute before:left-0 before:flex before:h-8 before:w-8 before:items-center before:justify-center before:rounded-full before:text-[10px] before:font-bold before:transition-all",
             "hover:before:scale-110",
             !isOrdered &&
@@ -130,7 +130,7 @@ export function getMDXComponents(components: MDXComponents): MDXComponents {
     }: React.ComponentPropsWithoutRef<"blockquote">) => (
       <blockquote
         className={cn(
-          "border-primary/30 bg-white/[0.02] my-16 rounded-2xl border-l-4 p-12 text-lg font-light text-zinc-300 italic backdrop-blur-sm leading-loose",
+          "border-primary/30 bg-muted/30 my-16 rounded-2xl border-l-4 p-12 text-lg font-normal text-muted-foreground italic backdrop-blur-sm leading-loose",
           className,
         )}
         {...props}
@@ -139,19 +139,19 @@ export function getMDXComponents(components: MDXComponents): MDXComponents {
     code: ({ className, ...props }: React.ComponentPropsWithoutRef<"code">) => (
       <code
         className={cn(
-          "text-primary rounded-md border border-white/10 bg-white/5 px-2 py-0.5 font-mono text-xs",
+          "text-primary rounded-md border border-border bg-muted/50 px-2 py-0.5 font-mono text-xs",
           className,
         )}
         {...props}
       />
     ),
     hr: ({ className, ...props }: React.ComponentPropsWithoutRef<"hr">) => (
-      <hr className={cn("my-20 border-white/5", className)} {...props} />
+      <hr className={cn("my-20 border-border", className)} {...props} />
     ),
     pre: ({ className, ...props }: React.ComponentPropsWithoutRef<"pre">) => (
       <pre
         className={cn(
-          "my-16 overflow-x-auto rounded-xl border border-white/10 bg-gradient-to-br from-slate-900 to-black/50 p-8 font-mono text-sm backdrop-blur-sm",
+          "my-16 overflow-x-auto rounded-xl border border-border bg-secondary p-8 font-mono text-sm backdrop-blur-sm",
           className,
         )}
         {...props}
@@ -161,7 +161,7 @@ export function getMDXComponents(components: MDXComponents): MDXComponents {
       className,
       ...props
     }: React.ComponentPropsWithoutRef<"table">) => (
-      <div className="my-16 w-full overflow-x-auto rounded-xl border border-white/10 p-2 backdrop-blur-sm">
+      <div className="my-16 w-full overflow-x-auto rounded-xl border border-border p-2 backdrop-blur-sm">
         <table
           className={cn("w-full caption-bottom text-sm", className)}
           {...props}
@@ -186,7 +186,7 @@ export function getMDXComponents(components: MDXComponents): MDXComponents {
     tr: ({ className, ...props }: React.ComponentPropsWithoutRef<"tr">) => (
       <tr
         className={cn(
-          "border-b border-white/10 transition-colors hover:bg-white/5",
+          "border-b border-border transition-colors hover:bg-muted/50",
           className,
         )}
         {...props}
@@ -195,7 +195,7 @@ export function getMDXComponents(components: MDXComponents): MDXComponents {
     th: ({ className, ...props }: React.ComponentPropsWithoutRef<"th">) => (
       <th
         className={cn(
-          "h-16 px-8 text-left align-middle text-xs font-bold uppercase tracking-widest text-white",
+          "h-16 px-8 text-left align-middle text-xs font-bold uppercase tracking-widest text-foreground",
           className,
         )}
         {...props}
@@ -204,7 +204,7 @@ export function getMDXComponents(components: MDXComponents): MDXComponents {
     td: ({ className, ...props }: React.ComponentPropsWithoutRef<"td">) => (
       <td
         className={cn(
-          "p-8 align-middle font-light text-zinc-300 [&>p]:mb-0",
+          "p-8 align-middle font-normal text-muted-foreground [&>p]:mb-0",
           className,
         )}
         {...props}
@@ -213,7 +213,7 @@ export function getMDXComponents(components: MDXComponents): MDXComponents {
 
     // 2. Custom Intelligence Components
     img: (props) => (
-      <div className="mx-auto my-16 max-w-4xl overflow-hidden rounded-3xl border border-white/5 shadow-2xl">
+      <div className="mx-auto my-16 max-w-4xl overflow-hidden rounded-3xl border border-border shadow-xl">
         <Image
           sizes="100vw"
           style={{ width: "100%", height: "auto" }}
@@ -225,7 +225,7 @@ export function getMDXComponents(components: MDXComponents): MDXComponents {
       const { width: _width, height: _height, src, alt, ...rest } = props;
       return (
         <figure className="mx-auto my-20 max-w-4xl">
-          <div className="group relative aspect-video overflow-hidden rounded-[2rem] border border-white/10 bg-[#0c1122] shadow-2xl">
+          <div className="group relative aspect-video overflow-hidden rounded-[2rem] border border-border bg-muted shadow-xl">
             <Image
               src={src || ""}
               alt={alt || "Strategic Document Image"}
@@ -236,7 +236,7 @@ export function getMDXComponents(components: MDXComponents): MDXComponents {
             />
           </div>
           {alt && (
-            <figcaption className="mt-8 text-center text-[9px] font-bold tracking-[0.6em] text-zinc-600 uppercase">
+            <figcaption className="mt-8 text-center text-[9px] font-bold tracking-[0.6em] text-muted-foreground uppercase">
               {alt}
             </figcaption>
           )}
@@ -251,24 +251,24 @@ export function getMDXComponents(components: MDXComponents): MDXComponents {
       type?: "info" | "warning" | "success" | "secure";
     }) => {
       const icons = {
-        info: <Info className="h-5 w-5 text-blue-400" />,
-        warning: <AlertTriangle className="text-accent h-5 w-5" />,
-        success: <CheckCircle2 className="h-5 w-5 text-emerald-400" />,
-        secure: <Lock className="text-accent h-5 w-5" />,
+        info: <Info className="h-5 w-5 text-blue-600" />,
+        warning: <AlertTriangle className="text-primary h-5 w-5" />,
+        success: <CheckCircle2 className="h-5 w-5 text-emerald-600" />,
+        secure: <Lock className="text-primary h-5 w-5" />,
       };
       return (
         <div
           className={cn(
-            "my-10 flex gap-6 rounded-sm border border-white/5 p-8 backdrop-blur-xl",
-            type === "info" && "border-blue-500/20 bg-blue-500/5",
-            type === "warning" && "border-accent/20 bg-accent/5",
-            type === "success" && "border-emerald-500/20 bg-emerald-500/5",
+            "my-10 flex gap-6 rounded-2xl border border-border p-8 backdrop-blur-xl shadow-sm",
+            type === "info" && "border-blue-500/20 bg-blue-50/50",
+            type === "warning" && "border-primary/20 bg-primary/5",
+            type === "success" && "border-emerald-500/20 bg-emerald-50/50",
             type === "secure" &&
-              "border-accent/30 bg-accent/10 shadow-[inner_0_0_20px_rgba(180,140,40,0.05)]",
+              "border-primary/30 bg-primary/5 shadow-[inner_0_0_20px_rgba(72,135,255,0.02)]",
           )}
         >
           <div className="mt-1 shrink-0">{icons[type]}</div>
-          <div className="text-sm leading-relaxed font-light tracking-wide text-slate-300 uppercase md:text-base">
+          <div className="text-sm leading-relaxed font-normal tracking-wide text-muted-foreground uppercase md:text-base">
             {children}
           </div>
         </div>
@@ -276,19 +276,19 @@ export function getMDXComponents(components: MDXComponents): MDXComponents {
     },
     ProtocolCTA: () => {
       return (
-        <div className="border-accent/20 my-20 rounded-sm border bg-gradient-to-br from-slate-900 to-slate-950 p-12 text-center">
-          <Shield className="text-accent mx-auto mb-6 h-10 w-10" />
-          <h4 className="mb-4 text-xl font-black tracking-widest text-white uppercase">
+        <div className="border-border my-20 rounded-[2.5rem] border bg-secondary p-12 text-center shadow-lg">
+          <Shield className="text-primary mx-auto mb-6 h-10 w-10" />
+          <h4 className="mb-4 text-xl font-black tracking-widest text-foreground uppercase">
             ต้องการเริ่มต้นวางยุทธศาสตร์ทันที?
           </h4>
-          <p className="mb-8 text-sm font-light tracking-widest text-slate-400 uppercase">
+          <p className="mb-8 text-sm font-normal tracking-widest text-muted-foreground uppercase">
             ติดต่อฝ่ายวิเคราะห์เชิงกลยุทธ์เพื่อขอรับการประเมินเบื้องต้นได้ทันที
           </p>
           <a
             href={siteConfig.links.line}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-accent hover:bg-accent-light inline-block rounded-sm px-10 py-4 text-[10px] font-black tracking-[0.3em] text-slate-950 uppercase transition-all hover:scale-105"
+            className="bg-primary hover:bg-primary/90 inline-block rounded-full px-10 py-4 text-[10px] font-black tracking-[0.3em] text-primary-foreground uppercase transition-all hover:scale-105 shadow-md"
           >
             CONTACT VIA LINE OFFICIAL
           </a>
