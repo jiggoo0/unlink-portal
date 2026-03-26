@@ -7,7 +7,16 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { Menu, X, ArrowRight, ChevronDown, Shield, Zap } from "lucide-react";
+import {
+  Menu,
+  X,
+  ArrowRight,
+  ChevronDown,
+  Shield,
+  Zap,
+  Activity,
+  Database,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   mainNav,
@@ -165,6 +174,28 @@ export default function Navbar() {
             );
           })}
 
+          <div className="mx-2 h-4 w-px bg-border/40" />
+
+          {/* Authority Nodes */}
+          <div className="flex items-center gap-1">
+            <Link
+              href="https://registry.unlink-th.com"
+              target="_blank"
+              className="hover:text-primary text-muted-foreground/60 flex items-center gap-1.5 px-3 py-2 text-[9px] font-bold tracking-widest uppercase transition-all"
+            >
+              <Database className="h-3 w-3 opacity-40" />
+              Registry
+            </Link>
+            <Link
+              href="https://audit.unlink-th.com"
+              target="_blank"
+              className="hover:text-primary text-muted-foreground/60 flex items-center gap-1.5 px-3 py-2 text-[9px] font-bold tracking-widest uppercase transition-all"
+            >
+              <Activity className="h-3 w-3 opacity-40" />
+              Audit
+            </Link>
+          </div>
+
           <div className="mx-4 h-5 w-px bg-border" />
 
           <Button
@@ -260,6 +291,26 @@ export default function Navbar() {
 
               {/* Secure Action Sector */}
               <div className="space-y-6 pt-10 border-t border-border">
+                <div className="grid grid-cols-2 gap-4">
+                  <Link
+                    href="https://registry.unlink-th.com"
+                    target="_blank"
+                    onClick={closeMenu}
+                    className="flex flex-col items-center justify-center gap-2 rounded-2xl border border-border/60 bg-secondary/30 p-4 text-[9px] font-black uppercase tracking-widest text-muted-foreground transition-all active:scale-95"
+                  >
+                    <Database className="h-5 w-5 opacity-70" />
+                    Registry
+                  </Link>
+                  <Link
+                    href="https://audit.unlink-th.com"
+                    target="_blank"
+                    onClick={closeMenu}
+                    className="flex flex-col items-center justify-center gap-2 rounded-2xl border border-border/60 bg-secondary/30 p-4 text-[9px] font-black uppercase tracking-widest text-muted-foreground transition-all active:scale-95"
+                  >
+                    <Activity className="h-5 w-5 opacity-70" />
+                    Audit Log
+                  </Link>
+                </div>
                 <Button
                   className="h-16 w-full rounded-2xl bg-primary text-xs font-black uppercase tracking-[0.2em] text-primary-foreground"
                   asChild

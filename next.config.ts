@@ -70,7 +70,7 @@ const nextConfig = {
     config.resolve.alias = {
       ...config.resolve.alias,
       "@/lib/seo-schemas": fileURLToPath(
-        new URL("./lib/shared-source/seo-schemas.ts", import.meta.url),
+        new URL("./lib/seo-schemas.ts", import.meta.url),
       ),
       "@/lib/db": fileURLToPath(
         new URL("./lib/shared-source/db.ts", import.meta.url),

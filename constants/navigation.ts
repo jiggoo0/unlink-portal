@@ -102,6 +102,11 @@ export const footerNav = {
       href: `mailto:${siteConfig.contact.email}`,
       external: true,
     },
+    {
+      title: "Security Audit Log",
+      href: "https://audit.unlink-th.com",
+      external: true,
+    },
   ],
 };
 

@@ -51,18 +51,26 @@ export default function Footer() {
             </div>
 
             <div className="flex flex-wrap gap-5">
-              <div className="bg-white/50 border-border/60 flex items-center gap-4 rounded-2xl border px-8 py-5 shadow-sm backdrop-blur-sm transition-all hover:border-primary/20">
-                <ShieldCheck className="text-primary h-5 w-5" />
+              <Link
+                href="https://registry.unlink-th.com"
+                target="_blank"
+                className="bg-white/50 border-border/60 flex items-center gap-4 rounded-2xl border px-8 py-5 shadow-sm backdrop-blur-sm transition-all hover:border-primary/20 hover:bg-primary/5 group"
+              >
+                <ShieldCheck className="text-primary h-5 w-5 transition-transform group-hover:scale-110" />
                 <span className="text-foreground font-mono text-[10px] tracking-[0.3em] uppercase font-black">
                   Institutional Registry
                 </span>
-              </div>
-              <div className="bg-white/50 border-border/60 flex items-center gap-4 rounded-2xl border px-8 py-5 shadow-sm backdrop-blur-sm transition-all hover:border-primary/20">
-                <Activity className="text-primary h-5 w-5" />
+              </Link>
+              <Link
+                href="https://audit.unlink-th.com"
+                target="_blank"
+                className="bg-white/50 border-border/60 flex items-center gap-4 rounded-2xl border px-8 py-5 shadow-sm backdrop-blur-sm transition-all hover:border-primary/20 hover:bg-primary/5 group"
+              >
+                <Activity className="text-primary h-5 w-5 transition-transform group-hover:scale-110" />
                 <span className="text-foreground font-mono text-[10px] tracking-[0.3em] uppercase font-black">
-                  Certified Data Node
+                  Security Audit Log
                 </span>
-              </div>
+              </Link>
             </div>
           </div>
 
@@ -153,7 +161,7 @@ export default function Footer() {
           <div className="flex flex-col gap-2">
             <p className="text-muted-foreground text-[9px] tracking-[0.4em] uppercase font-bold">
               © {new Date().getFullYear()} UNLINK-GLOBAL • Registry Status:
-              <span className="text-primary ml-2">ACTIVE</span>
+              <span className="text-primary ml-2">OPERATIONAL</span>
             </p>
             <p className="text-muted-foreground/60 font-mono text-[7px] tracking-[0.5em] uppercase">
               NODE_ID: 0x_ACCREDITED_2026_STABLE
@@ -161,19 +169,16 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-wrap justify-center gap-8">
-            {footerNav.connect.map((item) => (
-              <a
-                key={item.title}
-                href={item.href}
-                target={item.external ? "_blank" : undefined}
-                className="text-muted-foreground hover:text-primary text-[10px] font-bold tracking-[0.3em] uppercase transition-colors flex items-center gap-2"
-              >
-                {item.title}
-                {item.external && (
-                  <ExternalLink size={10} className="opacity-40" />
-                )}
-              </a>
-            ))}
+            <div className="flex items-center gap-2 text-[10px] font-bold tracking-[0.3em] uppercase text-muted-foreground">
+              <span>System Status:</span>
+              <span className="flex items-center gap-1.5 text-primary">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                </span>
+                OPERATIONAL
+              </span>
+            </div>
           </div>
         </div>
       </div>

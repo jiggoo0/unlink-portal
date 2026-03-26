@@ -2,32 +2,44 @@ import { NextRequest, NextResponse } from "next/server";
 import { coreIdentities } from "@/lib/shared-source/identities";
 
 /**
- * 🛰️ UNLINK-GLOBAL | Institutional Verification API (Registry Node)
+ * 🛰️ UNLINK-GLOBAL | Institutional Verification API (Registry Node) v2.0
  * -------------------------------------------------------------------------
- * บริการตรวจสอบความถูกต้องของตัวตน (UL-P/C) และเคสที่ได้รับอนุมัติ (UL-CASE)
+ * NEW: Connects to the master registry API for real-time verification.
+ * OLD: Uses mock data.
  */
 
 interface CaseData {
   id: string;
   customer_name: string;
-  email: string;
   status: string;
-  file_url: string;
   service: string;
 }
 
-export async function GET(req: NextRequest) {
+interface VerificationResponse {
+  success: boolean;
+  type: "identity" | "case" | "error";
+  caseData?: CaseData;
+  error?: string;
+}
+
+export async function GET(
+  req: NextRequest,
+): Promise<NextResponse<VerificationResponse>> {
   const { searchParams } = new URL(req.url);
   const caseId = searchParams.get("caseId");
 
   if (!caseId) {
     return NextResponse.json(
-      { error: "Identifier (caseId) is required for verification." },
+      {
+        success: false,
+        type: "error",
+        error: "Identifier (caseId) is required for verification.",
+      },
       { status: 400 },
     );
   }
 
-  // 1. ตรวจสอบข้อมูลจาก Core Identities (Identity Registry)
+  // 1. Check local Core Identities first (for foundational entities)
   const identity = coreIdentities.find((id) => id.id === caseId);
   if (identity) {
     return NextResponse.json({
@@ -36,50 +48,49 @@ export async function GET(req: NextRequest) {
       caseData: {
         id: identity.id,
         customer_name: identity.name,
-        email: "verified@registry.unlink-th.com",
         status: "ACTIVE",
-        file_url: "#",
         service:
           identity.type === "person"
             ? "Verified Individual"
             : "Verified Organization",
-      } as CaseData,
+      },
     });
   }
 
-  // 2. จำลองข้อมูลเคสที่ผ่านการรับรอง (Mock Case Registry)
-  const mockCases: Record<string, CaseData> = {
-    "UL-CASE-2026-X1": {
-      id: "UL-CASE-2026-X1",
-      customer_name: " Alongkorn Yomkerd (9mza)",
-      email: "ceo@aemdevweb.com",
-      status: "CERTIFIED",
-      file_url: "/docs/verified-node-001.pdf",
-      service: "Digital Identity Architecture",
-    },
-    "UL-CASE-2026-X2": {
-      id: "UL-CASE-2026-X2",
-      customer_name: "Strategic Client (VIP)",
-      email: "confidential@registry.node",
-      status: "CERTIFIED",
-      file_url: "/docs/verified-node-002.pdf",
-      service: "High-Stake Reputation Management",
-    },
-  };
-
-  const caseEntry = mockCases[caseId];
-
-  if (caseEntry) {
-    return NextResponse.json({
-      success: true,
-      type: "case",
-      caseData: caseEntry,
+  // 2. Fetch from the external Master Registry API
+  try {
+    const registryUrl = `https://registry.unlink-th.com/api/verify/${caseId}`;
+    const response = await fetch(registryUrl, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      // Use short cache time for real-time status
+      next: { revalidate: 60 },
     });
+
+    if (response.ok) {
+      const data = await response.json();
+      if (data.success) {
+        return NextResponse.json({
+          success: true,
+          type: data.type || "case",
+          caseData: data.data || data.caseData,
+        });
+      }
+    }
+  } catch (error) {
+    console.error("🚨 [MASTER REGISTRY FETCH ERROR]:", error);
+    // Do not return error here, proceed to fallback
   }
 
-  // 3. Fallback: กรณีไม่พบข้อมูล
+  // 3. Fallback: If not found in both local and master registry
   return NextResponse.json(
-    { error: "Identifier not found in UNLINK-GLOBAL Registry Node." },
+    {
+      success: false,
+      type: "error",
+      error: "Identifier not found in UNLINK-GLOBAL Registry Network.",
+    },
     { status: 404 },
   );
 }
