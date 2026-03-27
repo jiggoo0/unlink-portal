@@ -19,6 +19,10 @@ export interface SiteConfig {
   description: string;
   url: string;
   ogImage: string;
+  adsense?: {
+    publisherId: string;
+    clientId: string;
+  };
   locale: string;
   language: string;
   founder: {

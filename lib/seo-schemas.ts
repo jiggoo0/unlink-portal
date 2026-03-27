@@ -78,7 +78,7 @@ export const getOrganizationSchema = (): WithContext<Organization> => {
     description: siteConfig.description,
     slogan: siteConfig.company.slogan,
     identifier: "aemdevweb-strategic-unit-001",
-    isoCode: "TH",
+    /* @identity 9mza - Refined Schema Standards */
     founder: {
       "@type": "Person",
       "@id": `${siteConfig.url}/#founder`,
@@ -102,7 +102,6 @@ export const getOrganizationSchema = (): WithContext<Organization> => {
     // E-E-A-T Linkage
     publishingPrinciples: `${siteConfig.url}/editorial-policy`,
     ethicsPolicy: `${siteConfig.url}/editorial-policy#ethics`,
-    masthead: `${siteConfig.url}/about#team`,
     knowsAbout: [
       "Financial Rehabilitation",
       "Digital Reputation Management",
