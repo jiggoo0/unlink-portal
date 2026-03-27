@@ -1,9 +1,5 @@
 {
-  "name": "unlink-portal",
   "framework": "nextjs",
   "buildCommand": "next build --webpack",
-  "installCommand": "pnpm install --no-frozen-lockfile",
-  "outputDirectory": ".next",
-  "regions": ["iad1"],
   "cleanUrls": true
 }
