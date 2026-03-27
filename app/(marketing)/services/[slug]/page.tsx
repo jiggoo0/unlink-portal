@@ -64,7 +64,7 @@ export default async function SingleServicePage({ params }: ServicePageProps) {
         <>
           {service.slug === "statement-optimization" ? (
             <div className="bg-white border-2 border-border rounded-[2.5rem] p-4 md:p-8 shadow-2xl shadow-primary/5">
-               <StatementOptimizationForm />
+              <StatementOptimizationForm />
             </div>
           ) : (
             <section className="relative overflow-hidden rounded-[2.5rem] border-2 border-border bg-secondary/20 p-12 md:p-20 text-center">

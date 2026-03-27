@@ -171,7 +171,11 @@ export interface Identity {
   assets_summary?: string;
   trust_level: number;
   last_checked: string;
+  last_verified_at?: string;
+  authority_score?: number;
+  verified_badge_url?: string;
   metadata?: string;
+  sameAs?: string[];
   created_at: string;
   updated_at: string;
 }

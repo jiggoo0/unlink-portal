@@ -52,7 +52,17 @@ export default function Footer() {
 
             <div className="flex flex-wrap gap-5">
               <Link
-                href="https://registry.unlink-th.com"
+                href="https://www.unlink-th.com"
+                target="_blank"
+                className="bg-white/50 border-border/60 flex items-center gap-4 rounded-2xl border px-8 py-5 shadow-sm backdrop-blur-sm transition-all hover:border-primary/20 hover:bg-primary/5 group"
+              >
+                <Globe className="text-primary h-5 w-5 transition-transform group-hover:scale-110" />
+                <span className="text-foreground font-mono text-[10px] tracking-[0.3em] uppercase font-black">
+                  Portal
+                </span>
+              </Link>
+              <Link
+                href="https://unlink-registry.com"
                 target="_blank"
                 className="bg-white/50 border-border/60 flex items-center gap-4 rounded-2xl border px-8 py-5 shadow-sm backdrop-blur-sm transition-all hover:border-primary/20 hover:bg-primary/5 group"
               >
@@ -73,6 +83,7 @@ export default function Footer() {
               </Link>
             </div>
           </div>
+          {/* @identity 9mza */}
 
           {/* --- Strategic Links Grid --- */}
           <div className="grid grid-cols-2 gap-10 lg:col-span-4">

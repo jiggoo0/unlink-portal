@@ -3,14 +3,19 @@
 import { SiteConfig } from "@unlink/shared/types";
 
 export const siteConfig: SiteConfig = {
-  name: "UNLINK-GLOBAL",
+  name: "UNLINK-THAILAND",
   fullName:
-    "UNLINK-GLOBAL | ทางออกคนกู้บ้านไม่ผ่าน รับปั้นสเตทเม้นท์ และลบประวัติเสียออนไลน์",
+    "UNLINK-THAILAND | ทางออกคนกู้บ้านไม่ผ่าน รับปั้นสเตทเม้นท์ และลบประวัติเสียออนไลน์",
   description:
     "กู้บ้านไม่ผ่าน ติดบูโร หรือโดนประจานออนไลน์? UNLINK-GLOBAL คือทางออกสุดท้ายที่ช่วยคุณปั้นสเตทเม้นท์ใหม่ ลบชื่อเสียจาก Google และจัดการทุกอุปสรรคที่ขวางโอกาสทางการเงินของคุณ ให้คุณกลับมามีที่ยืนและเริ่มต้นใหม่ได้จริง 100% ปรึกษาลับฟรีครับ",
 
-  url: "https://auth.unlink-th.com",
+  url: "https://unlink-th.com",
   ogImage: "/og/og-main.webp",
+
+  adsense: {
+    publisherId: "pub-7695158092776507",
+    clientId: "7859065032",
+  },
 
   locale: "th_TH",
   language: "th",

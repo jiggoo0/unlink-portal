@@ -5,6 +5,7 @@ import { fileURLToPath } from "url";
 const nextConfig = {
   // 🚀 NEXT.JS 16 OPTIMIZED CONFIGURATION
   reactStrictMode: true,
+  turbopack: {},
 
   // 🛡️ SECURITY & BUILD PROTOCOL (Optimized for Termux/WASM)
   // เราใช้ pnpm run aipc ตรวจสอบแยกอยู่แล้ว จึงปิดส่วนนี้เพื่อเลี่ยง WASM bug
@@ -42,6 +43,7 @@ const nextConfig = {
       { protocol: "https", hostname: "promptpay.io" },
       { protocol: "https", hostname: "logos-world.net" },
       { protocol: "https", hostname: "www.thaiairways.com" },
+      { protocol: "https", hostname: "xtcosubhdcoeiojqlwwh.supabase.co" },
     ],
   },
 

@@ -16,6 +16,7 @@ import {
   Zap,
   Activity,
   Database,
+  Globe,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -179,7 +180,15 @@ export default function Navbar() {
           {/* Authority Nodes */}
           <div className="flex items-center gap-1">
             <Link
-              href="https://registry.unlink-th.com"
+              href="https://www.unlink-th.com"
+              target="_blank"
+              className="hover:text-primary text-muted-foreground/60 flex items-center gap-1.5 px-3 py-2 text-[9px] font-bold tracking-widest uppercase transition-all"
+            >
+              <Globe className="h-3 w-3 opacity-40" />
+              Portal
+            </Link>
+            <Link
+              href="https://unlink-registry.com"
               target="_blank"
               className="hover:text-primary text-muted-foreground/60 flex items-center gap-1.5 px-3 py-2 text-[9px] font-bold tracking-widest uppercase transition-all"
             >
@@ -291,9 +300,18 @@ export default function Navbar() {
 
               {/* Secure Action Sector */}
               <div className="space-y-6 pt-10 border-t border-border">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-3 gap-2">
                   <Link
-                    href="https://registry.unlink-th.com"
+                    href="https://www.unlink-th.com"
+                    target="_blank"
+                    onClick={closeMenu}
+                    className="flex flex-col items-center justify-center gap-2 rounded-2xl border border-border/60 bg-secondary/30 p-4 text-[9px] font-black uppercase tracking-widest text-muted-foreground transition-all active:scale-95"
+                  >
+                    <Globe className="h-5 w-5 opacity-70" />
+                    Portal
+                  </Link>
+                  <Link
+                    href="https://unlink-registry.com"
                     target="_blank"
                     onClick={closeMenu}
                     className="flex flex-col items-center justify-center gap-2 rounded-2xl border border-border/60 bg-secondary/30 p-4 text-[9px] font-black uppercase tracking-widest text-muted-foreground transition-all active:scale-95"
@@ -308,7 +326,7 @@ export default function Navbar() {
                     className="flex flex-col items-center justify-center gap-2 rounded-2xl border border-border/60 bg-secondary/30 p-4 text-[9px] font-black uppercase tracking-widest text-muted-foreground transition-all active:scale-95"
                   >
                     <Activity className="h-5 w-5 opacity-70" />
-                    Audit Log
+                    Audit
                   </Link>
                 </div>
                 <Button
@@ -331,6 +349,7 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
+      {/* @identity 9mza */}
     </header>
   );
 }

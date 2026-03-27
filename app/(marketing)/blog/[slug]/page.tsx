@@ -6,7 +6,14 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getMDXComponents } from "@/mdx-components";
 import { SecureChannel } from "@/components/sections/SecureChannel";
-import { Calendar, Clock, ShieldCheck, Lock, Terminal, User } from "lucide-react";
+import {
+  Calendar,
+  Clock,
+  ShieldCheck,
+  Lock,
+  Terminal,
+  User,
+} from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import JsonLd from "@/components/shared/JsonLd";
@@ -81,18 +88,27 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+                <Link href="/" className="hover:text-primary transition-colors">
+                  Home
+                </Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link href="/blog" className="hover:text-primary transition-colors">Insights</Link>
+                <Link
+                  href="/blog"
+                  className="hover:text-primary transition-colors"
+                >
+                  Insights
+                </Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage className="font-bold text-foreground">{post.title}</BreadcrumbPage>
+              <BreadcrumbPage className="font-bold text-foreground">
+                {post.title}
+              </BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
@@ -203,10 +219,15 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
               {[
                 "ดำเนินการประเมินความเสี่ยงและจัดเตรียมเอกสารตามเกณฑ์มาตรฐานล่าสุด",
                 "ตรวจสอบความถูกต้องของรายการเดินบัญชีและที่มาของรายได้ให้ชัดเจน",
-                "ปรึกษาผู้เชี่ยวชาญผ่านช่องทางที่ปลอดภัยเพื่อลดความเสี่ยงในการถูกปฏิเสธ"
+                "ปรึกษาผู้เชี่ยวชาญผ่านช่องทางที่ปลอดภัยเพื่อลดความเสี่ยงในการถูกปฏิเสธ",
               ].map((item, i) => (
-                <li key={i} className="flex items-start gap-4 text-[15px] text-muted-foreground font-medium">
-                  <span className="text-primary font-mono font-bold">[0{i+1}]</span>
+                <li
+                  key={i}
+                  className="flex items-start gap-4 text-[15px] text-muted-foreground font-medium"
+                >
+                  <span className="text-primary font-mono font-bold">
+                    [0{i + 1}]
+                  </span>
                   <span>{item}</span>
                 </li>
               ))}
@@ -258,12 +279,18 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
 
                 <p className="text-[14px] text-muted-foreground leading-relaxed font-medium">
                   ผู้เชี่ยวชาญด้านการจัดการข้อมูลตัวตนดิจิทัลและวิศวกรรมภาพลักษณ์
-                  ผู้วางโครงสร้างมาตรฐาน <span className="text-foreground font-bold italic">The Shield Protocol</span>
+                  ผู้วางโครงสร้างมาตรฐาน{" "}
+                  <span className="text-foreground font-bold italic">
+                    The Shield Protocol
+                  </span>
                   เพื่อความโปร่งใสระดับสากล
                 </p>
 
                 <div className="pt-4 border-t border-border">
-                  <Link href="/about" className="text-primary hover:text-foreground flex items-center justify-between text-[11px] font-black uppercase tracking-widest transition-colors">
+                  <Link
+                    href="/about"
+                    className="text-primary hover:text-foreground flex items-center justify-between text-[11px] font-black uppercase tracking-widest transition-colors"
+                  >
                     View Credentials <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>
@@ -281,9 +308,12 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
                 {[
                   { label: "Article ID", value: post.id || "UK-INTEL-09" },
                   { label: "Classification", value: post.category },
-                  { label: "Status", value: "Verified Source", status: true }
+                  { label: "Status", value: "Verified Source", status: true },
                 ].map((item, i) => (
-                  <div key={i} className="flex justify-between items-center border-b border-border/50 pb-4">
+                  <div
+                    key={i}
+                    className="flex justify-between items-center border-b border-border/50 pb-4"
+                  >
                     <span className="text-[10px] text-muted-foreground/60 uppercase tracking-widest font-bold">
                       {item.label}
                     </span>
@@ -302,7 +332,8 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
               </div>
 
               <p className="text-[10px] text-muted-foreground/50 leading-relaxed font-medium italic text-center">
-                * Strategic intelligence strictly managed by UNLINK-GLOBAL Infrastructure
+                * Strategic intelligence strictly managed by UNLINK-GLOBAL
+                Infrastructure
               </p>
             </div>
           </div>
@@ -317,7 +348,17 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
 }
 
 const ArrowRight = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+  <svg
+    className={className}
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={3}
+      d="M14 5l7 7m0 0l-7 7m7-7H3"
+    />
   </svg>
 );

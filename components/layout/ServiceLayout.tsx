@@ -44,18 +44,27 @@ export function ServiceLayout({ service, children }: ServiceLayoutProps) {
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+                <Link href="/" className="hover:text-primary transition-colors">
+                  Home
+                </Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link href="/services" className="hover:text-primary transition-colors">Services</Link>
+                <Link
+                  href="/services"
+                  className="hover:text-primary transition-colors"
+                >
+                  Services
+                </Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage className="font-bold text-foreground">{service.title}</BreadcrumbPage>
+              <BreadcrumbPage className="font-bold text-foreground">
+                {service.title}
+              </BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
@@ -66,10 +75,10 @@ export function ServiceLayout({ service, children }: ServiceLayoutProps) {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(72,135,255,0.08),transparent)]" />
           <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0)_0%,rgba(255,255,255,1)_100%)]" />
-          
+
           {service.image && (
             <div className="absolute right-0 top-0 h-full w-1/2 opacity-[0.03] grayscale pointer-events-none">
-               <Image
+              <Image
                 src={getImageUrl(service.image)}
                 alt={service.title}
                 fill
@@ -90,7 +99,8 @@ export function ServiceLayout({ service, children }: ServiceLayoutProps) {
                 {service.category} Protocol Active
               </Badge>
               <span className="text-muted-foreground font-mono text-[10px] tracking-widest uppercase flex items-center gap-2">
-                <Activity className="h-3 w-3 text-primary/60" /> Service-ID: {service.id}
+                <Activity className="h-3 w-3 text-primary/60" /> Service-ID:{" "}
+                {service.id}
               </span>
               <Badge
                 variant="secondary"
@@ -158,9 +168,7 @@ export function ServiceLayout({ service, children }: ServiceLayoutProps) {
           </section>
 
           {/* Dynamic Content Router */}
-          <div className="relative">
-            {children}
-          </div>
+          <div className="relative">{children}</div>
 
           {/* 2.2 Takeaways & Strategic Actions */}
           <section className="mt-20 rounded-[2rem] border border-border bg-muted/30 p-10">
@@ -172,10 +180,15 @@ export function ServiceLayout({ service, children }: ServiceLayoutProps) {
               {[
                 "ตรวจสอบเงื่อนไขและเตรียมความพร้อมด้านข้อมูลภายใต้การดูแลของผู้เชี่ยวชาญ",
                 "ดำเนินการตามขั้นตอนความปลอดภัยสูงสุดเพื่อปกป้องข้อมูลและความเป็นส่วนตัว",
-                "ยืนยันความถูกต้องของแผนงานก่อนเริ่มดำเนินการจริงผ่านช่องทางลับที่กำหนด"
+                "ยืนยันความถูกต้องของแผนงานก่อนเริ่มดำเนินการจริงผ่านช่องทางลับที่กำหนด",
               ].map((item, i) => (
-                <li key={i} className="flex items-start gap-4 text-[15px] text-muted-foreground font-medium">
-                  <span className="text-primary font-mono font-bold">[0{i+1}]</span>
+                <li
+                  key={i}
+                  className="flex items-start gap-4 text-[15px] text-muted-foreground font-medium"
+                >
+                  <span className="text-primary font-mono font-bold">
+                    [0{i + 1}]
+                  </span>
                   <span>{item}</span>
                 </li>
               ))}
@@ -201,17 +214,24 @@ export function ServiceLayout({ service, children }: ServiceLayoutProps) {
                   {[
                     { label: "Protocol ID", value: service.id },
                     { label: "Classification", value: service.category },
-                    { label: "Availability", value: "Active / Secure", status: true }
+                    {
+                      label: "Availability",
+                      value: "Active / Secure",
+                      status: true,
+                    },
                   ].map((item, i) => (
-                    <div key={i} className="flex justify-between items-center border-b border-border/50 pb-4">
+                    <div
+                      key={i}
+                      className="flex justify-between items-center border-b border-border/50 pb-4"
+                    >
                       <span className="text-[10px] text-muted-foreground/60 uppercase tracking-widest font-bold">
                         {item.label}
                       </span>
                       {item.status ? (
-                         <span className="text-[10px] font-black text-emerald-600 uppercase tracking-tighter flex items-center gap-2">
-                         <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                         {item.value}
-                       </span>
+                        <span className="text-[10px] font-black text-emerald-600 uppercase tracking-tighter flex items-center gap-2">
+                          <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                          {item.value}
+                        </span>
                       ) : (
                         <span className="text-xs font-mono font-black text-foreground uppercase">
                           {item.value}

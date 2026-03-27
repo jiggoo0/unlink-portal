@@ -16,6 +16,7 @@ import { Service, CaseStudy } from "@unlink/shared/types";
 
 /**
  * 👤 Enhanced Person Identity Schema (E-E-A-T Optimized)
+ * Used for both SEO and Authority Sync (JSON-LD)
  */
 export const getPersonSchema = (): WithContext<Person> => {
   return {
@@ -34,13 +35,25 @@ export const getPersonSchema = (): WithContext<Person> => {
     image: `${siteConfig.url}/branding/founder-avatar.webp`,
     jobTitle: siteConfig.founder.role,
     url: siteConfig.founder.url,
-    sameAs: siteConfig.founder.sameAs,
+    sameAs: [
+      ...siteConfig.founder.sameAs,
+      "https://github.com/9mza",
+      "https://me.aemdevweb.com",
+    ],
+    identifier: "9mza-authority-sync-v1",
+    knowsLanguage: ["th", "en"],
+    nationality: {
+      "@type": "Country",
+      name: "TH",
+    },
     knowsAbout: [
       "Digital Identity Management",
       "Reputation Engineering",
       "Cybersecurity Audit",
       "Strategic Intelligence",
       "Information Privacy",
+      "Financial Rehabilitation",
+      "Crisis Management",
     ],
     worksFor: {
       "@type": "Organization",
@@ -51,6 +64,7 @@ export const getPersonSchema = (): WithContext<Person> => {
 
 /**
  * 🏢 Enhanced Organization Schema (Institutional Authority)
+ * Used for both SEO and Authority Sync (JSON-LD)
  */
 export const getOrganizationSchema = (): WithContext<Organization> => {
   return {
@@ -63,6 +77,8 @@ export const getOrganizationSchema = (): WithContext<Organization> => {
     logo: `${siteConfig.url}/branding/logo.png`,
     description: siteConfig.description,
     slogan: siteConfig.company.slogan,
+    identifier: "aemdevweb-strategic-unit-001",
+    isoCode: "TH",
     founder: {
       "@type": "Person",
       "@id": `${siteConfig.url}/#founder`,
@@ -82,6 +98,17 @@ export const getOrganizationSchema = (): WithContext<Organization> => {
       "https://www.aemdevweb.com",
       siteConfig.links.facebook,
       siteConfig.links.twitter,
+    ],
+    // E-E-A-T Linkage
+    publishingPrinciples: `${siteConfig.url}/editorial-policy`,
+    ethicsPolicy: `${siteConfig.url}/editorial-policy#ethics`,
+    masthead: `${siteConfig.url}/about#team`,
+    knowsAbout: [
+      "Financial Rehabilitation",
+      "Digital Reputation Management",
+      "Strategic Intelligence",
+      "Privacy Protection",
+      "Cybersecurity Compliance",
     ],
   } as const;
 };

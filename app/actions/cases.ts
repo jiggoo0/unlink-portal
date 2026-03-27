@@ -7,6 +7,10 @@ import { revalidatePath } from "next/cache";
 import { updateCaseStatus } from "@/lib/google-sheets";
 import { put } from "@vercel/blob";
 import { verifySlip } from "@/lib/payment-utils";
+import { syncAuthorityData } from "@/lib/services/authority-sync-service";
+import { getPersonSchema, getOrganizationSchema } from "@/lib/seo-schemas";
+import { safeErrorLog } from "@/lib/utils";
+import crypto from "crypto";
 
 /**
  * ⚡ UNLINK-GLOBAL: LIAISON SERVER ACTIONS (v3.0 - Client Focused)
@@ -38,6 +42,24 @@ export async function uploadFileAction(caseId: string, formData: FormData) {
     await db.execute({
       sql: "UPDATE cases SET file_url = ? WHERE id = ?",
       args: [blob.url, caseId],
+    });
+
+    // [AUTHORITY-SYNC]: Sync E-E-A-T Data (9mza Standard) - Non-blocking
+    syncAuthorityData({
+      event: "file_upload",
+      timestamp: new Date().toISOString(),
+      authority: {
+        person: getPersonSchema(),
+        organization: getOrganizationSchema(),
+      },
+      // Anonymized reference to prevent PII leak
+      reference: crypto
+        .createHash("sha256")
+        .update(caseId)
+        .digest("hex")
+        .substring(0, 12),
+    }).catch((syncError) => {
+      safeErrorLog("AUTHORITY-SYNC-ERROR", syncError);
     });
 
     // [AUTOMATED-SYNC]: Update Google Sheets Status
@@ -88,6 +110,24 @@ export async function submitSlipAction(caseId: string, formData: FormData) {
     await db.execute({
       sql: "UPDATE cases SET slip_url = ?, status = 'pending_verification' WHERE id = ?",
       args: [blob.url, caseId],
+    });
+
+    // [AUTHORITY-SYNC]: Sync E-E-A-T Data (9mza Standard) - Non-blocking
+    syncAuthorityData({
+      event: "slip_submission",
+      timestamp: new Date().toISOString(),
+      authority: {
+        person: getPersonSchema(),
+        organization: getOrganizationSchema(),
+      },
+      // Anonymized reference to prevent PII leak
+      reference: crypto
+        .createHash("sha256")
+        .update(caseId)
+        .digest("hex")
+        .substring(0, 12),
+    }).catch((syncError) => {
+      safeErrorLog("AUTHORITY-SYNC-ERROR", syncError);
     });
 
     // [AUTOMATED-PAYMENT]: Verify Slip via SlipOK API

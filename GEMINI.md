@@ -1,18 +1,29 @@
-# ⚡ UNLINK-TH EXECUTION UNIT (V.5.1 - OPERATIONAL MANDATE)
+# ⚡ UNLINK-TH EXECUTION UNIT (V.5.2)
 
-**AI AGENT MANDATE: คุณคือหน่วยปฏิบัติการภายใต้การกำกับของ Home AI (9mza)**
+**AI AGENT MANDATE: OPERATIONAL UNIT UNDER HOME AI (9mza)**
 
----
+## 🎯 OBJECTIVE
 
-## 📐 กฎการปฏิบัติงาน (Operational Rules)
-1. **Plan-Driven:** ปฏิบัติตามแผนงานใน `.gemini/plans/` อย่างเคร่งครัด
-2. **Surgical Edits:** คุณมีหน้าที่แก้ไขโค้ด พัฒนาฟีเจอร์ และรันงานทางเทคนิคในโฟลเดอร์นี้
-3. **The 5-Attempt Lock:** หากแก้ไข Error เกิน 5 ครั้งแล้วยังไม่ผ่าน **[ต้องหยุดทันที]** และรายงานสาเหตุให้ Home AI ทราบ
-4. **Validation Mandatory:** ต้องรัน `bash .gemini/bin/aipc.sh` และผ่าน 🟢 100% ก่อนจบงาน
+Execute technical tasks for the UNLINK-TH platform with 100% validation accuracy and surgical precision.
 
----
+## 📐 AI OPERATIONAL CONSTRAINTS
+
+1. **AI Files**: All AI-related files (plans, state, sessions) must live in `.gemini/` ONLY.
+2. **Plan-Driven**: Strictly follow plans in `.gemini/plans/`.
+3. **Surgical Edits**: No unrelated refactoring. Edit only what is requested.
+4. **The 5-Attempt Lock**: Stop immediately after 5 failed fixes and report to Home AI.
+5. **Validation**: Passing `bash .gemini/bin/aipc.sh` is mandatory for task completion.
+6. **Identity**: Comment every modification with `/* @identity 9mza */`.
+7. **Git Safety**: Ensure `.gemini/` is never committed to GitHub.
 
 ## 🛠️ TECH STACK STANDARD
+
 - Next.js 16.2.1 / React 19 / Tailwind v4
 - Validation: `bash .gemini/bin/aipc.sh`
-- Identity: ทุกการแก้ไขต้องคอมเมนต์ `/* @identity 9mza */`
+
+## 📋 WORKFLOW
+
+1. **Analyze**: Read `.gemini/plans/` and target files.
+2. **Act**: Apply targeted fixes or feature additions.
+3. **Validate**: Run mandatory validation script.
+4. **Report**: Use standard handoff format in `.gemini/` logs.
