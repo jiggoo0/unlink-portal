@@ -57,25 +57,33 @@ export async function GET(
     });
   }
 
-  // 2. Fetch from the external Master Registry API
+  // 2. Fetch from the external Master Registry API (Shared Turso Core)
   try {
-    const registryUrl = `https://registry.unlink-th.com/api/verify/${caseId}`;
+    const registryUrl = `https://registry.unlink-th.com/api/identity/${caseId}`;
     const response = await fetch(registryUrl, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
       },
-      // Use short cache time for real-time status
       next: { revalidate: 60 },
     });
 
     if (response.ok) {
-      const data = await response.json();
-      if (data.success) {
+      const result = await response.json();
+      if (result.success && result.data) {
+        const identity = result.data;
         return NextResponse.json({
           success: true,
-          type: data.type || "case",
-          caseData: data.data || data.caseData,
+          type: "identity",
+          caseData: {
+            id: identity.id,
+            customer_name: identity.name,
+            status: "ACTIVE",
+            service:
+              identity.type === "person"
+                ? "Verified Individual"
+                : "Verified Organization",
+          },
         });
       }
     }

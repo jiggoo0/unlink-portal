@@ -1,30 +1,30 @@
 /**
  * UNLINK-GLOBAL | Service Registry (2026)
  * -------------------------------------------------------------------------
- * ศูนย์กลางการจัดการบริการและตัวกำหนดประเภทการทำงาน (Hybrid Registry)
- * ปรับปรุงใหม่เพื่อเน้นการเข้าถึงระบบอัตโนมัติ (Instant Conversion)
+ * ศูนย์กลางการจัดการบริการและตัวกำหนดประเภทการทำงาน (Institutional Registry)
+ * ปรับปรุงใหม่เพื่อเน้นโครงสร้าง 4 เสาหลัก (Reputation Fix, Protection, IP, PDPA)
  */
 
 import { Service } from "@unlink/shared/types";
 
 export const SERVICES: Service[] = [
-  // 🛡️ REPUTATION SERVICES (จัดการชื่อเสียง)
+  // 🛡️ REPUTATION FIX (การกู้คืนและเยียวยาภาพลักษณ์)
   {
-    id: "SRV-REP-01",
+    id: "SRV-FIX-01",
     slug: "extreme-intervention",
-    title: "Extreme Reputation Intervention",
-    shortDescription: "จัดการข่าวเสียและกู้ชื่อเสียงระดับ VIP ขั้นเด็ดขาด",
+    title: "Extreme Reputation Intervention | ปฏิบัติการกู้คืนและเยียวยาภาพลักษณ์ขั้นสูงสุด",
+    shortDescription: "บริหารจัดการวิกฤตและกู้คืนเกียรติภูมิระดับผู้นำอย่างเบ็ดเสร็จ",
     description:
-      "เมื่อการแจ้งลบปกติไม่ได้ผล เราเข้าจัดการด้วยเทคนิคพิเศษเพื่อจัดการมลพิษข้อมูลและทวงคืนศักดิ์ศรีให้คุณ",
+      "มาตรการขั้นสูงสุดเพื่อขจัดมลพิษทางข้อมูลและทวงคืนศักดิ์ศรีในกรณีที่กระบวนการปกติไม่บรรลุผล ผ่านยุทธวิธีพิเศษและการเจรจาระดับสูง",
     iconName: "Zap",
     image: "/images/services/srv-security-protected.webp",
-    category: "Reputation",
+    category: "Reputation Fix",
     type: "content",
     features: [
-      "จัดการข่าวเสียบน Google",
-      "ตอบโต้ข้อมูลเท็จเชิงลึก",
-      "สถาปนาอัตลักษณ์ใหม่",
-      "ระบบเฝ้าระวัง 24 ชม.",
+      "จัดการข่าวเสียบน Google ระดับลึก",
+      "ตอบโต้ข้อมูลเท็จเชิงลึก (Counter-Intelligence)",
+      "สถาปนาอัตลักษณ์ใหม่ (Identity Re-establishment)",
+      "ระบบเฝ้าระวังมลพิษข้อมูล 24 ชม.",
     ],
     priceInfo: {
       startingAt: "50,000",
@@ -32,27 +32,27 @@ export const SERVICES: Service[] = [
       model: "High-Stake Intervention",
     },
     metadata: {
-      defaultTitle: "ลบข่าวเสีย Google กู้ชื่อเสียงขั้นสูงสุด | UNLINK-GLOBAL",
+      defaultTitle: "Extreme Reputation Intervention | กู้ชื่อเสียงขั้นสูงสุด | UNLINK-GLOBAL",
       defaultDescription:
-        "ทางออกสุดท้ายสำหรับเคสกู้ชื่อเสียงที่ซับซ้อน จัดการข่าวเสียและข้อมูลบิดเบือน",
-      keywords: ["ลบข่าวเสีย Google", "จัดการคนประจานออนไลน์", "กู้ชื่อเสียง"],
+        "ทางออกสุดท้ายสำหรับเคสกู้ชื่อเสียงที่ซับซ้อน จัดการข่าวเสียและข้อมูลบิดเบือนระดับสถาบัน",
+      keywords: ["ลบข่าวเสีย Google", "จัดการคนประจานออนไลน์", "กู้ชื่อเสียง VIP"],
     },
   },
   {
-    id: "SRV-REP-02",
-    slug: "blacklist-remover",
-    title: "Blacklist Intelligence Removal",
-    shortDescription: "ลบชื่อติดแบล็คลิสต์ออนไลน์ที่ไม่มีหลักฐาน",
+    id: "SRV-FIX-02",
+    slug: "blacklist-removal",
+    title: "Strategic Blacklist Elimination | การล้างข้อมูลบัญชีดำและประวัติเชิงลบเชิงยุทธศาสตร์",
+    shortDescription: "ขจัดรายชื่อจากบัญชีดำออนไลน์และประวัติที่ปราศจากข้อเท็จจริง",
     description:
-      "ปฏิบัติการเชิงลึกเพื่อลบข้อมูลจากเว็บไซต์รวบรวมรายชื่อผู้กระทำผิดที่ขาดการตรวจสอบข้อเท็จจริง",
+      "ปฏิบัติการเชิงลึกเพื่อลบข้อมูลจากเว็บไซต์รวบรวมรายชื่อผู้กระทำผิด (Blacklist) ที่ขาดการตรวจสอบหรือถูกกลั่นแกล้ง เพื่อคืนความบริสุทธิ์ให้แก่ประวัติของท่าน",
     iconName: "ShieldAlert",
     image: "/images/services/srv-security-protected.webp",
-    category: "Reputation",
+    category: "Reputation Fix",
     type: "content",
     features: [
-      "Blacklistseller Mediation",
-      "False Accusation Counter",
-      "Digital Footprint Cleansing",
+      "Blacklistseller Mediation & Removal",
+      "False Accusation Counter-Measures",
+      "Digital Footprint Cleansing Protocol",
     ],
     priceInfo: {
       startingAt: "15,000",
@@ -60,27 +60,27 @@ export const SERVICES: Service[] = [
       model: "Intervention Protocol",
     },
     metadata: {
-      defaultTitle: "ลบชื่อติดแบล็คลิสต์ออนไลน์ | UNLINK-GLOBAL",
+      defaultTitle: "Strategic Blacklist Elimination | ลบชื่อติดแบล็คลิสต์ | UNLINK-GLOBAL",
       defaultDescription:
-        "บริการจัดการลบชื่อออกจากเว็บไซต์แบล็คลิสต์ที่ไม่มีหลักฐานหรือถูกใส่ร้าย",
+        "บริการจัดการลบชื่อออกจากเว็บไซต์แบล็คลิสต์ที่ไม่มีหลักฐานหรือถูกใส่ร้ายด้วยกระบวนการทางเทคนิค",
       keywords: ["ลบแบล็คลิสต์", "Blacklistseller", "ลบประวัติเสีย"],
     },
   },
   {
-    id: "SRV-REP-03",
+    id: "SRV-FIX-03",
     slug: "crisis-cleanup",
-    title: "Digital Crisis Cleanup",
-    shortDescription: "ระงับวิกฤตชื่อเสียงออนไลน์เร่งด่วน 24/7",
+    title: "Digital Crisis Management & Cleanup | การบริหารจัดการวิกฤตและเยียวยาภาพลักษณ์ดิจิทัล",
+    shortDescription: "ระงับวิกฤตชื่อเสียงออนไลน์และควบคุมความเสียหายเร่งด่วนตลอด 24 ชั่วโมง",
     description:
-      "มาตรการตอบโต้ทันทีเมื่อเกิดเหตุการณ์โจมตีชื่อเสียง หรือข้อมูลรั่วไหลที่ส่งผลกระทบอย่างรุนแรง",
+      "หน่วยตอบโต้สถานการณ์ฉุกเฉินเมื่อเกิดการโจมตีชื่อเสียงหรือข้อมูลรั่วไหลที่ส่งผลกระทบอย่างรุนแรงต่อเกียรติภูมิของสถาบัน",
     iconName: "Flame",
     image: "/images/services/srv-crisis-cleanup.webp",
-    category: "Reputation",
+    category: "Reputation Fix",
     type: "content",
     features: [
-      "Rapid Response Unit",
-      "Search Engine Result Control",
-      "Social Media Containment",
+      "Rapid Response Unit (RRU)",
+      "Search Engine Result Control (SERC)",
+      "Social Media Damage Containment",
     ],
     priceInfo: {
       startingAt: "35,000",
@@ -88,119 +88,30 @@ export const SERVICES: Service[] = [
       model: "Emergency Protocol",
     },
     metadata: {
-      defaultTitle: "จัดการวิกฤตชื่อเสียงออนไลน์เร่งด่วน | UNLINK-GLOBAL",
+      defaultTitle: "Digital Crisis Management | จัดการวิกฤตชื่อเสียงออนไลน์ | UNLINK-GLOBAL",
       defaultDescription:
-        "ทีมตอบโต้สถานการณ์ฉุกเฉินเมื่อถูกโจมตีชื่อเสียงบนโลกออนไลน์",
+        "ทีมตอบโต้สถานการณ์ฉุกเฉินเมื่อถูกโจมตีชื่อเสียงบนโลกออนไลน์เพื่อรักษาความน่าเชื่อถือ",
       keywords: ["วิกฤตชื่อเสียง", "ลบโพสต์ประจาน", "Digital Crisis"],
     },
   },
+
+  // 🛡️ REPUTATION PROTECTION (การอภิบาลและเสริมสร้างเกียรติภูมิสถาบัน)
   {
-    id: "SRV-REP-04",
-    slug: "digital-detox-jobbers",
-    title: "Professional Digital Detox",
-    shortDescription: "ล้างประวัติออนไลน์เพื่อการสมัครงานและปรับโปรไฟล์ใหม่",
-    description:
-      "จัดการข้อมูลในอดีตที่อาจเป็นอุปสรรคต่อความก้าวหน้าทางอาชีพ เพื่อให้คุณเริ่มต้นใหม่ได้อย่างมั่นใจ",
-    iconName: "History",
-    image: "/images/services/srv-digital-detox.webp",
-    category: "Reputation",
-    type: "content",
-    features: [
-      "สแกนหาจุดเสี่ยงเชิงลึกย้อนหลัง 10 ปี",
-      "ทำความสะอาดอัตลักษณ์ดิจิทัลในทุกแพลตฟอร์ม",
-      "ยกระดับความปลอดภัยและความเป็นส่วนตัวขั้นสูง",
-      "วิเคราะห์และจัดการผลการค้นหาที่ไม่พึงประสงค์ใน Google",
-    ],
-    priceInfo: {
-      startingAt: "2,900",
-      unit: "ครั้ง",
-      model: "One-time Payment",
-    },
-    metadata: {
-      defaultTitle:
-        "บริการลบโพสต์ย้อนหลัง ฟอกประวัติออนไลน์ก่อนสมัครงาน | UNLINK-GLOBAL",
-      defaultDescription:
-        "ล้างประวัติโซเชียล ลบข้อมูลส่วนตัวที่ไม่เหมาะสม เตรียมความพร้อมสำหรับการสมัครงาน",
-      keywords: ["ลบโพสต์เก่า", "ฟอกประวัติออนไลน์", "ตรวจประวัติโซเชียล"],
-    },
-  },
-  {
-    id: "SRV-REP-05",
-    slug: "ex-partner-eraser",
-    title: "Personal History Containment",
-    shortDescription:
-      "จัดการข้อมูลและความสัมพันธ์ในอดีตที่ส่งผลกระทบต่อปัจจุบัน",
-    description:
-      "บริการลบรูปภาพ ข้อความ หรือโพสต์ที่เกี่ยวข้องกับความสัมพันธ์เก่าภายใต้ความเป็นส่วนตัวสูงสุด",
-    iconName: "ImageOff",
-    image: "/images/services/srv-ex-partner-eraser.webp",
-    category: "Reputation",
-    type: "content",
-    features: [
-      "กำจัดเนื้อหาที่ไม่พึงประสงค์ออกจากโซเชียลมีเดีย",
-      "จัดการข้อมูลละเอียดอ่อนและรูปภาพที่ถูกประจาน",
-      "ล้างประวัติรูปภาพจากระบบการค้นหา Google",
-      "รักษาความลับขั้นสูงสุดตลอดกระบวนการจัดการ",
-    ],
-    priceInfo: {
-      startingAt: "3,900",
-      unit: "เคส",
-      model: "Starting Price",
-    },
-    metadata: {
-      defaultTitle: "รับลบรูปหลุด ลบรูปแฟนเก่า ลบประจานออนไลน์ | UNLINK-GLOBAL",
-      defaultDescription:
-        "บริการลบภาพส่วนตัว ข้อมูลละเอียดอ่อน และจัดการร่องรอยดิจิทัลหลังเลิกรา",
-      keywords: ["ลบรูปหลุด", "ลบประจาน", "ลบรูปแฟนเก่า"],
-    },
-  },
-  {
-    id: "SRV-REP-06",
-    slug: "sme-reputation-rescue",
-    title: "SME Reputation Rescue",
-    shortDescription:
-      "กู้ชื่อเสียงและจัดการรีวิวเชิงลบสำหรับธุรกิจขนาดกลางและย่อม",
-    description:
-      "รับมือกับการรีวิวที่กลั่นแกล้งหรือข้อมูลเท็จที่ทำลายความเชื่อมั่นของลูกค้าต่อแบรนด์ของคุณ",
-    iconName: "Store",
-    image: "/images/services/srv-sme-rescue.webp",
-    category: "Reputation",
-    type: "content",
-    features: [
-      "จัดการรีวิวปลอมและดิสเครดิตบน Google Maps และ Facebook",
-      "ระงับกระทู้โจมตีหรือโพสต์ใส่ร้ายที่ทำลายภาพลักษณ์แบรนด์",
-      "วางแผนกระตุ้นรีวิวบวกจากลูกค้าจริงเพื่อเพิ่มคะแนน",
-      "จัดโครงสร้างข้อมูลใหม่เพื่อครองพื้นที่การค้นหาหน้าแรก",
-    ],
-    priceInfo: {
-      startingAt: "12,000",
-      unit: "เดือน/โปรเจกต์",
-      model: "Monthly/Project",
-    },
-    metadata: {
-      defaultTitle: "รับลบรีวิวแย่ Google Maps กู้ดาวร้านค้า | UNLINK-GLOBAL",
-      defaultDescription:
-        "จัดการรีวิวหน้าม้า กู้ชื่อเสียงร้านอาหาร คลินิก และธุรกิจ SME",
-      keywords: ["ลบรีวิว Google Maps", "แก้ดาวตก", "กู้ชื่อร้านค้า"],
-    },
-  },
-  {
-    id: "SRV-REP-07",
+    id: "SRV-PRO-01",
     slug: "brand-identity-engineering",
-    title: "Brand Identity & Reputation Engineering",
-    shortDescription:
-      "สร้างภาพลักษณ์และบริหารชื่อเสียงเฉพาะทางตามชื่อแบรนด์ของคุณ",
+    title: "Elite Brand Identity Engineering | วิศวกรรมอัตลักษณ์และภาพลักษณ์แบรนด์ระดับสูง",
+    shortDescription: "สถาปนาและบริหารจัดการภาพลักษณ์แบรนด์ระดับพรีเมียม",
     description:
-      "บริการวิเคราะห์และสร้างภาพลักษณ์แบรนด์ใหม่ (Brand Re-engineering) พร้อมจัดการข้อมูลเชิงลบ เพื่อยกระดับความน่าเชื่อถือให้กับแบรนด์ในโลกดิจิทัล",
+      "บริการวิเคราะห์และออกแบบอัตลักษณ์แบรนด์ใหม่ (Brand Re-engineering) พร้อมจัดการข้อมูลเชิงลบเพื่อยกระดับความน่าเชื่อถือสู่มาตรฐานสูงสุด",
     iconName: "Sparkles",
     image: "/images/services/srv-sme-rescue.webp",
-    category: "Reputation",
+    category: "Reputation Protection",
     type: "content",
     features: [
-      "วิเคราะห์และวางกลยุทธ์ภาพลักษณ์แบรนด์ใหม่",
-      "จัดการข้อมูลเชิงลบที่ส่งผลกระทบต่อแบรนด์",
-      "สร้างคอนเทนต์เชิงบวกและ PR ระดับพรีเมียม",
-      "ยกระดับ E-E-A-T Signal ให้กับแบรนด์บน Google",
+      "Strategic Brand Re-engineering",
+      "Negative Content Suppression",
+      "Premium PR & Positive Content Seeding",
+      "E-E-A-T Signal Optimization",
     ],
     priceInfo: {
       startingAt: "45,000",
@@ -208,209 +119,188 @@ export const SERVICES: Service[] = [
       model: "Strategic Brand Engineering",
     },
     metadata: {
-      defaultTitle:
-        "รับสร้างภาพลักษณ์แบรนด์ บริหารชื่อเสียงองค์กร | UNLINK-GLOBAL",
+      defaultTitle: "Elite Brand Identity Engineering | สร้างภาพลักษณ์แบรนด์ | UNLINK-GLOBAL",
       defaultDescription:
-        "บริการสร้างภาพลักษณ์ใหม่ให้แบรนด์ จัดการข้อมูลเชิงลบ และยกระดับความน่าเชื่อถือบนโลกออนไลน์",
-      keywords: [
-        "สร้างภาพลักษณ์แบรนด์",
-        "บริหารชื่อเสียงองค์กร",
-        "Brand Reputation",
-      ],
+        "บริการสร้างภาพลักษณ์ใหม่ให้แบรนด์ จัดการข้อมูลเชิงลบ และยกระดับความน่าเชื่อถือระดับสถาบัน",
+      keywords: ["สร้างภาพลักษณ์แบรนด์", "บริหารชื่อเสียงองค์กร", "Brand Reputation"],
     },
   },
-
-  // 💰 FINANCIAL SERVICES (วิศวกรรมการเงิน)
   {
-    id: "SRV-FIN-001",
-    slug: "credit-engineering",
-    title: "Credit Engineering & Recovery",
-    shortDescription: "ฟื้นฟูเครดิตและการปรับโครงสร้างเพื่อการอนุมัติสินเชื่อ",
+    id: "SRV-PRO-02",
+    slug: "professional-digital-detox",
+    title: "Executive Digital Identity Detox | การชำระประวัติดิจิทัลระดับบริหาร",
+    shortDescription: "ชำระร่องรอยออนไลน์และปรับปรุงโปรไฟล์ดิจิทัลเพื่อความก้าวหน้าในระดับสูง",
     description:
-      "สำหรับคนอยากกู้บ้านแต่ติดแบล็คลิสต์ เราช่วยวิเคราะห์จุดตายและฟื้นฟูประวัติให้ธนาคารยอมรับ",
-    iconName: "TrendingUp",
-    image: "/images/services/srv-credit-engineering.webp",
-    category: "Financial",
+      "จัดการข้อมูลในอดีตที่อาจเป็นอุปสรรคต่อความก้าวหน้าทางอาชีพหรือภาพลักษณ์ส่วนบุคคล เพื่อการเริ่มต้นใหม่ที่สมบูรณ์แบบและสง่างาม",
+    iconName: "History",
+    image: "/images/services/srv-digital-detox.webp",
+    category: "Reputation Protection",
     type: "content",
     features: [
-      "วิเคราะห์สาเหตุการถูกปฏิเสธ",
-      "ฟื้นฟู Credit Scoring",
-      "จัดเตรียมเอกสารรายได้",
-      "ที่ปรึกษาจนถึงวันโอน",
+      "Deep Scan (10-Year Historical Audit)",
+      "Digital Identity Cleansing",
+      "Privacy & Security Hardening",
+      "SERP Optimization for Professionals",
     ],
     priceInfo: {
-      startingAt: "9,900",
-      unit: "โปรเจกต์",
-      model: "Success-Based Action",
+      startingAt: "5,000",
+      unit: "ครั้ง",
+      model: "Executive Protocol",
     },
     metadata: {
-      defaultTitle: "กู้บ้านไม่ผ่าน ติดบูโร ทำยังไงดี? | UNLINK-GLOBAL",
+      defaultTitle: "Executive Digital Identity Detox | ล้างประวัติออนไลน์ | UNLINK-GLOBAL",
       defaultDescription:
-        "ทางออกสำหรับคนกู้บ้านไม่ผ่านเพราะติดบูโร ฟื้นฟูเครดิตและจัดเตรียมเอกสาร",
-      keywords: ["กู้บ้านไม่ผ่าน", "แก้เครดิตบูโร", "ฟื้นฟูเครดิต"],
+        "ล้างประวัติโซเชียล ลบข้อมูลส่วนตัวที่ไม่เหมาะสม เพื่อเตรียมความพร้อมสำหรับตำแหน่งระดับสูง",
+      keywords: ["ลบโพสต์เก่า", "ฟอกประวัติออนไลน์", "Executive Detox"],
     },
   },
   {
-    id: "SRV-FIN-002",
-    slug: "statement-optimization",
-    title: "Statement Optimization Protocol",
-    shortDescription: "จัดระเบียบสเตทเม้นท์เพื่อการยื่นกู้และขอวีซ่า",
-    description:
-      "เราช่วยจัดการรายการเดินบัญชีของคุณให้กลายเป็นข้อมูลที่ธนาคารเชื่อถือ ผ่านการวางแผนที่ถูกต้อง",
-    iconName: "FileText",
-    image: "/images/services/srv-statement-optimization.webp",
-    category: "Financial",
-    type: "interactive",
-    features: [
-      "วางแผนการเดินเงินเข้า-ออก",
-      "สร้างสภาพคล่องให้น่าเชื่อถือ",
-      "ปรับพฤติกรรมการใช้จ่าย",
-      "เชื่อมโยงข้อมูลกับเอกสารรายได้",
-    ],
-    priceInfo: {
-      startingAt: "12,000",
-      unit: "โปรเจกต์",
-      model: "Success Protocol",
-    },
-    metadata: {
-      defaultTitle: "วิธีเดินสเตทเม้นท์กู้บ้าน 2569 | UNLINK-GLOBAL",
-      defaultDescription:
-        "ที่ปรึกษาออกแบบรายการเดินบัญชี เตรียมความพร้อมเพื่อกู้บ้าน",
-      keywords: [
-        "วิธีเดินสเตทเม้นท์",
-        "จัดระเบียบบัญชีธนาคาร",
-        "วางแผนการเงิน",
-      ],
-    },
-  },
-  {
-    id: "SRV-FIN-003",
+    id: "SRV-PRO-03",
     slug: "institutional-reliability",
-    title: "Institutional Reliability Alignment",
-    shortDescription:
-      "ยกระดับความน่าเชื่อถือระดับสถาบันเพื่อการทำธุรกรรมขนาดใหญ่",
+    title: "Institutional Reliability & Trust Alignment | การเสริมสร้างความน่าเชื่อถือและเกียรติภูมิระดับสถาบัน",
+    shortDescription: "ยกระดับความเชื่อมั่นเพื่อการทำธุรกรรมและพันธกิจระดับสากล",
     description:
-      "วางโครงสร้างตัวตนและเอกสารเพื่อสอดรับกับเกณฑ์การตรวจสอบของสถาบันการเงินระดับสากล",
+      "วางโครงสร้างตัวตนและเอกสารเพื่อสอดรับกับเกณฑ์การตรวจสอบของสถาบันระดับสากล พร้อมบริหารจัดการร่องรอยดิจิทัลให้ใสสะอาด",
     iconName: "ShieldCheck",
     image: "/images/services/srv-institutional-reliability.webp",
-    category: "Financial",
+    category: "Reputation Protection",
     type: "content",
     features: [
-      "ปรับปรุงประวัติออนไลน์: ล้างข้อมูลเชิงลบและสร้างชื่อเสียงใหม่ที่น่าเชื่อถือ",
-      "จัดวางโครงสร้างการเงิน: เตรียมรายได้และทรัพย์สินให้เป็นระบบตามเกณฑ์ธนาคาร",
-      "เตรียมความพร้อมการตรวจสอบ: จัดทำข้อมูลเพื่อรองรับการตรวจสอบประวัติเชิงลึก",
-      "เปิดประตูสู่โอกาสใหม่: แก้ปัญหาประวัติในอดีตที่เคยปิดกั้นโอกาสของคุณ",
+      "Institutional Profile Alignment",
+      "Financial & Identity Structuring",
+      "Due Diligence Readiness",
+      "Global Trust Signal Engineering",
     ],
     priceInfo: {
       startingAt: "25,000",
-      unit: "Integrated Protocol",
+      unit: "โปรเจกต์",
       model: "Bespoke Engineering",
     },
     metadata: {
-      defaultTitle:
-        "สร้างความน่าเชื่อถือเพื่อกู้บ้านและทำธุรกิจ | UNLINK-GLOBAL",
+      defaultTitle: "Institutional Reliability & Trust Alignment | UNLINK-GLOBAL",
       defaultDescription:
-        "สร้างภาพลักษณ์ที่น่าเชื่อถือผ่านการจัดการประวัติออนไลน์และโครงสร้างการเงิน",
-      keywords: ["กู้บ้านไม่ผ่าน", "แก้เครดิตบูโร", "ฟอกประวัติออนไลน์"],
-    },
-  },
-  {
-    id: "SRV-FIN-004",
-    slug: "transparent-investment",
-    title: "Transparent Investment Documentation",
-    shortDescription: "จัดทำเอกสารแสดงแหล่งที่มาของเงินลงทุนอย่างโปร่งใส",
-    description:
-      "ช่วยเตรียมข้อมูลและหลักฐานการลงทุนให้มีความชัดเจนตามกฎระเบียบป้องกันการฟอกเงิน (AMLO)",
-    iconName: "FileText",
-    image: "/images/services/srv-transparent-investment.webp",
-    category: "Financial",
-    type: "content",
-    features: [
-      "การวิเคราะห์เคสรายบุคคลเชิงลึก",
-      "กำหนดขอบเขตงาน (Scope of Work) ที่ชัดเจน",
-      "ระบบโครงสร้างราคาที่ไม่มีค่าใช้จ่ายแฝง",
-      "การจัดทำเอกสารรับรองที่โปร่งใสและตรวจสอบได้",
-    ],
-    priceInfo: {
-      startingAt: "0",
-      unit: "Project",
-      model: "Transparent Pricing",
-    },
-    metadata: {
-      defaultTitle: "ค่าบริการและขั้นตอนการดำเนินงาน | UNLINK-GLOBAL",
-      defaultDescription:
-        "รายละเอียดค่าบริการวางแผนการเงิน แก้เครดิตบูโร และกู้บ้าน ชัดเจน โปร่งใส",
-      keywords: ["ราคาบริการ", "แก้เครดิตบูโร", "กู้บ้านไม่ผ่าน"],
+        "สร้างภาพลักษณ์ที่น่าเชื่อถือผ่านการจัดการประวัติออนไลน์และโครงสร้างตัวตนระดับสถาบัน",
+      keywords: ["ความน่าเชื่อถือสถาบัน", "Due Diligence", "Trust Alignment"],
     },
   },
 
-  // ✈️ IMMIGRATION & MOBILITY (วีซ่าและการเดินทาง)
+  // ⚖️ IP CONFIRMATION (การรับรองและพิทักษ์สิทธิในทรัพย์สินทางปัญญา)
   {
-    id: "SRV-IMM-04",
-    slug: "lifestyle-mobility-independent-visa",
-    title: "Lifestyle Mobility & Independent Visa",
-    shortDescription:
-      "ยุทธศาสตร์การเตรียมโปรไฟล์เพื่อขอวีซ่าพำนักระยะยาวสำหรับอาชีพอิสระ",
+    id: "SRV-IPC-01",
+    slug: "private-ip-registration",
+    title: "Private Intellectual Property Registration | การจดทะเบียนและพิทักษ์ทรัพย์สินทางปัญญาส่วนบุคคล",
+    shortDescription: "คุ้มครองสิทธิและจดทะเบียนทรัพย์สินทางปัญญาภายใต้มาตรฐานความลับสูงสุด",
     description:
-      "ออกแบบแผนการเดินทางและเอกสารประกอบเพื่อรองรับ Lifestyle การทำงานแบบ Digital Nomad ทั่วโลก",
-    iconName: "Globe",
-    image: "/images/services/srv-lifestyle-mobility.webp",
-    category: "Immigration",
+      "บริการจดทะเบียนสิทธิบัตร เครื่องหมายการค้า และลิขสิทธิ์ พร้อมการบริหารจัดการสิทธิเพื่อความมั่นคงของสินทรัพย์ดิจิทัลและนวัตกรรมของท่าน",
+    iconName: "FileSignature",
+    image: "/images/services/srv-statement-optimization.webp",
+    category: "IP Confirmation",
     type: "content",
     features: [
-      "ปรับปรุงสถานะทางการเงิน (Financial Grooming) ให้สอดคล้องกับอาชีพอิสระ",
-      "สร้างอัตลักษณ์มืออาชีพ (Professional Identity) ที่สถาบันการยอมรับ",
-      "ร่างเอกสารรับรองงานและจดหมายแนะนำตัวระดับสูง",
-      "แนะนำวิธีรับมือสถานการณ์หน้าด่าน ตม. และการตอบคำถามอย่างมั่นใจ",
+      "Discreet IP Registration",
+      "Copyright & Trademark Protection",
+      "Digital Asset Rights Management",
+      "IP Portfolio Audit",
     ],
     priceInfo: {
-      startingAt: "19,000",
-      unit: "โปรเจกต์",
-      model: "Discreet VIP Protocol",
+      startingAt: "20,000",
+      unit: "เคส",
+      model: "Registration Protocol",
     },
     metadata: {
-      defaultTitle:
-        "รับทำวีซ่าอาชีพอิสระ 2569 | ปรึกษาวีซ่าไลฟ์สไตล์ | UNLINK-GLOBAL",
+      defaultTitle: "Private IP Registration | จดทะเบียนทรัพย์สินทางปัญญา | UNLINK-GLOBAL",
       defaultDescription:
-        "ทางเลือกใหม่สำหรับคนทำงานอิสระที่ต้องการวีซ่าไปต่างประเทศ จัดเตรียมเอกสารและรับรองรายได้ให้ดูเป็นมืออาชีพ",
-      keywords: ["วีซ่าอาชีพอิสระ", "เตรียมเอกสารวีซ่า", "วีซ่าไลฟ์สไตล์"],
+        "บริการจดทะเบียนและคุ้มครองทรัพย์สินทางปัญญาด้วยความเป็นส่วนตัวและความปลอดภัยสูงสุด",
+      keywords: ["จดสิทธิบัตร", "จดเครื่องหมายการค้า", "คุ้มครองลิขสิทธิ์"],
     },
   },
   {
-    id: "SRV-IMM-06",
-    slug: "global-career-mobility-vip",
-    title: "Elite Global Career Mobility (VIP)",
-    shortDescription:
-      "ดูแลวีซ่าและปั้นโปรไฟล์เพื่อการทำงานต่างประเทศสำหรับผู้หญิงโดยเฉพาะ",
+    id: "SRV-IPC-02",
+    slug: "patent-trademark-strategy",
+    title: "Global Patent & Trademark Strategic Planning | การวางแผนยุทธศาสตร์สิทธิบัตรและเครื่องหมายการค้าระดับสากล",
+    shortDescription: "กำหนดกลยุทธ์การคุ้มครองทรัพย์สินทางปัญญาในระดับสากล",
     description:
-      "บริการที่ปรึกษาและจัดเตรียมเอกสารสำหรับผู้หญิงที่ต้องการย้ายไปทำงานหรือพำนักในต่างประเทศ เราเน้นการสร้างโปรไฟล์ที่น่าเชื่อถือและจัดการอุปสรรคด้านเอกสารภายใต้ความลับสูงสุด",
-    iconName: "UserRound",
-    image: "/images/services/srv-mobility-vip.webp",
-    category: "Immigration",
+      "ออกแบบโครงสร้างการถือครองและปกป้องทรัพย์สินทางปัญญา เพื่อสร้างความได้เปรียบทางการแข่งขันและเพิ่มมูลค่าทางธุรกิจในระดับสากล",
+    iconName: "Globe",
+    image: "/images/services/srv-lifestyle-mobility.webp",
+    category: "IP Confirmation",
     type: "content",
     features: [
-      "Zero Judgment Policy: ดูแลทุกอาชีพด้วยความเข้าใจและให้เกียรติ",
-      "Financial Profile Grooming: ปรับปรุงสเตทเม้นท์ให้สอดคล้องกับรายได้จริง",
-      "Discreet Documentation: จัดเตรียมเอกสารรับรองที่ดูเป็นมืออาชีพและตรวจสอบได้",
-      "Global Network Support: แนะนำแนวทางการพำนักในดูไบ มาเลเซีย และยุโรป",
+      "Global IP Strategy Development",
+      "Competitive Landscape Analysis",
+      "IP Monetization Consulting",
+      "Infringement Risk Mitigation",
     ],
     priceInfo: {
-      startingAt: "25,000",
+      startingAt: "35,000",
       unit: "โปรเจกต์",
-      model: "VIP Personal Concierge",
+      model: "Strategic Planning",
     },
     metadata: {
-      defaultTitle:
-        "รับทำวีซ่าสาวทำงานต่างประเทศ | ปั้นโปรไฟล์ย้ายถิ่นฐาน | UNLINK-GLOBAL",
+      defaultTitle: "Global Patent & Trademark Strategy | กลยุทธ์ IP สากล | UNLINK-GLOBAL",
       defaultDescription:
-        "บริการดูแลวีซ่าและจัดเตรียมเอกสารสำหรับผู้หญิงที่ต้องการไปทำงานต่างประเทศ เน้นความปลอดภัย ความลับ และผลลัพธ์ที่จับต้องได้",
-      keywords: [
-        "วีซ่าทำงานต่างประเทศ",
-        "รับทำวีซ่าผู้หญิง",
-        "ย้ายไปทำงานต่างประเทศ",
-        "วีซ่าดูไบ",
-        "วีซ่ามาเลเซีย",
-      ],
+        "วางแผนกลยุทธ์ทรัพย์สินทางปัญญาระดับสากลเพื่อปกป้องนวัตกรรมและสร้างมูลค่าเพิ่ม",
+      keywords: ["กลยุทธ์สิทธิบัตร", "Trademark Strategy", "IP Global"],
+    },
+  },
+
+  // 🛡️ PDPA ENFORCEMENT (การบังคับใช้กฎหมายคุ้มครองข้อมูลส่วนบุคคล)
+  {
+    id: "SRV-PDP-01",
+    slug: "pdpa-legal-action",
+    title: "Strategic PDPA Legal Enforcement | การบังคับใช้สิทธิตามกฎหมายคุ้มครองข้อมูลส่วนบุคคลเชิงยุทธศาสตร์",
+    shortDescription: "บังคับใช้สิทธิตามกฎหมาย PDPA เพื่อพิทักษ์ความเป็นส่วนตัวของท่าน",
+    description:
+      "ดำเนินการทางกฎหมายกับผู้ที่ละเมิดข้อมูลส่วนบุคคลหรือนำข้อมูลไปใช้โดยมิชอบ เพื่อทวงคืนความยุติธรรมและค่าชดเชยที่พึงได้",
+    iconName: "Gavel",
+    image: "/images/services/srv-mobility-vip.webp",
+    category: "PDPA Enforcement",
+    type: "content",
+    features: [
+      "PDPA Violation Investigation",
+      "Legal Notice & Litigation Support",
+      "Data Breach Compensation Claims",
+      "Right to be Forgotten Enforcement",
+    ],
+    priceInfo: {
+      startingAt: "30,000",
+      unit: "เคส",
+      model: "Legal Action Protocol",
+    },
+    metadata: {
+      defaultTitle: "Strategic PDPA Legal Enforcement | ฟ้องละเมิด PDPA | UNLINK-GLOBAL",
+      defaultDescription:
+        "บริการดำเนินการทางกฎหมายกรณีถูกละเมิดข้อมูลส่วนบุคคลตาม พรบ. คุ้มครองข้อมูลส่วนบุคคล",
+      keywords: ["ฟ้อง PDPA", "ละเมิดข้อมูลส่วนบุคคล", "กฎหมายคุ้มครองข้อมูล"],
+    },
+  },
+  {
+    id: "SRV-PDP-02",
+    slug: "corporate-compliance",
+    title: "Corporate Data Governance & Compliance | ธรรมาภิบาลข้อมูลและมาตรฐานการคุ้มครองข้อมูลองค์กร",
+    shortDescription: "วางระบบคุ้มครองข้อมูลส่วนบุคคลและธรรมาภิบาลข้อมูลระดับมาตรฐานสากล",
+    description:
+      "บริการที่ปรึกษาและวางระบบ PDPA Compliance ครบวงจร เพื่อให้องค์กรดำเนินธุรกิจได้อย่างถูกต้องตามกฎหมายและเปี่ยมด้วยความน่าเชื่อถือ",
+    iconName: "Lock",
+    image: "/images/services/srv-transparent-investment.webp",
+    category: "PDPA Enforcement",
+    type: "content",
+    features: [
+      "PDPA Compliance Audit",
+      "Data Governance Framework",
+      "Consent Management Systems",
+      "DPO as a Service",
+    ],
+    priceInfo: {
+      startingAt: "50,000",
+      unit: "โปรเจกต์",
+      model: "Compliance Framework",
+    },
+    metadata: {
+      defaultTitle: "Corporate PDPA Compliance | วางระบบ PDPA องค์กร | UNLINK-GLOBAL",
+      defaultDescription:
+        "บริการวางระบบ PDPA และธรรมาภิบาลข้อมูลสำหรับองค์กรเพื่อความถูกต้องตามกฎหมาย",
+      keywords: ["วางระบบ PDPA", "Data Governance", "Compliance"],
     },
   },
 ];

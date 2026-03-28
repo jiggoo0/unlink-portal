@@ -28,34 +28,30 @@ export function generateMetadata(): Metadata {
   };
 }
 
-const services = [
+const serviceDisplayCategories = [
   {
-    title: "Reputation Fix/Repair",
-    description:
-      "Strategic removal and mitigation of damaging digital content and search results.",
+    title: "Reputation Fix",
+    description: "ปฏิบัติการกู้คืนและเยียวยาภาพลักษณ์ดิจิทัลในภาวะวิกฤตอย่างเร่งด่วน",
     icon: Shield,
-    href: "/services/reputation-repair",
+    href: "/services#reputation-fix",
   },
   {
     title: "Reputation Protection",
-    description:
-      "Proactive monitoring and defense systems to maintain institutional integrity.",
+    description: "การอภิบาลและเสริมสร้างเกียรติภูมิระดับสถาบันเพื่อความยั่งยืน",
     icon: ShieldCheck,
-    href: "/services/reputation-protection",
+    href: "/services#reputation-protection",
   },
   {
-    title: "IP/Copyright Confirmation",
-    description:
-      "Legal and technical verification of intellectual property rights across digital platforms.",
+    title: "IP Confirmation",
+    description: "การรับรองและพิทักษ์สิทธิในทรัพย์สินทางปัญญาภายใต้มาตรฐานความลับ",
     icon: FileCheck,
-    href: "/services/ip-confirmation",
+    href: "/services#ip-confirmation",
   },
   {
     title: "PDPA Enforcement",
-    description:
-      "Comprehensive compliance and enforcement of personal data protection rights.",
+    description: "การบังคับใช้สิทธิตามกฎหมายคุ้มครองข้อมูลส่วนบุคคลเพื่อทวงคืนความยุติธรรม",
     icon: Lock,
-    href: "/services/pdpa-enforcement",
+    href: "/services#pdpa-enforcement",
   },
 ];
 
@@ -71,27 +67,26 @@ export default function HomePage() {
               <span>Institutional Grade Security</span>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-primary">
-              Institutional <span className="text-secondary">Authority</span>{" "}
+              สถาปนา <span className="text-secondary">อำนาจดิจิทัล</span>{" "}
               <br />
-              in the Digital Ecosystem.
+              ในระบบนิเวศระดับสากล
             </h1>
             <p className="text-xl text-muted-foreground mb-10 leading-relaxed max-w-2xl">
-              UNLINK provides elite-level reputation management, intellectual
-              property protection, and data privacy enforcement for
-              organizations and high-profile individuals.
+              UNLINK มอบบริการบริหารจัดการชื่อเสียงระดับสูง การคุ้มครองทรัพย์สินทางปัญญา
+              และการบังคับใช้สิทธิความเป็นส่วนตัวของข้อมูล สำหรับองค์กรและบุคคลระดับสูง
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
                 href={siteConfig.contact.lineUrl}
                 className="px-8 py-4 bg-primary text-primary-foreground rounded-md font-semibold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20"
               >
-                Consult an Expert
+                ปรึกษาผู้เชี่ยวชาญระดับยุทธศาสตร์
               </Link>
               <Link
                 href="#services"
                 className="px-8 py-4 bg-white border border-border text-primary rounded-md font-semibold hover:bg-slate-50 transition-all"
               >
-                Our Services
+                สำรวจขอบข่ายบริการ
               </Link>
             </div>
           </div>
@@ -131,16 +126,15 @@ export default function HomePage() {
         <div className="container">
           <div className="mb-16 text-center max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">
-              Core Services
+              ยุทธศาสตร์หลักในการบริหารจัดการ
             </h2>
             <p className="text-muted-foreground">
-              Our specialized protocols are designed to address the most complex
-              digital challenges with precision, legal authority, and technical
-              excellence.
+              โปรโตคอลเฉพาะทางของเราได้รับการออกแบบมาเพื่อจัดการกับความท้าทายทางดิจิทัลที่ซับซ้อนที่สุด
+              ด้วยความแม่นยำ อำนาจทางกฎหมาย และความเป็นเลิศทางเทคนิค
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service) => (
+            {serviceDisplayCategories.map((service) => (
               <div
                 key={service.title}
                 className="authority-card group bg-white"
@@ -158,7 +152,7 @@ export default function HomePage() {
                   href={service.href}
                   className="inline-flex items-center text-sm font-semibold text-secondary hover:underline"
                 >
-                  Learn More <ArrowRight className="ml-2 w-4 h-4" />
+                  รายละเอียดเพิ่มเติม <ArrowRight className="ml-2 w-4 h-4" />
                 </Link>
               </div>
             ))}
@@ -175,18 +169,17 @@ export default function HomePage() {
                 <Database className="w-7 h-7 text-primary" />
               </div>
               <h3 className="text-2xl font-bold mb-4 text-primary">
-                UNLINK Registry
+                ทะเบียนข้อมูล UNLINK
               </h3>
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                Access our global database of verified digital assets and
-                reputation records. The authoritative source for digital
-                identity verification and institutional transparency.
+                เข้าถึงฐานข้อมูลระดับสากลของสินทรัพย์ดิจิทัลและบันทึกชื่อเสียงที่ได้รับการตรวจสอบแล้ว
+                แหล่งข้อมูลที่เชื่อถือได้สำหรับการยืนยันตัวตนดิจิทัลและความโปร่งใสระดับสถาบัน
               </p>
               <Link
-                href="https://registry.unlink.global"
+                href="https://registry.unlink-th.com"
                 className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-md font-medium hover:bg-primary/90 transition-colors"
               >
-                Access Registry <ExternalLink className="ml-2 w-4 h-4" />
+                เข้าถึงฐานข้อมูลทะเบียน <ExternalLink className="ml-2 w-4 h-4" />
               </Link>
             </div>
             <div className="p-10 bg-slate-50 border border-border rounded-2xl shadow-sm hover:shadow-md transition-shadow">
@@ -194,18 +187,17 @@ export default function HomePage() {
                 <Search className="w-7 h-7 text-secondary" />
               </div>
               <h3 className="text-2xl font-bold mb-4 text-primary">
-                UNLINK Audit
+                การตรวจสอบสิทธิ์ UNLINK
               </h3>
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                Comprehensive digital footprint analysis and risk assessment.
-                Identify vulnerabilities in your institutional reputation before
-                they are exploited by malicious actors.
+                การวิเคราะห์ร่องรอยดิจิทัลและการประเมินความเสี่ยงอย่างครอบคลุม
+                ระบุช่องโหว่ในชื่อเสียงระดับสถาบันของท่านก่อนที่จะถูกแสวงหาประโยชน์โดยผู้ไม่หวังดี
               </p>
               <Link
                 href="https://audit.unlink.global"
                 className="inline-flex items-center px-6 py-3 bg-secondary text-secondary-foreground rounded-md font-medium hover:bg-secondary/90 transition-colors"
               >
-                Start Audit <ExternalLink className="ml-2 w-4 h-4" />
+                เริ่มการตรวจสอบสิทธิ์ <ExternalLink className="ml-2 w-4 h-4" />
               </Link>
             </div>
           </div>
@@ -216,17 +208,17 @@ export default function HomePage() {
       <section className="py-24 bg-primary text-primary-foreground">
         <div className="container text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-8">
-            Ready to Secure Your Digital Authority?
+            พร้อมสำหรับการสถาปนาอำนาจดิจิทัลของท่านแล้วหรือยัง?
           </h2>
           <p className="text-primary-foreground/70 max-w-2xl mx-auto mb-12 text-lg">
-            Join the elite organizations and individuals who trust UNLINK to
-            protect their most valuable digital assets.
+            เข้าร่วมกับองค์กรและบุคคลระดับสูงที่ไว้วางใจให้ UNLINK
+            ปกป้องสินทรัพย์ดิจิทัลที่มีค่าที่สุดของพวกเขา
           </p>
           <Link
             href={siteConfig.contact.lineUrl}
             className="px-10 py-5 bg-secondary text-secondary-foreground rounded-md font-bold text-lg hover:bg-secondary/90 transition-all inline-block"
           >
-            Contact Our Strategic Unit
+            ติดต่อหน่วยปฏิบัติการเชิงกลยุทธ์
           </Link>
         </div>
       </section>

@@ -130,9 +130,9 @@ export default function Navbar() {
                         initial={{ opacity: 0, y: 10, scale: 0.95 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                        className="absolute left-1/2 top-full mt-2 w-[600px] -translate-x-1/2 overflow-hidden rounded-[1.5rem] border border-border bg-background/95 p-8 shadow-2xl backdrop-blur-xl"
+                        className="absolute left-1/2 top-full mt-2 w-[650px] -translate-x-1/2 overflow-hidden rounded-[1.5rem] border border-border bg-background/95 p-8 shadow-2xl backdrop-blur-xl"
                       >
-                        <div className="grid grid-cols-3 gap-8">
+                        <div className="grid grid-cols-2 gap-x-12 gap-y-8">
                           {serviceCategories.map((cat, idx) => (
                             <div key={idx} className="space-y-4">
                               <div className="flex flex-col gap-1">

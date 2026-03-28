@@ -11,8 +11,8 @@ import {
   Database,
   ArrowRight,
   ShieldCheck,
-  TrendingUp,
-  Globe,
+  FileCheck,
+  Lock,
 } from "lucide-react";
 import JsonLd from "@/components/shared/JsonLd";
 import { getBreadcrumbSchema } from "@/lib/seo-schemas";
@@ -43,39 +43,36 @@ export default function ServicesPage() {
 
   const categories = [
     {
-      id: "reputation",
-      name: "Reputation Engineering",
+      id: "reputation-fix",
+      name: "Reputation Fix",
       description:
-        "ปฏิบัติการเชิงลึกเพื่อกู้คืนชื่อเสียงและบริหารจัดการข้อมูลที่เป็นมลพิษออนไลน์",
+        "ปฏิบัติการกู้คืนและเยียวยาภาพลักษณ์ที่ได้รับผลกระทบอย่างรุนแรง ผ่านโปรโตคอลการจัดการข้อมูลเชิงลึกขั้นสูง",
+      icon: ShieldAlert,
+      services: filterServices(["Reputation Fix"]),
+    },
+    {
+      id: "reputation-protection",
+      name: "Reputation Protection",
+      description:
+        "การอภิบาลและเสริมสร้างเกียรติภูมิระดับสถาบัน เพื่อธำรงไว้ซึ่งอัตลักษณ์อันทรงคุณค่าในระบบนิเวศดิจิทัล",
       icon: ShieldCheck,
-      services: filterServices([
-        "reputation",
-        "extreme",
-        "business",
-        "personal",
-        "reputation-management",
-      ]),
+      services: filterServices(["Reputation Protection"]),
     },
     {
-      id: "financial",
-      name: "Financial Structuring",
+      id: "ip-confirmation",
+      name: "IP Confirmation",
       description:
-        "วิศวกรรมเครดิตและการปรับโครงสร้างการเงินเพื่อการอนุมัติสินเชื่อระดับพรีเมียม",
-      icon: TrendingUp,
-      services: filterServices(["financial", "finance", "credit"]),
+        "การรับรองสิทธิและพิทักษ์ทรัพย์สินทางปัญญา ภายใต้มาตรฐานความปลอดภัยและมาตรการรักษาความลับขั้นสูงสุด",
+      icon: FileCheck,
+      services: filterServices(["IP Confirmation"]),
     },
     {
-      id: "immigration",
-      name: "Global Mobility & Documents",
+      id: "pdpa-enforcement",
+      name: "PDPA Enforcement",
       description:
-        "ยุทธศาสตร์การเตรียมโปรไฟล์วีซ่าและจัดทำเอกสารรายรับอาชีพอิสระสากล",
-      icon: Globe,
-      services: filterServices([
-        "immigration",
-        "documentation",
-        "visa",
-        "mobility",
-      ]),
+        "การบังคับใช้สิทธิตามกฎหมายคุ้มครองข้อมูลส่วนบุคคล เพื่อทวงคืนความยุติธรรมและพิทักษ์ความเป็นส่วนตัวของท่าน",
+      icon: Lock,
+      services: filterServices(["PDPA Enforcement"]),
     },
   ];
 
@@ -129,7 +126,7 @@ export default function ServicesPage() {
             }
             title="Operational"
             titleHighlight="Protocols"
-            description="ยกระดับโอกาสและปกป้องภาพลักษณ์ดิจิทัล รวบรวมระบบจัดการข้อมูลเชิงลึกที่ผ่านการกลั่นกรองจากสถานการณ์จริง เพื่อให้ท่านบรรลุเป้าหมายในระบบนิเวศดิจิทัลอย่างสง่างามครับ"
+            description="ยกระดับโอกาสและพิทักษ์ภาพลักษณ์ดิจิทัล รวบรวมระบบจัดการข้อมูลเชิงลึกที่ผ่านการกลั่นกรองจากสถานการณ์จริง เพื่อให้ท่านบรรลุเป้าหมายในระบบนิเวศดิจิทัลอย่างสง่างาม"
             className="mb-0 max-w-4xl"
             isItalic={true}
           />
@@ -198,16 +195,16 @@ export default function ServicesPage() {
                 <span>Special Operations Unit</span>
               </div>
               <h2 className="text-4xl font-bold tracking-tight text-white md:text-7xl leading-none">
-                Complex Case <br />
+                การสืบสวน <br />
                 <span className="text-primary italic font-serif">
-                  Investigation?
+                  กรณีซับซ้อนพิเศษ
                 </span>
               </h2>
               <p className="text-slate-400 text-lg leading-relaxed font-light md:text-xl">
                 หากท่านประสบปัญหาที่มีความซับซ้อนสูง
                 หรืออยู่นอกเหนือจากโปรโตคอลมาตรฐาน
                 ทีมที่ปรึกษาเชิงกลยุทธ์ของเราพร้อมร่วมวิเคราะห์และออกแบบโซลูชันเฉพาะราย
-                เพื่อแก้ไขปัญหาที่ต้นเหตุภายใต้มาตรฐานความลับสูงสุดครับ
+                เพื่อแก้ไขปัญหาที่ต้นเหตุภายใต้มาตรฐานความลับสูงสุด
               </p>
             </div>
 
@@ -217,7 +214,7 @@ export default function ServicesPage() {
               rel="noopener noreferrer"
               className="bg-primary text-black shadow-primary/20 group inline-flex items-center gap-4 rounded-full px-12 py-6 text-sm font-bold tracking-widest uppercase shadow-2xl transition-all hover:scale-105"
             >
-              Liaison Specialist
+              เจ้าหน้าที่ประสานงานยุทธศาสตร์
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
             </a>
           </div>

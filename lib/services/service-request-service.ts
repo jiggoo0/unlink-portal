@@ -4,6 +4,7 @@ import { db } from "@unlink/shared/db";
  * 🛠️ UNLINK-GLOBAL: SERVICE REQUEST SERVICE (Data Access Layer)
  * -------------------------------------------------------------------------
  * ศูนย์กลางการจัดการข้อมูลคำขอรับบริการ (Service Requests)
+ * มาตรฐาน: Shared Turso (SQLite Cloud) - Strategic Core (Post-Supabase migration)
  */
 
 export interface CreateServiceRequestParams {
@@ -19,6 +20,7 @@ export async function createServiceRequest({
   status,
   metadata,
 }: CreateServiceRequestParams) {
+  // 🛡️ [Security Protocol] Anonymize PII before storage in the shared core
   const anonymizedMetadata = { ...metadata };
   const piiFields = [
     "guestName",
@@ -33,6 +35,7 @@ export async function createServiceRequest({
     delete anonymizedMetadata[field];
   });
 
+  // 🛰️ [AI Standard] Execute via Shared Core bridge (Turso Standard)
   return await db.execute({
     sql: "INSERT INTO service_requests (id, service_type, status, metadata, created_at) VALUES (?, ?, ?, ?, ?)",
     args: [

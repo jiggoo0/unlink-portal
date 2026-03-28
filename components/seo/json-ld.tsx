@@ -38,17 +38,11 @@ export default function JsonLd({ data, includeBase = true }: JsonLdProps) {
       ]
     : [];
 
-  let schemaData: WithContext<Thing>[] = [];
-
-  if (data) {
-    if (Array.isArray(data)) {
-      schemaData = [...baseSchemas, ...data];
-    } else {
-      schemaData = [...baseSchemas, data];
-    }
-  } else {
-    schemaData = baseSchemas;
-  }
+  const schemaData: WithContext<Thing>[] = data
+    ? Array.isArray(data)
+      ? [...baseSchemas, ...data]
+      : [...baseSchemas, data]
+    : baseSchemas;
 
   if (schemaData.length === 0) {
     return null;

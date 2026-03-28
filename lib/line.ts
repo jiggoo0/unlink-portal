@@ -66,7 +66,7 @@ export async function sendServiceRequestNotification(
           contents: {
             type: "bubble",
             styles: {
-              header: { backgroundColor: "#1e293b" },
+              header: { backgroundColor: "#0f172a" },
               footer: { separator: true },
             },
             header: {
@@ -75,7 +75,7 @@ export async function sendServiceRequestNotification(
               contents: [
                 {
                   type: "text",
-                  text: "NEW SERVICE REQUEST",
+                  text: "🔔 มีรายการสอบถามบริการใหม่",
                   color: "#ffffff",
                   weight: "bold",
                   size: "sm",
@@ -96,7 +96,7 @@ export async function sendServiceRequestNotification(
                 },
                 {
                   type: "text",
-                  text: `ID: ${data.caseId} | Status: ${data.status}`,
+                  text: `หมายเลขเคส: ${data.caseId} | สถานะ: ${data.status}`,
                   size: "xs",
                   color: "#64748b",
                 },
@@ -110,7 +110,7 @@ export async function sendServiceRequestNotification(
                   contents: [
                     {
                       type: "text",
-                      text: "👤 CUSTOMER INFO (PII)",
+                      text: "👤 ข้อมูลผู้ติดต่อ (PII)",
                       size: "xs",
                       weight: "bold",
                       color: "#ef4444",
@@ -140,7 +140,7 @@ export async function sendServiceRequestNotification(
                   contents: [
                     {
                       type: "text",
-                      text: "📊 SYSTEM METADATA",
+                      text: "📊 ข้อมูลระบบ (METADATA)",
                       size: "xs",
                       weight: "bold",
                       color: "#3b82f6",
@@ -165,7 +165,7 @@ export async function sendServiceRequestNotification(
                   type: "button",
                   action: {
                     type: "uri",
-                    label: "GO TO DASHBOARD",
+                    label: "เปิดดูแดชบอร์ดจัดการเคส",
                     uri: `${siteConfig.url}/admin/liaison`,
                   },
                   style: "primary",

@@ -8,7 +8,7 @@ import { reportAuditLog } from "@/lib/audit";
 /**
  * 🛠️ SERVICE SUBMISSION API (SECURED BY THE SHIELD PROTOCOL)
  * -------------------------------------------------------------------------
- * รับข้อมูลจากฟอร์ม ตรวจสอบความถูกต้อง (Zod) และบันทึกลง Turso DB
+ * รับข้อมูลจากฟอร์ม ตรวจสอบความถูกต้อง (Zod) และบันทึกลง Shared Supabase
  * กฎเหล็ก: ห้ามเก็บ PII (Personally Identifiable Information) ลงในฐานข้อมูลหลัก
  */
 
