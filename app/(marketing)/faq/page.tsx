@@ -1,10 +1,10 @@
 /** @format */
 
 import { Metadata } from "next";
+import Link from "next/link";
 import { 
   HelpCircle, 
   MessageSquare, 
-  ArrowRight
 } from "lucide-react";
 import {
   Accordion,
@@ -111,12 +111,12 @@ export default function FAQPage() {
               ทีมงานผู้เชี่ยวชาญของเราพร้อมให้คำปรึกษาด้านความปลอดภัยและ Reputation Management ตลอด 24 ชั่วโมง
             </p>
             <div className="flex flex-wrap justify-center gap-4 pt-4">
-              <a 
+              <Link 
                 href="/services" 
                 className="bg-primary text-primary-foreground px-10 py-4 rounded-2xl font-black text-[11px] tracking-widest uppercase hover:scale-105 active:scale-95 transition-all shadow-xl shadow-primary/20"
               >
                 เริ่มโปรเจกต์ของคุณ
-              </a>
+              </Link>
             </div>
           </div>
         </div>

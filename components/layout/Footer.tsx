@@ -12,7 +12,6 @@ import {
 } from "lucide-react";
 import { footerNav } from "@/constants/navigation";
 import VerifiedBadge from "@/components/shared/VerifiedBadge";
-import { cn } from "@/lib/utils";
 
 /**
  * 🔒 UNLINK-GLOBAL | PREMIUM EXECUTIVE FOOTER (v6.0)
