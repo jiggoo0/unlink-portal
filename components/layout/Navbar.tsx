@@ -28,68 +28,79 @@ import Image from "next/image";
 import { siteConfig } from "@/constants/site-config";
 
 /**
- * UNLINK-GLOBAL | High-Performance Navigation System (v5.0)
+ * 🔒 UNLINK-GLOBAL | EXECUTIVE NAVIGATION SYSTEM (v6.0 - Premium RE)
  * -------------------------------------------------------------------------
- * ผสมผสานความสวยงามแบบ Executive และความคล่องตัวบน Mobile
- * รองรับการแสดงผลบริการแบบ Dropdown และ Mobile Menu แบบแยกหมวดหมู่
+ * ดีไซน์ใหม่เน้นความหรูหรา โปร่งใส และความปลอดภัยสูงสุด
+ * แก้ไขปัญหา UI ทับซ้อนด้วยระบบ Layering ขั้นสูง
  */
 export default function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = React.useState(false);
-  const [activeDropdown, setActiveDropdown] = React.useState<string | null>(
-    null,
-  );
+  const [activeDropdown, setActiveDropdown] = React.useState<string | null>(null);
+  const [scrolled, setScrolled] = React.useState(false);
 
-  // ปิดเมนูเมื่อตรวจพบการเปลี่ยนหน้า
+  // ตรวจจับการ Scroll เพื่อเปลี่ยนสไตล์ Navbar
+  React.useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   React.useEffect(() => {
     setIsOpen(false);
     setActiveDropdown(null);
   }, [pathname]);
 
-  const toggleMenu = React.useCallback(() => {
-    setIsOpen((prev) => !prev);
-  }, []);
-
-  const closeMenu = React.useCallback(() => {
-    setIsOpen(false);
-  }, []);
+  const closeMenu = () => setIsOpen(false);
 
   return (
-    <header className="bg-background/80 sticky top-0 z-50 w-full border-b border-border/50 backdrop-blur-xl transition-all duration-500 hover:bg-background/95">
-      <div className="container flex h-20 items-center justify-between">
-        {/* --- Brand Identity Protocol --- */}
+    <header 
+      className={cn(
+        "fixed top-0 left-0 right-0 w-full transition-all duration-500 z-[1000]",
+        scrolled 
+          ? "bg-background/80 border-b border-border/40 backdrop-blur-2xl py-3" 
+          : "bg-transparent py-6"
+      )}
+    >
+      <div className="container max-w-7xl mx-auto px-6 flex items-center justify-between">
+        
+        {/* --- 💎 PREMIUM BRANDING SECTOR --- */}
         <Link
           href="/"
-          className="group flex items-center gap-3 transition-all"
+          className="group relative flex items-center gap-4 transition-all duration-500"
           onClick={closeMenu}
         >
-          <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-primary/5 border border-primary/10 transition-colors group-hover:bg-primary/10">
-            <Image
-              src="/branding/logo.svg"
-              alt="Unlink-Global Logo"
-              width={24}
-              height={24}
-              className="transition-transform duration-500 group-hover:scale-110"
-              priority
-            />
+          <div className="relative">
+            <div className="absolute -inset-2 rounded-full bg-primary/20 opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100" />
+            <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 shadow-2xl transition-all duration-500 group-hover:border-primary/30 group-hover:rotate-[10deg]">
+              <Image
+                src="/branding/logo.svg"
+                alt="UNLINK-GLOBAL"
+                width={28}
+                height={28}
+                className="transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_0_10px_rgba(72,135,255,0.5)]"
+                priority
+              />
+            </div>
           </div>
+          
           <div className="flex flex-col">
-            <span className="font-sans text-xl font-black tracking-tight leading-none text-foreground uppercase">
-              {siteConfig.name.split("-")[0]}
-              <span className="text-primary align-top text-xs ml-0.5">
-                {siteConfig.name.split("-")[1]
-                  ? `-${siteConfig.name.split("-")[1]}`
-                  : ""}
+            <div className="flex items-baseline gap-1">
+              <span className="font-sans text-2xl font-black tracking-tighter leading-none text-foreground uppercase italic group-hover:text-primary transition-colors">
+                UNLINK
               </span>
-            </span>
-            <span className="text-[7px] font-mono tracking-[0.4em] text-muted-foreground uppercase mt-1 font-bold">
-              Reputation Engineering
+              <span className="text-primary font-mono text-xs font-bold tracking-widest">
+                GLOBAL
+              </span>
+            </div>
+            <span className="text-[8px] font-mono tracking-[0.5em] text-muted-foreground/60 uppercase mt-1 font-black">
+              Reputation Authority
             </span>
           </div>
         </Link>
 
-        {/* --- Desktop Navigation Interface --- */}
-        <nav className="hidden items-center gap-1 md:flex">
+        {/* --- 🖥️ DESKTOP NAVIGATION TRACK --- */}
+        <nav className="hidden items-center gap-2 lg:flex">
           {mainNav.map((link) => {
             const isActive = pathname === link.href;
             const isServices = link.href === "/services";
@@ -103,71 +114,73 @@ export default function Navbar() {
               >
                 <Link
                   href={link.href}
-                  aria-haspopup={isServices ? "true" : undefined}
-                  aria-expanded={isServices ? activeDropdown === "services" : undefined}
                   className={cn(
-                    "hover:text-primary group relative flex items-center gap-1.5 rounded-full px-5 py-2 text-[10px] font-bold tracking-widest uppercase transition-all duration-300",
+                    "relative flex items-center gap-2 rounded-full px-6 py-2.5 text-[11px] font-black tracking-[0.15em] uppercase transition-all duration-500",
                     isActive
-                      ? "text-primary bg-primary/5 shadow-[inset_0_0_20px_rgba(72,135,255,0.05)]"
-                      : "text-muted-foreground/80 hover:bg-secondary/50",
+                      ? "text-primary bg-primary/5 shadow-[0_0_30px_rgba(72,135,255,0.1)]"
+                      : "text-muted-foreground/70 hover:text-foreground hover:bg-white/5"
                   )}
                 >
                   {link.title}
                   {isServices && (
-                    <ChevronDown
-                      aria-hidden="true"
-                      className={cn(
-                        "h-3 w-3 transition-transform duration-300 opacity-50",
-                        activeDropdown === "services" &&
-                          "rotate-180 opacity-100",
-                      )}
+                    <ChevronDown className={cn(
+                      "h-3 w-3 transition-transform duration-500",
+                      activeDropdown === "services" && "rotate-180 text-primary"
+                    )} />
+                  )}
+                  {isActive && (
+                    <motion.div 
+                      layoutId="activeNav"
+                      className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-primary"
                     />
                   )}
                 </Link>
 
-                {/* --- Services Dropdown Panel --- */}
+                {/* --- 💎 MEGA DROPDOWN PANEL --- */}
                 {isServices && (
                   <AnimatePresence>
                     {activeDropdown === "services" && (
                       <motion.div
-                        initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                        initial={{ opacity: 0, y: 20, scale: 0.98 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                        className="absolute left-1/2 top-full mt-2 w-[650px] -translate-x-1/2 overflow-hidden rounded-[1.5rem] border border-border bg-background/95 p-8 shadow-2xl backdrop-blur-xl"
+                        exit={{ opacity: 0, y: 15, scale: 0.98 }}
+                        className="absolute left-1/2 top-full mt-4 w-[750px] -translate-x-1/2 overflow-hidden rounded-[2.5rem] border border-white/10 bg-background/95 p-10 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] backdrop-blur-3xl"
                       >
-                        <div className="grid grid-cols-2 gap-x-12 gap-y-8">
+                        <div className="grid grid-cols-2 gap-16">
                           {serviceCategories.map((cat, idx) => (
-                            <div key={idx} className="space-y-4">
-                              <div className="flex flex-col gap-1">
-                                <span className="text-primary font-mono text-[9px] font-black uppercase tracking-[0.2em]">
+                            <div key={idx} className="space-y-6">
+                              <div className="flex flex-col gap-2">
+                                <h4 className="text-primary font-mono text-[10px] font-black uppercase tracking-[0.3em]">
                                   {cat.title}
-                                </span>
-                                <p className="text-[10px] text-muted-foreground leading-tight">
+                                </h4>
+                                <p className="text-[11px] text-muted-foreground/60 leading-relaxed font-medium">
                                   {cat.description}
                                 </p>
                               </div>
-                              <div className="flex flex-col gap-2">
+                              <div className="grid gap-3">
                                 {cat.items.map((item, i) => (
                                   <Link
                                     key={i}
                                     href={item.href}
-                                    className="text-muted-foreground hover:text-primary group flex items-center gap-2 text-[11px] font-semibold transition-colors"
+                                    className="group/item flex items-center justify-between rounded-2xl border border-transparent bg-white/[0.02] px-5 py-4 transition-all duration-300 hover:border-white/10 hover:bg-white/[0.05]"
                                   >
-                                    <div className="h-1 w-1 rounded-full bg-primary/20 transition-all group-hover:w-2 group-hover:bg-primary" />
-                                    {item.title}
+                                    <span className="text-[12px] font-bold text-muted-foreground group-hover/item:text-foreground transition-colors">
+                                      {item.title}
+                                    </span>
+                                    <ArrowRight className="h-4 w-4 opacity-0 -translate-x-2 transition-all group-hover/item:opacity-100 group-hover/item:translate-x-0 text-primary" />
                                   </Link>
                                 ))}
                               </div>
                             </div>
                           ))}
                         </div>
-                        <div className="mt-8 border-t border-border pt-6 text-center">
+                        <div className="mt-10 border-t border-white/5 pt-8">
                           <Link
                             href="/services"
-                            className="text-primary group flex items-center justify-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] transition-opacity hover:opacity-80"
+                            className="group flex items-center justify-center gap-3 text-[11px] font-black uppercase tracking-[0.3em] text-muted-foreground hover:text-primary transition-colors"
                           >
-                            สำรวจบริการทั้งหมด{" "}
-                            <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
+                            Explore Universal Protocol
+                            <Zap className="h-4 w-4 fill-primary text-primary group-hover:scale-125 transition-transform" />
                           </Link>
                         </div>
                       </motion.div>
@@ -178,152 +191,133 @@ export default function Navbar() {
             );
           })}
 
-          <div className="mx-2 h-4 w-px bg-border/40" />
+          <div className="mx-4 h-6 w-px bg-white/10" />
 
-          {/* Authority Nodes */}
-          <div className="flex items-center gap-1">
-            <Link
-              href="https://www.unlink-th.com"
+          {/* 🌐 NODE SELECTOR */}
+          <div className="flex items-center gap-1 bg-white/5 rounded-full p-1 border border-white/5">
+            <Link 
+              href="https://registry.unlink-th.com" 
               target="_blank"
-              className="hover:text-primary text-muted-foreground/60 flex items-center gap-1.5 px-3 py-2 text-[9px] font-bold tracking-widest uppercase transition-all"
+              className="px-4 py-2 text-[9px] font-black tracking-widest text-muted-foreground hover:text-primary transition-all uppercase"
             >
-              <Globe className="h-3 w-3 opacity-40" />
-              Portal
-            </Link>
-            <Link
-              href="https://unlink-registry.com"
-              target="_blank"
-              className="hover:text-primary text-muted-foreground/60 flex items-center gap-1.5 px-3 py-2 text-[9px] font-bold tracking-widest uppercase transition-all"
-            >
-              <Database className="h-3 w-3 opacity-40" />
               Registry
             </Link>
-            <Link
-              href="https://audit.unlink-th.com"
+            <Link 
+              href="https://audit.unlink-th.com" 
               target="_blank"
-              className="hover:text-primary text-muted-foreground/60 flex items-center gap-1.5 px-3 py-2 text-[9px] font-bold tracking-widest uppercase transition-all"
+              className="px-4 py-2 text-[9px] font-black tracking-widest text-muted-foreground hover:text-primary transition-all uppercase"
             >
-              <Activity className="h-3 w-3 opacity-40" />
               Audit
             </Link>
           </div>
 
-          <div className="mx-4 h-5 w-px bg-border" />
-
           <Button
-            className="group relative h-11 overflow-hidden rounded-full bg-primary px-8 text-[10px] font-black uppercase tracking-widest text-primary-foreground shadow-[0_0_20px_rgba(16,185,129,0.1)] transition-all hover:scale-105 active:scale-95"
+            className="ml-4 h-12 rounded-2xl bg-primary px-8 text-[11px] font-black uppercase tracking-[0.2em] text-primary-foreground shadow-xl shadow-primary/20 transition-all hover:scale-105 active:scale-95"
             asChild
           >
             <Link href={navigationConfig.header.ctaLink}>
-              <Zap className="mr-2 h-3.5 w-3.5 fill-primary-foreground" />
               {navigationConfig.header.ctaText}
             </Link>
           </Button>
         </nav>
 
-        {/* --- Mobile Interface Toggle --- */}
+        {/* --- 📱 MOBILE INTERFACE TRIGGER --- */}
         <button
-        className="bg-secondary hover:bg-secondary/80 flex h-12 w-12 items-center justify-center rounded-2xl text-muted-foreground transition-all active:scale-90 md:hidden"
-        onClick={toggleMenu}
-        aria-label="Toggle Navigation"
+          className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/50 text-foreground transition-all active:scale-90 lg:hidden border border-white/10"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Access Core"
         >
-        {isOpen ? <X aria-hidden="true" className="h-6 w-6" /> : <Menu aria-hidden="true" className="h-6 w-6" />}
-        </button>      </div>
+          <AnimatePresence mode="wait">
+            {isOpen ? (
+              <motion.div 
+                key="close" 
+                initial={{ rotate: -90, opacity: 0 }} 
+                animate={{ rotate: 0, opacity: 1 }} 
+                exit={{ rotate: 90, opacity: 0 }}
+              >
+                <X className="h-6 w-6" />
+              </motion.div>
+            ) : (
+              <motion.div 
+                key="open" 
+                initial={{ rotate: 90, opacity: 0 }} 
+                animate={{ rotate: 0, opacity: 1 }} 
+                exit={{ rotate: -90, opacity: 0 }}
+              >
+                <Menu className="h-6 w-6" />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </button>
+      </div>
 
-      {/* --- Mobile Liaison Overlay (Full-screen Architecture) --- */}
+      {/* --- 📱 MOBILE ARCHITECTURE OVERLAY --- */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "100%" }}
-            transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-[100] flex flex-col bg-background md:hidden"
+            initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
+            animate={{ opacity: 1, backdropFilter: "blur(20px)" }}
+            exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
+            className="fixed inset-0 z-[2000] flex flex-col bg-background/95 lg:hidden"
           >
-            {/* Mobile Header Overlay */}
-            <div className="flex h-20 items-center justify-between px-8 border-b border-border">
-              <span className="font-mono text-xs font-black uppercase tracking-widest text-primary italic">
-                Navigation Protocol
+            <div className="flex h-24 items-center justify-between px-10 border-b border-white/5">
+              <span className="font-mono text-[10px] font-black uppercase tracking-[0.4em] text-primary italic">
+                Secure Channel
               </span>
               <button
                 onClick={closeMenu}
-                className="bg-secondary flex h-10 w-10 items-center justify-center rounded-xl"
+                className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/5"
               >
-                <X className="h-5 w-5" />
+                <X className="h-6 w-6" />
               </button>
             </div>
 
-            <div className="flex-1 overflow-y-auto px-6 py-8 space-y-10">
-              {/* Primary Navigation Tracks */}
-              <div className="flex flex-col gap-6">
-                {mainNav.map((link) => (
-                  <div key={link.href} className="space-y-4">
+            <div className="flex-1 overflow-y-auto px-10 py-12 space-y-12">
+              <div className="flex flex-col gap-8">
+                {mainNav.map((link, i) => (
+                  <motion.div
+                    key={link.href}
+                    initial={{ x: -20, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ delay: i * 0.1 }}
+                  >
                     <Link
                       href={link.href}
                       onClick={closeMenu}
                       className={cn(
-                        "flex items-center justify-between text-2xl font-black italic tracking-tighter uppercase",
-                        pathname === link.href
-                          ? "text-primary"
-                          : "text-foreground",
+                        "flex items-center justify-between text-4xl font-black italic tracking-tighter uppercase",
+                        pathname === link.href ? "text-primary" : "text-foreground"
                       )}
                     >
                       {link.title}
-                      <ArrowRight className="h-5 w-5 opacity-20" />
+                      <ArrowRight className="h-8 w-8 opacity-10" />
                     </Link>
-
-                    {/* Expandable Services for Mobile - Refined Grid */}
-                    {link.href === "/services" && (
-                      <div className="grid grid-cols-2 gap-3 mt-2 bg-secondary/10 p-4 rounded-2xl border border-border/50">
-                        {serviceCategories.flatMap(cat => cat.items).slice(0, 6).map((item, j) => (
-                          <Link
-                            key={j}
-                            href={item.href}
-                            onClick={closeMenu}
-                            className="bg-background/50 border border-border/40 rounded-xl px-3 py-3 text-[9px] font-bold text-muted-foreground hover:text-foreground transition-colors"
-                          >
-                            {item.title}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
+                  </motion.div>
                 ))}
               </div>
 
-              {/* Secure Action Sector */}
-              <div className="space-y-6 pt-10 border-t border-border">
-                <div className="grid grid-cols-3 gap-2">
+              <div className="space-y-8 pt-12 border-t border-white/5">
+                <div className="grid grid-cols-2 gap-4">
                   <Link
-                    href="https://www.unlink-th.com"
+                    href="https://registry.unlink-th.com"
                     target="_blank"
-                    onClick={closeMenu}
-                    className="flex flex-col items-center justify-center gap-2 rounded-2xl border border-border/60 bg-secondary/30 p-4 text-[9px] font-black uppercase tracking-widest text-muted-foreground transition-all active:scale-95"
+                    className="flex flex-col items-center justify-center gap-3 rounded-3xl border border-white/5 bg-white/5 p-8 text-[10px] font-black uppercase tracking-widest transition-all active:scale-95"
                   >
-                    <Globe className="h-5 w-5 opacity-70" />
-                    Portal
-                  </Link>
-                  <Link
-                    href="https://unlink-registry.com"
-                    target="_blank"
-                    onClick={closeMenu}
-                    className="flex flex-col items-center justify-center gap-2 rounded-2xl border border-border/60 bg-secondary/30 p-4 text-[9px] font-black uppercase tracking-widest text-muted-foreground transition-all active:scale-95"
-                  >
-                    <Database className="h-5 w-5 opacity-70" />
+                    <Database className="h-6 w-6 text-primary" />
                     Registry
                   </Link>
                   <Link
                     href="https://audit.unlink-th.com"
                     target="_blank"
-                    onClick={closeMenu}
-                    className="flex flex-col items-center justify-center gap-2 rounded-2xl border border-border/60 bg-secondary/30 p-4 text-[9px] font-black uppercase tracking-widest text-muted-foreground transition-all active:scale-95"
+                    className="flex flex-col items-center justify-center gap-3 rounded-3xl border border-white/5 bg-white/5 p-8 text-[10px] font-black uppercase tracking-widest transition-all active:scale-95"
                   >
-                    <Activity className="h-5 w-5 opacity-70" />
+                    <Activity className="h-6 w-6 text-primary" />
                     Audit
                   </Link>
                 </div>
+                
                 <Button
-                  className="h-16 w-full rounded-2xl bg-primary text-xs font-black uppercase tracking-[0.2em] text-primary-foreground"
+                  className="h-20 w-full rounded-3xl bg-primary text-sm font-black uppercase tracking-[0.3em] text-primary-foreground shadow-2xl shadow-primary/20"
                   asChild
                   onClick={closeMenu}
                 >
@@ -331,18 +325,11 @@ export default function Navbar() {
                     {navigationConfig.header.ctaText}
                   </Link>
                 </Button>
-                <div className="flex items-center justify-center gap-4 text-muted-foreground/60">
-                  <Shield className="h-4 w-4" />
-                  <span className="font-mono text-[8px] uppercase tracking-widest">
-                    AES-256 Encrypted Connection
-                  </span>
-                </div>
               </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-      {/* @identity 9mza */}
     </header>
   );
 }
