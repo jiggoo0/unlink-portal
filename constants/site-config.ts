@@ -8,7 +8,7 @@ export const siteConfig: SiteConfig = {
   description:
     "ศูนย์กลางการจัดการเชิงกลยุทธ์ (Strategic Portal) ภายใต้เครือข่าย UNLINK THAILAND เพื่อการบริหารจัดการชื่อเสียงและสิทธิในการเริ่มต้นใหม่",
 
-  url: "https://unlink-th.com",
+  url: "https://www.unlink-th.com",
   ogImage: "/og/og-main.webp",
 
   adsense: {
@@ -31,9 +31,9 @@ export const siteConfig: SiteConfig = {
     roleTh: "หัวหน้าฝ่ายสถาปัตยกรรมข้อมูลและการจัดการวิกฤต",
     description:
       "เบื้องหลังระบบการจัดการชื่อเสียงออนไลน์และฟื้นฟูโปรไฟล์บุคคลภายใต้ The Shield Protocol เพื่อมอบโอกาสการเริ่มต้นใหม่ให้กับผู้ที่ต้องการความเป็นส่วนตัวสูงสุด",
-    url: "https://www.me.aemdevweb.com",
+    url: "https://me.aemdevweb.com",
     sameAs: [
-      "https://www.me.aemdevweb.com",
+      "https://me.aemdevweb.com",
       "https://www.aemdevweb.com",
       "https://www.facebook.com/share/16jjyWbPyG/",
       "https://www.linkedin.com/in/alongkorl-aemdevweb",

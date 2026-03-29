@@ -62,7 +62,7 @@ export const metadata: Metadata = {
   },
   description: siteConfig.seo.defaultDescription,
   keywords: siteConfig.seo.keywords,
-  authors: [{ name: "9mza (AEMDEVWEB)", url: "https://www.me.aemdevweb.com" }],
+  authors: [{ name: "9mza (AEMDEVWEB)", url: "https://me.aemdevweb.com" }],
   creator: "Alongkorn Yomkerd | UNLINK-GLOBAL Strategic Unit",
   publisher: "AemDevWeb Studio (www.aemdevweb.com)",
   formatDetection: { email: false, address: false, telephone: false },

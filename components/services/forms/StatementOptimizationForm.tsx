@@ -211,7 +211,7 @@ export function StatementOptimizationForm() {
                 <input
                   required
                   type="email"
-                  placeholder="your-email@example.com"
+                  placeholder="support@unlink-th.com"
                   value={formData.email}
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })

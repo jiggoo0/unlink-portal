@@ -9,7 +9,7 @@ export default function ReputationShield() {
     siteConfig;
 
   // ป้องกัน undefined สำหรับ developer
-  const devUrl = developer?.url || "https://aemdevweb.com";
+  const devUrl = developer?.url || "https://www.aemdevweb.com";
   const devName = developer?.name || "AemDevWeb";
 
   const reputationSchema: WithContext<Thing>[] = [
