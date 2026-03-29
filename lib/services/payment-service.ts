@@ -6,7 +6,7 @@ import { db } from "@unlink/shared/db";
  * จัดการข้อมูลการชำระเงิน และการเปลี่ยนสถานะเคสหลังได้รับเงิน
  */
 
-export interface CreatePaymentRevenueParams {
+interface CreatePaymentRevenueParams {
   id: string;
   amount: number;
   service: string;

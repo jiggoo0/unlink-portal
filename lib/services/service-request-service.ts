@@ -7,7 +7,7 @@ import { db } from "@unlink/shared/db";
  * มาตรฐาน: Shared Turso (SQLite Cloud) - Strategic Core (Post-Supabase migration)
  */
 
-export interface CreateServiceRequestParams {
+interface CreateServiceRequestParams {
   id: string;
   serviceType: string;
   status: string;

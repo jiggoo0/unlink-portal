@@ -53,19 +53,19 @@ export default function ProtocolStepper() {
         <AnimatedCard
           key={idx}
           delay={idx * 0.1}
-          className="lab-card group hover:border-primary/30 relative p-6 transition-all duration-500"
+          className="authority-card group relative p-6 transition-all duration-500"
         >
           {/* Icon Architecture */}
           <div
-            className={`bg-background border-border group-hover:border-primary/40 mb-6 flex h-14 w-14 items-center justify-center rounded-xl border shadow-sm transition-all duration-500 group-hover:scale-110`}
+            className={`bg-card border-border group-hover:border-secondary/40 mb-6 flex h-14 w-14 items-center justify-center rounded-xl border shadow-sm transition-all duration-500 group-hover:scale-110`}
           >
             <step.icon
-              className={`h-7 w-7 ${step.color} group-hover:text-primary transition-colors`}
+              className={`h-7 w-7 text-secondary group-hover:text-secondary transition-colors`}
             />
           </div>
 
           {/* Protocol Specifications */}
-          <h3 className="mb-3 text-xl font-bold tracking-tight">
+          <h3 className="mb-3 text-xl font-bold tracking-tight text-primary">
             {step.title}
           </h3>
           <p className="text-muted-foreground text-sm leading-relaxed font-light">
@@ -73,7 +73,7 @@ export default function ProtocolStepper() {
           </p>
 
           {/* Authentication Badge */}
-          <div className="bg-muted border-border absolute -top-3 -right-3 flex h-8 w-8 items-center justify-center rounded-full border font-mono text-[10px] font-bold shadow-sm">
+          <div className="bg-muted border-border absolute -top-3 -right-3 flex h-8 w-8 items-center justify-center rounded-full border font-mono text-[10px] font-bold shadow-sm text-primary">
             0{idx + 1}
           </div>
         </AnimatedCard>

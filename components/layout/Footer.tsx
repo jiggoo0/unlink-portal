@@ -161,7 +161,7 @@ export default function Footer() {
                   target="_blank"
                   className="text-primary hover:text-foreground flex items-center justify-between text-[10px] font-bold tracking-widest uppercase transition-all"
                 >
-                  Source Node <ExternalLink className="h-3 w-3" />
+                  Source Node <ExternalLink aria-hidden="true" className="h-3 w-3" />
                 </a>
               </div>
             </div>
@@ -174,6 +174,12 @@ export default function Footer() {
               © {new Date().getFullYear()} UNLINK-GLOBAL • Registry Status:
               <span className="text-primary ml-2">OPERATIONAL</span>
             </p>
+            {/* Intentional Signatures */}
+            <div className="mt-1 flex flex-wrap gap-3 text-[8px] font-black tracking-widest text-muted-foreground/30 uppercase">
+              <span>นายอลงกรณ์ ยมเกิด</span>
+              <span>9mza</span>
+              <span>เจ้าป่า</span>
+            </div>
             <p className="text-muted-foreground/60 font-mono text-[7px] tracking-[0.5em] uppercase">
               NODE_ID: 0x_ACCREDITED_2026_STABLE
             </p>

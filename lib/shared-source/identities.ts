@@ -1,4 +1,4 @@
-import { Identity } from "@unlink/shared/types";
+import { Identity } from "./types";
 
 /**
  * 🆔 UNLINK-GLOBAL: CORE IDENTITY REGISTRY (Source of Truth)
@@ -12,7 +12,7 @@ export const coreIdentities: Identity[] = [
   {
     id: "UL-P-001",
     type: "person",
-    name: "9mza / 9mzm",
+    name: "9mza / Alongkorn Yomkerd",
     gender: "Male",
     expertise: "Strategic Intelligence & InfoSec",
     bio: "Founding Architect of The Shield Protocol. Specializing in high-stakes reputation management and digital identity recovery.",
@@ -20,9 +20,14 @@ export const coreIdentities: Identity[] = [
     last_checked: new Date().toISOString(),
     created_at: "2024-01-01T00:00:00Z",
     updated_at: new Date().toISOString(),
+    sameAs: [
+      "https://me.aemdevweb.com",
+      "https://www.aemdevweb.com",
+      "https://github.com/9mza",
+    ],
     metadata: JSON.stringify({
       alias: "9mza",
-      role: "Founder",
+      role: "Founder / Ultimate Authority Owner",
       tags: ["Infrastructure", "Security", "Crisis Management"],
     }),
   },
@@ -92,7 +97,43 @@ export const coreIdentities: Identity[] = [
     }),
   },
 
-  // --- 🏢 1 COMPANY (ORGANIZATION) ---
+  // --- 🍜 2 INDIVIDUALS FROM CH.SAHACHAI (nextjs_nuddle) ---
+  {
+    id: "UL-P-006",
+    type: "person",
+    name: "เฮียเนก (Mr. Nake)",
+    gender: "Male",
+    expertise: "Traditional Charcoal Roasted Pork & Noodle Crafting",
+    bio: "The master chef behind Ch. Sahachai. 9 years of excellence in traditional BBQ pork roasting and handmade egg noodle standards in Tak Province.",
+    trust_level: 9,
+    last_checked: new Date().toISOString(),
+    created_at: "2024-03-26T00:00:00Z",
+    updated_at: new Date().toISOString(),
+    metadata: JSON.stringify({
+      alias: "เฮียเนก",
+      role: "Master Chef",
+      tags: ["Culinary Art", "BBQ Specialist", "Traditional Recipes"],
+    }),
+  },
+  {
+    id: "UL-P-007",
+    type: "person",
+    name: "เจ๊ตั๊ก (Mrs. Tuk)",
+    gender: "Female",
+    expertise: "Quality Control & Service Excellence",
+    bio: "Strategic operator and quality controller for Ch. Sahachai. Ensuring the freshness of premium crab meat and delivering hospitality with a 9-year track record.",
+    trust_level: 9,
+    last_checked: new Date().toISOString(),
+    created_at: "2024-03-26T00:00:00Z",
+    updated_at: new Date().toISOString(),
+    metadata: JSON.stringify({
+      alias: "เจ๊ตั๊ก",
+      role: "Service Director",
+      tags: ["Quality Assurance", "Customer Service", "Ingredient Sourcing"],
+    }),
+  },
+
+  // --- 🏢 2 COMPANIES (ORGANIZATIONS) ---
   {
     id: "UL-C-001",
     type: "organization",
@@ -109,7 +150,72 @@ export const coreIdentities: Identity[] = [
       operator: "AEMDEVWEB",
     }),
   },
+  {
+    id: "UL-C-002",
+    type: "organization",
+    name: "ช.สหชัย เกี๊ยวปูหมูแดง (Ch. Sahachai)",
+    industry: "Food & Beverage (Traditional Cuisine)",
+    key_person_id: "UL-P-006",
+    assets_summary:
+      "9 Years of Culinary Excellence • Signature Crab Noodles & Charcoal Roasted Pork",
+    trust_level: 9,
+    last_checked: new Date().toISOString(),
+    created_at: "2024-03-26T00:00:00Z",
+    updated_at: new Date().toISOString(),
+    metadata: JSON.stringify({
+      slogan: "9 ปี แห่งความภูมิใจ จากหัวใจเฮียเนกและเจ๊ตั๊ก",
+      address: "จ.ตาก (สะพานกิตติขจร)",
+      branch: "Main Branch (Tak)",
+      social: {
+        facebook: "SahachaiNoodleTak",
+        phone: "083-630-1174",
+      },
+    }),
+  },
+
+  // --- 👥 1 INDIVIDUAL (PERSON) - JP-VISUAL&DOCS ---
+  {
+    id: "UL-P-008",
+    type: "person",
+    name: "เจ้าป่า (Chao Pa)",
+    gender: "Male",
+    expertise: "Digital Identity Verification & Reputation Management",
+    bio: "Official representative and verification officer for UNLINK-TH. Specializing in institutional trust linkage and E-E-A-T optimization.",
+    trust_level: 10,
+    last_checked: new Date().toISOString(),
+    created_at: "2024-03-26T00:00:00Z",
+    updated_at: new Date().toISOString(),
+    sameAs: ["https://jpvisouldocs.website", "https://jpvisouldocs.shop"],
+    metadata: JSON.stringify({
+      alias: "เจ้าป่า",
+      role: "Verification Officer",
+      tags: ["Verification", "Trust", "E-E-A-T"],
+    }),
+  },
+
+  // --- 🏢 1 ORGANIZATION - JP-VISUAL&DOCS ---
+  {
+    id: "UL-C-003",
+    type: "organization",
+    name: 'JP-Visual&Docs ("เจ้าป่า")',
+    industry: "Digital Verification & Institutional Trust Services",
+    key_person_id: "UL-P-008",
+    assets_summary:
+      "Official Representative for UNLINK-TH Verification Services",
+    trust_level: 10,
+    last_checked: new Date().toISOString(),
+    created_at: "2024-03-26T00:00:00Z",
+    updated_at: new Date().toISOString(),
+    sameAs: ["https://jpvisouldocs.website", "https://jpvisouldocs.shop"],
+    metadata: JSON.stringify({
+      role: "Verification Node",
+      slogan: "The Guardian of Digital Identity",
+      operator: "เจ้าป่า",
+    }),
+  },
 ];
 
 export const getIdentityById = (id: string) =>
   coreIdentities.find((identity) => identity.id === id);
+
+/* @identity 9mza */

@@ -46,11 +46,11 @@ export default function CaseTrackerInfo() {
           {STEPS.map((step, idx) => (
             <div key={idx} className="relative">
               {idx < STEPS.length - 1 && (
-                <div className="hidden lg:block absolute top-6 left-full w-full h-[1px] bg-gradient-to-r from-[#D4AF37]/50 to-transparent z-0" />
+                <div className="hidden lg:block absolute top-6 left-full w-full h-[1px] bg-gradient-to-r from-secondary/50 to-transparent z-0" />
               )}
               <div className="relative z-10">
-                <div className="w-12 h-12 bg-[#D4AF37]/10 rounded-full flex items-center justify-center mb-4 border border-[#D4AF37]/20">
-                  <step.icon className="text-[#D4AF37]" size={24} />
+                <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mb-4 border border-secondary/20">
+                  <step.icon className="text-secondary" size={24} />
                 </div>
                 <h4 className="text-foreground font-bold mb-2">{step.title}</h4>
                 <p className="text-muted-foreground text-xs leading-relaxed">
@@ -61,9 +61,9 @@ export default function CaseTrackerInfo() {
           ))}
         </div>
 
-        <div className="mt-12 p-6 bg-[#D4AF37]/5 rounded-2xl border border-[#D4AF37]/10 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="mt-12 p-6 bg-secondary/5 rounded-2xl border border-secondary/10 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4 text-left">
-            <div className="bg-[#D4AF37] p-2 rounded-lg text-black">
+            <div className="bg-secondary p-2 rounded-lg text-secondary-foreground">
               <ShieldCheck size={24} />
             </div>
             <div>
@@ -75,7 +75,7 @@ export default function CaseTrackerInfo() {
               </p>
             </div>
           </div>
-          <button className="whitespace-nowrap bg-secondary hover:bg-secondary/80 text-[#D4AF37] px-6 py-2 rounded-full text-sm font-bold border border-[#D4AF37]/20 transition-all">
+          <button className="whitespace-nowrap bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-2 rounded-full text-sm font-bold transition-all">
             ทดลองใช้ระบบ Demo
           </button>
         </div>

@@ -3,16 +3,24 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import {
-  Shield,
-  ShieldCheck,
-  Lock,
-  FileCheck,
   ExternalLink,
-  ArrowRight,
   Database,
   Search,
+  ShieldCheck,
+  TrendingUp,
+  FileText,
 } from "lucide-react";
 import { siteConfig } from "@/constants/site-config";
+import Hero from "@/components/sections/Hero";
+import ServicesGrid from "@/components/sections/ServicesGrid";
+import Methods from "@/components/sections/Methods";
+import ProtocolStepper from "@/components/sections/ProtocolStepper";
+import LatestCaseStudies from "@/components/sections/LatestCaseStudies";
+import LatestInsights from "@/components/sections/LatestInsights";
+import { PortfolioSection } from "@/components/sections/Portfolio";
+import FaqSection from "@/components/sections/FaqSection";
+import CaseTrackerInfo from "@/components/sections/CaseTrackerInfo";
+import SectionHeader from "@/components/shared/SectionHeader";
 
 /**
  * UNLINK-GLOBAL | Institutional Authority Landing Page (2026)
@@ -28,90 +36,32 @@ export function generateMetadata(): Metadata {
   };
 }
 
-const serviceDisplayCategories = [
-  {
-    title: "Reputation Fix",
-    description: "ปฏิบัติการกู้คืนและเยียวยาภาพลักษณ์ดิจิทัลในภาวะวิกฤตอย่างเร่งด่วน",
-    icon: Shield,
-    href: "/services#reputation-fix",
-  },
-  {
-    title: "Reputation Protection",
-    description: "การอภิบาลและเสริมสร้างเกียรติภูมิระดับสถาบันเพื่อความยั่งยืน",
-    icon: ShieldCheck,
-    href: "/services#reputation-protection",
-  },
-  {
-    title: "IP Confirmation",
-    description: "การรับรองและพิทักษ์สิทธิในทรัพย์สินทางปัญญาภายใต้มาตรฐานความลับ",
-    icon: FileCheck,
-    href: "/services#ip-confirmation",
-  },
-  {
-    title: "PDPA Enforcement",
-    description: "การบังคับใช้สิทธิตามกฎหมายคุ้มครองข้อมูลส่วนบุคคลเพื่อทวงคืนความยุติธรรม",
-    icon: Lock,
-    href: "/services#pdpa-enforcement",
-  },
-];
-
 export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       {/* 1. Hero Section: Institutional Authority */}
-      <section className="relative py-20 md:py-32 overflow-hidden border-b border-border">
-        <div className="container relative z-10">
-          <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-bold tracking-widest uppercase mb-6">
-              <Shield className="w-3 h-3" />
-              <span>Institutional Grade Security</span>
-            </div>
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-primary">
-              สถาปนา <span className="text-secondary">อำนาจดิจิทัล</span>{" "}
-              <br />
-              ในระบบนิเวศระดับสากล
-            </h1>
-            <p className="text-xl text-muted-foreground mb-10 leading-relaxed max-w-2xl">
-              UNLINK มอบบริการบริหารจัดการชื่อเสียงระดับสูง การคุ้มครองทรัพย์สินทางปัญญา
-              และการบังคับใช้สิทธิความเป็นส่วนตัวของข้อมูล สำหรับองค์กรและบุคคลระดับสูง
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href={siteConfig.contact.lineUrl}
-                className="px-8 py-4 bg-primary text-primary-foreground rounded-md font-semibold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20"
-              >
-                ปรึกษาผู้เชี่ยวชาญระดับยุทธศาสตร์
-              </Link>
-              <Link
-                href="#services"
-                className="px-8 py-4 bg-white border border-border text-primary rounded-md font-semibold hover:bg-slate-50 transition-all"
-              >
-                สำรวจขอบข่ายบริการ
-              </Link>
-            </div>
-          </div>
-        </div>
-        {/* Background decorative element */}
-        <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[800px] h-[800px] bg-secondary/5 rounded-full blur-3xl -z-10" />
-      </section>
+      <Hero />
 
       {/* 2. Strategic Compliance Bar */}
-      <section className="border-b border-border bg-white py-6">
+      <section className="border-b border-border bg-white py-8 md:py-10">
         <div className="container">
-          <div className="flex flex-wrap justify-center md:justify-between items-center gap-8 opacity-60">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 opacity-70">
             {[
               { label: "Data Encryption", value: "AES-256 SECURE" },
               { label: "Privacy Protocol", value: "PDPA COMPLIANT" },
               { label: "Case Handling", value: "NON-DISCLOSURE" },
               { label: "Operation", value: "24/7 ACTIVE" },
             ].map((signal, i) => (
-              <div key={i} className="flex items-center gap-3">
-                <div className="h-1.5 w-1.5 rounded-full bg-secondary" />
+              <div
+                key={i}
+                className="flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-3 text-center md:text-left"
+              >
+                <div className="h-2 w-2 rounded-full bg-secondary shrink-0 mt-1 md:mt-1.5" />
                 <div className="flex flex-col">
-                  <span className="text-[8px] font-mono tracking-[0.3em] text-muted-foreground uppercase">
+                  <span className="text-[8px] md:text-[9px] font-mono tracking-[0.2em] md:tracking-[0.3em] text-muted-foreground uppercase">
                     {signal.label}
                   </span>
-                  <span className="text-[10px] font-black tracking-widest text-primary uppercase">
+                  <span className="text-[9px] md:text-[11px] font-black tracking-widest text-primary uppercase">
                     {signal.value}
                   </span>
                 </div>
@@ -122,46 +72,48 @@ export default function HomePage() {
       </section>
 
       {/* 3. Services Section: Core Solutions */}
-      <section id="services" className="py-24 bg-slate-50">
+      <section id="services" className="py-20 md:py-32 bg-slate-50">
         <div className="container">
-          <div className="mb-16 text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">
-              ยุทธศาสตร์หลักในการบริหารจัดการ
-            </h2>
-            <p className="text-muted-foreground">
-              โปรโตคอลเฉพาะทางของเราได้รับการออกแบบมาเพื่อจัดการกับความท้าทายทางดิจิทัลที่ซับซ้อนที่สุด
-              ด้วยความแม่นยำ อำนาจทางกฎหมาย และความเป็นเลิศทางเทคนิค
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {serviceDisplayCategories.map((service) => (
-              <div
-                key={service.title}
-                className="authority-card group bg-white"
-              >
-                <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-secondary/20 transition-colors">
-                  <service.icon className="w-6 h-6 text-secondary" />
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-primary">
-                  {service.title}
-                </h3>
-                <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
-                  {service.description}
-                </p>
-                <Link
-                  href={service.href}
-                  className="inline-flex items-center text-sm font-semibold text-secondary hover:underline"
-                >
-                  รายละเอียดเพิ่มเติม <ArrowRight className="ml-2 w-4 h-4" />
-                </Link>
-              </div>
-            ))}
+          <SectionHeader
+            align="center"
+            badge={
+              <>
+                <ShieldCheck className="h-4 w-4" />
+                <span>ยุทธศาสตร์การจัดการข้อมูล</span>
+              </>
+            }
+            title="บริการหลักระดับสถาบัน"
+            description="โปรโตคอลเฉพาะทางของเราได้รับการออกแบบมาเพื่อจัดการกับความท้าทายทางดิจิทัลที่ซับซ้อนที่สุด ด้วยความแม่นยำ อำนาจทางกฎหมาย และความเป็นเลิศทางเทคนิค"
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <ServicesGrid limit={6} />
           </div>
         </div>
       </section>
 
-      {/* 4. Ecosystem Links: Registry & Audit */}
-      <section className="py-24 bg-white border-y border-border">
+      {/* 4. Methods Section: Strategic Execution */}
+      <Methods />
+
+      {/* 5. Protocol Stepper: Operational Flow */}
+      <section className="py-24 bg-slate-50 border-y border-border">
+        <div className="container">
+          <SectionHeader
+            align="center"
+            badge={
+              <>
+                <TrendingUp className="h-4 w-4" />
+                <span>กระบวนการปฏิบัติงาน</span>
+              </>
+            }
+            title="4 ระยะสู่ความสำเร็จ"
+            description="เราดำเนินการอย่างเป็นระบบและโปร่งใส เพื่อให้คุณมั่นใจในทุกขั้นตอนของปฏิบัติการกู้คืนและปกป้องชื่อเสียง"
+          />
+          <ProtocolStepper />
+        </div>
+      </section>
+
+      {/* 6. Ecosystem Links: Registry & Audit */}
+      <section className="py-24 bg-white">
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12">
             <div className="p-10 bg-slate-50 border border-border rounded-2xl shadow-sm hover:shadow-md transition-shadow">
@@ -197,14 +149,64 @@ export default function HomePage() {
                 href="https://audit.unlink.global"
                 className="inline-flex items-center px-6 py-3 bg-secondary text-secondary-foreground rounded-md font-medium hover:bg-secondary/90 transition-colors"
               >
-                เริ่มการตรวจสอบสิทธิ์ <ExternalLink className="ml-2 w-4 h-4" />
+                เริ่มการตรวจสอบสิทธิ์{" "}
+                <ExternalLink aria-hidden="true" className="ml-2 w-4 h-4" />
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 5. Trust Section */}
+      {/* 7. Social Proof: Latest Case Studies */}
+      <section className="py-24 bg-slate-50 border-y border-border">
+        <div className="container">
+          <SectionHeader
+            align="center"
+            badge={
+              <>
+                <ShieldCheck className="h-4 w-4" />
+                <span>บันทึกปฏิบัติการจริง</span>
+              </>
+            }
+            title="กรณีศึกษาล่าสุด"
+            description="ตัวอย่างความสำเร็จในการจัดการวิกฤตชื่อเสียงและการปกป้องสิทธิ์ดิจิทัลสำหรับลูกค้าของเรา"
+          />
+          <LatestCaseStudies />
+        </div>
+      </section>
+
+      {/* 8. Insights: Strategic Analysis */}
+      <section className="py-24 bg-white">
+        <div className="container">
+          <SectionHeader
+            align="center"
+            badge={
+              <>
+                <FileText className="h-4 w-4" />
+                <span>คลังความรู้เชิงยุทธศาสตร์</span>
+              </>
+            }
+            title="บทวิเคราะห์และข้อมูลเชิงลึก"
+            description="ทำความเข้าใจกลไกของโลกดิจิทัลและวิธีการปกป้องตัวตนของคุณในยุคข้อมูลข่าวสาร"
+          />
+          <LatestInsights />
+        </div>
+      </section>
+
+      {/* 9. Portfolio Section */}
+      <PortfolioSection />
+
+      {/* 10. FAQ Section */}
+      <FaqSection />
+
+      {/* 11. Case Tracker Section */}
+      <section className="py-24 bg-slate-50 border-t border-border">
+        <div className="container">
+          <CaseTrackerInfo />
+        </div>
+      </section>
+
+      {/* 12. Trust Section (CTA) */}
       <section className="py-24 bg-primary text-primary-foreground">
         <div className="container text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-8">

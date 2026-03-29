@@ -83,18 +83,18 @@ export default function Methods() {
           <AnimatedSection
             key={idx}
             delay={idx * 0.15}
-            className="lab-card group hover:bg-muted/5 flex flex-col justify-between p-10 transition-all duration-500"
+            className="authority-card group flex flex-col justify-between p-10 transition-all duration-500"
           >
             <div className="space-y-6">
-              <div className="bg-primary/5 border-primary/10 group-hover:bg-primary/20 flex h-14 w-14 items-center justify-center rounded-2xl border transition-all duration-500 group-hover:scale-110">
-                <method.icon className="text-primary glow-gold h-7 w-7" />
+              <div className="bg-secondary/10 border-secondary/20 group-hover:bg-secondary/20 flex h-14 w-14 items-center justify-center rounded-2xl border transition-all duration-500 group-hover:scale-110">
+                <method.icon className="text-secondary h-7 w-7" />
               </div>
 
               <div className="space-y-2">
-                <p className="text-primary/60 font-mono text-[10px] tracking-[0.25em] uppercase">
+                <p className="text-muted-foreground font-mono text-[10px] tracking-[0.25em] uppercase">
                   {method.subtitle}
                 </p>
-                <h3 className="text-2xl font-bold tracking-tight">
+                <h3 className="text-2xl font-bold tracking-tight text-primary">
                   {method.title}
                 </h3>
               </div>

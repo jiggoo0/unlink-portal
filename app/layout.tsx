@@ -3,12 +3,13 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Noto_Sans_Thai, JetBrains_Mono } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
+import Script from "next/script";
 import { siteConfig } from "@/constants/site-config";
 import { Analytics } from "@vercel/analytics/react";
 import { Suspense } from "react";
 import JsonLd from "@/components/shared/JsonLd";
 import ReputationShield from "@/components/layout/ReputationShield";
-import PdpaConsent from "@/components/layout/PdpaConsent";
+import { CookieBanner } from "@/components/CookieBanner";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { Toaster } from "@/components/ui/sonner";
@@ -66,7 +67,7 @@ export const metadata: Metadata = {
   publisher: "AemDevWeb Studio (www.aemdevweb.com)",
   formatDetection: { email: false, address: false, telephone: false },
   verification: {
-    google: "google-site-verification-pending", // คุณสามารถอัปเดตค่าจริงได้จาก Search Console
+    google: "google-site-verification-pending", // ป้อนรหัสจาก Google Search Console ที่นี่
   },
   other: {
     "google-adsense-account": "ca-pub-7695158092776507",
@@ -120,6 +121,12 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="bg-background text-foreground selection:bg-primary/20 selection:text-primary relative flex min-h-screen flex-col font-sans antialiased">
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7695158092776507"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
         <Providers>
           <NextTopLoader
             color="oklch(var(--color-primary))"
@@ -133,11 +140,13 @@ export default function RootLayout({
           <JsonLd data={getWebSiteSchema()} />
 
           <ReputationShield />
-          <PdpaConsent />
+          <CookieBanner />
           <Toaster />
 
           <Navbar />
-          <main className="flex-1">{children}</main>
+          <main id="main-content" className="flex-1">
+            {children}
+          </main>
           <Footer />
 
           <Analytics />

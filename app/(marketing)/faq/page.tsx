@@ -126,7 +126,7 @@ export default function FAQPage() {
         <div className="grid gap-16 lg:grid-cols-12">
           {/* Secure Liaison Side Info */}
           <aside className="lg:col-span-4">
-            <div className="lab-card border-border/40 bg-muted/5 sticky top-28 p-8">
+            <div className="authority-card sticky top-28 p-8">
               <Lock className="text-primary mb-6 h-8 w-8" />
               <h3 className="mb-4 text-xl font-bold tracking-tight">
                 Secure Liaison
@@ -167,7 +167,7 @@ export default function FAQPage() {
                     <AccordionItem
                       key={idx}
                       value={`${category.id}-${idx}`}
-                      className="lab-card border-border/40 bg-muted/5 hover:bg-muted/10 overflow-hidden rounded-2xl px-8 transition-all duration-500"
+                      className="authority-card overflow-hidden rounded-2xl px-8 transition-all duration-500"
                     >
                       <AccordionTrigger className="hover:text-primary py-8 text-left text-lg font-bold tracking-tight transition-colors hover:no-underline">
                         {item.q}

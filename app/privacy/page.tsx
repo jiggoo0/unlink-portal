@@ -10,27 +10,29 @@ import {
   Server,
   FileKey,
   ChevronRight,
+  Globe,
+  Scale,
 } from "lucide-react";
 import { SecureChannel } from "@/components/sections/SecureChannel";
 import { siteConfig } from "@/constants/site-config";
 import SectionHeader from "@/components/shared/SectionHeader";
 
 /**
- * UNLINK-TH | Confidentiality & Privacy Protocol (2026)
+ * UNLINK-TH | Master Privacy Policy (Unified PDPA/GDPR)
  * -------------------------------------------------------------------------
  * มาตรฐานการคุ้มครองข้อมูลภายใต้หลักการ Zero-Knowledge Security
- * ออกแบบเพื่อรองรับมาตรฐาน PDPA และพันธสัญญาการรักษาความลับสากล
+ * ออกแบบเพื่อรองรับมาตรฐาน PDPA (Thailand) และ GDPR (EU/International)
  * Managed by: อลงกรณ์ ยมเกิด (นายเอ็มซ่ามากส์) - Technical Data Architect
  */
 
 export const metadata: Metadata = {
-  title: `Confidentiality & Privacy Protocol | ${siteConfig.name}`,
+  title: `Master Privacy Policy | ${siteConfig.name}`,
   description:
-    "นโยบายการรักษาความลับและมาตรฐานการจัดการข้อมูลส่วนบุคคลภายใต้กฎหมาย PDPA ของ UNLINK-TH เพื่อความปลอดภัยสูงสุดของลูกค้าระดับ VIP",
+    "นโยบายการรักษาความลับและมาตรฐานการจัดการข้อมูลส่วนบุคคลภายใต้กฎหมาย PDPA และ GDPR ของ UNLINK-TH เพื่อความปลอดภัยสูงสุดของลูกค้าระดับ VIP",
 };
 
 export default function PrivacyPage() {
-  const lastUpdated = "29 มกราคม 2026";
+  const lastUpdated = "29 มีนาคม 2026";
 
   const protocols = [
     {
@@ -55,7 +57,7 @@ export default function PrivacyPage() {
 
   return (
     <div className="pb-24">
-      {/* 1. Technical Header Section: สัญญาณความปลอดภัยหลัก */}
+      {/* 1. Technical Header Section */}
       <header className="bg-muted/10 border-border/50 relative overflow-hidden border-b py-32">
         <div className="bg-primary/5 pointer-events-none absolute top-0 right-0 -z-10 h-[500px] w-[500px] rounded-full blur-[120px]" />
         <div className="relative z-10 container">
@@ -66,14 +68,14 @@ export default function PrivacyPage() {
                 <span>ความสบายใจของคุณคือภารกิจสำคัญที่สุดของเรา</span>
               </>
             }
-            title="Privacy"
+            title="Master Privacy"
             titleHighlight="& Protection"
-            description="เพราะชื่อเสียงและการเริ่มต้นใหม่ของคุณเริ่มต้นที่ความลับของเรา เราจึงวางระบบจัดการข้อมูลที่เข้มงวดที่สุดเพื่อปกป้องสิทธิส่วนบุคคลตามมาตรฐานสูงสุด"
+            description="เพราะชื่อเสียงและการเริ่มต้นใหม่ของคุณเริ่มต้นที่ความลับของเรา เราจึงวางระบบจัดการข้อมูลที่เข้มงวดที่สุดเพื่อปกป้องสิทธิส่วนบุคคลตามมาตรฐาน PDPA และ GDPR"
             className="mb-8"
           />
           <div className="flex items-center gap-4 pt-4">
             <span className="text-muted-foreground/40 border-border/10 rounded border px-3 py-1 font-mono text-[10px] tracking-widest uppercase">
-              Document ID: UTH-PRV-2026
+              Document ID: UTH-MPRV-2026
             </span>
             <span className="text-muted-foreground/40 font-mono text-[10px] tracking-widest uppercase">
               Last Updated: {lastUpdated}
@@ -82,13 +84,13 @@ export default function PrivacyPage() {
         </div>
       </header>
 
-      {/* 2. Privacy Pillars Grid: รากฐานการคุ้มครองข้อมูล */}
+      {/* 2. Privacy Pillars Grid */}
       <section className="container py-24">
         <div className="grid gap-8 md:grid-cols-3">
           {protocols.map((p, idx) => (
             <div
               key={idx}
-              className="lab-card group border-border/40 bg-muted/5 hover:bg-muted/10 p-10 transition-all duration-500"
+              className="authority-card group p-10 transition-all duration-500"
             >
               <div className="bg-primary/5 group-hover:bg-primary/10 mb-8 w-fit rounded-2xl p-3 transition-colors">
                 <p.icon className="text-primary/70 h-8 w-8" />
@@ -104,24 +106,35 @@ export default function PrivacyPage() {
         </div>
       </section>
 
-      {/* 3. Formal Regulatory Content: มาตรฐานทางกฎหมายและเทคนิค */}
+      {/* 3. Formal Regulatory Content */}
       <section className="container pb-32">
-        <div className="prose prose-invert prose-h2:text-3xl prose-h2:tracking-tighter prose-h3:text-primary prose-p:text-muted-foreground prose-p:leading-relaxed prose-strong:text-foreground mx-auto max-w-4xl">
+        <div className="prose prose-slate prose-h2:text-3xl prose-h2:tracking-tighter prose-h3:text-primary prose-p:text-muted-foreground prose-p:leading-relaxed prose-strong:text-foreground mx-auto max-w-4xl">
           <h2 className="border-border/10 border-b pb-4 tracking-tighter uppercase">
-            Data Protection Standard (PDPA Compliance)
+            Unified Data Protection Standard (PDPA & GDPR)
           </h2>
           <p className="text-lg">
             {siteConfig.name} ในฐานะผู้ควบคุมข้อมูลส่วนบุคคล (Data Controller)
-            ภายใต้การกำกับดูแลของทีมวิศวกรรมข้อมูล
             ยึดถือจริยธรรมดิจิทัลในการจัดการข้อมูลสูงสุด
-            นโยบายฉบับนี้คือพันธสัญญาในการคุ้มครองสิทธิความเป็นส่วนตัวของท่าน
+            นโยบายฉบับนี้คือพันธสัญญาในการคุ้มครองสิทธิความเป็นส่วนตัวของท่านตามมาตรฐานสากล
           </p>
 
           <div className="mt-16 grid gap-12">
             <div className="space-y-4">
               <h3 className="flex items-center gap-3 font-bold tracking-tight">
+                <Globe className="h-5 w-5" />
+                1. มาตรฐานการคุ้มครองข้อมูลสากล
+              </h3>
+              <p>
+                เราปฏิบัติตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 (PDPA) ของประเทศไทย
+                และยึดถือหลักการ General Data Protection Regulation (GDPR) ของสหภาพยุโรป
+                เพื่อให้มั่นใจว่าข้อมูลของท่านจะได้รับการดูแลด้วยมาตรฐานสูงสุดไม่ว่าท่านจะอยู่ที่ใดในโลก
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="flex items-center gap-3 font-bold tracking-tight">
                 <Server className="h-5 w-5" />
-                1. ขอบเขตการจัดเก็บข้อมูล (Data Minimization)
+                2. ขอบเขตการจัดเก็บข้อมูล (Data Minimization)
               </h3>
               <p>
                 เรายึดถือหลักการจัดเก็บข้อมูลเท่าที่จำเป็น (Minimalism)
@@ -147,7 +160,7 @@ export default function PrivacyPage() {
             <div className="space-y-4">
               <h3 className="flex items-center gap-3 font-bold tracking-tight">
                 <FileKey className="h-5 w-5" />
-                2. วัตถุประสงค์และการประมวลผล
+                3. วัตถุประสงค์และการประมวลผล
               </h3>
               <p>
                 ข้อมูลของท่านจะถูกประมวลผลภายใต้วัตถุประสงค์เดียวคือ{" "}
@@ -175,17 +188,30 @@ export default function PrivacyPage() {
           </div>
 
           <div className="border-border/10 space-y-6 border-t pt-10">
-            <h3 className="text-xl font-bold tracking-tight">
-              3. สิทธิเหนือข้อมูลส่วนบุคคล (Your Rights)
+            <h3 className="flex items-center gap-3 text-xl font-bold tracking-tight">
+              <Scale className="h-5 w-5" />
+              4. สิทธิเหนือข้อมูลส่วนบุคคล (Your Rights)
             </h3>
             <p>
-              ตามกฎหมาย PDPA ท่านมีสิทธิในการขอเข้าถึง, แก้ไข, ระงับการใช้งาน
-              หรือสั่งทำลายข้อมูล (Right to Erasure)
-              ได้ทุกเวลาผ่านเจ้าหน้าที่คุ้มครองข้อมูลส่วนบุคคลของเรา
+              ตามกฎหมาย PDPA และ GDPR ท่านมีสิทธิดังต่อไปนี้:
             </p>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 list-none pl-0">
+              <li className="bg-muted/5 border border-border/20 p-4 rounded-lg text-sm">
+                <strong>Right to Access:</strong> สิทธิในการขอเข้าถึงและรับสำเนาข้อมูล
+              </li>
+              <li className="bg-muted/5 border border-border/20 p-4 rounded-lg text-sm">
+                <strong>Right to Rectification:</strong> สิทธิในการขอแก้ไขข้อมูลให้ถูกต้อง
+              </li>
+              <li className="bg-muted/5 border border-border/20 p-4 rounded-lg text-sm">
+                <strong>Right to Erasure:</strong> สิทธิในการขอให้ลบหรือทำลายข้อมูล (Right to be Forgotten)
+              </li>
+              <li className="bg-muted/5 border border-border/20 p-4 rounded-lg text-sm">
+                <strong>Right to Restriction:</strong> สิทธิในการขอให้ระงับการใช้ข้อมูล
+              </li>
+            </ul>
 
             <h3 className="text-xl font-bold tracking-tight">
-              4. การติดต่อประสานงานด้านความปลอดภัย
+              5. การติดต่อประสานงานด้านความปลอดภัย
             </h3>
             <p>
               หากท่านมีข้อสงสัยเกี่ยวกับมาตรการความเป็นส่วนตัว

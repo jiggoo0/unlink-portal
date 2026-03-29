@@ -25,7 +25,7 @@ function crc16(data: string): string {
 /**
  * UNLINK-PAYMENT: MASTER PAYMENT CONFIGURATION
  */
-export function generatePromptPayQR(amount = 0) {
+function generatePromptPayQR(amount = 0) {
   const mobileNumber = "0066990322175";
 
   const tag29_content = ["0016A000000677010111", `0113${mobileNumber}`].join(
@@ -85,41 +85,4 @@ export function generatePromptPayQR(amount = 0) {
 
 export function getPaymentConfig(amount = 0) {
   return generatePromptPayQR(amount);
-}
-
-/**
- * 🔍 VERIFY PAYMENT SLIP (Legacy/System Part)
- * ตรวจสอบความถูกต้องของสลิปโอนเงินผ่านระบบ SlipOK
- */
-export async function verifySlip(payload: { data: string }) {
-  const apiKey = process.env.SLIPOK_API_KEY;
-
-  if (!apiKey) {
-    console.error("🚨 [PAYMENT_ERROR]: SLIPOK_API_KEY is not configured.");
-    return { success: false, error: "Payment verification system is offline." };
-  }
-
-  try {
-    const response = await fetch(
-      "https://api.slipok.com/api/line/apikey/21232",
-      {
-        method: "POST",
-        headers: {
-          "x-lib-apikey": apiKey,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      },
-    );
-
-    const result = (await response.json()) as {
-      success: boolean;
-      data?: { amount: number; transTime: string };
-      error?: string;
-    };
-    return result;
-  } catch (error) {
-    console.error("❌ [PAYMENT_FETCH_ERROR]:", error);
-    return { success: false, error: "Unable to reach verification server." };
-  }
 }

@@ -103,6 +103,8 @@ export default function Navbar() {
               >
                 <Link
                   href={link.href}
+                  aria-haspopup={isServices ? "true" : undefined}
+                  aria-expanded={isServices ? activeDropdown === "services" : undefined}
                   className={cn(
                     "hover:text-primary group relative flex items-center gap-1.5 rounded-full px-5 py-2 text-[10px] font-bold tracking-widest uppercase transition-all duration-300",
                     isActive
@@ -113,6 +115,7 @@ export default function Navbar() {
                   {link.title}
                   {isServices && (
                     <ChevronDown
+                      aria-hidden="true"
                       className={cn(
                         "h-3 w-3 transition-transform duration-300 opacity-50",
                         activeDropdown === "services" &&
@@ -220,13 +223,12 @@ export default function Navbar() {
 
         {/* --- Mobile Interface Toggle --- */}
         <button
-          className="bg-secondary hover:bg-secondary/80 flex h-12 w-12 items-center justify-center rounded-2xl text-muted-foreground transition-all active:scale-90 md:hidden"
-          onClick={toggleMenu}
-          aria-label="Toggle Navigation"
+        className="bg-secondary hover:bg-secondary/80 flex h-12 w-12 items-center justify-center rounded-2xl text-muted-foreground transition-all active:scale-90 md:hidden"
+        onClick={toggleMenu}
+        aria-label="Toggle Navigation"
         >
-          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
-      </div>
+        {isOpen ? <X aria-hidden="true" className="h-6 w-6" /> : <Menu aria-hidden="true" className="h-6 w-6" />}
+        </button>      </div>
 
       {/* --- Mobile Liaison Overlay (Full-screen Architecture) --- */}
       <AnimatePresence>
@@ -251,46 +253,37 @@ export default function Navbar() {
               </button>
             </div>
 
-            <div className="flex-1 overflow-y-auto px-8 py-10 space-y-12">
+            <div className="flex-1 overflow-y-auto px-6 py-8 space-y-10">
               {/* Primary Navigation Tracks */}
-              <div className="flex flex-col gap-8">
+              <div className="flex flex-col gap-6">
                 {mainNav.map((link) => (
                   <div key={link.href} className="space-y-4">
                     <Link
                       href={link.href}
                       onClick={closeMenu}
                       className={cn(
-                        "flex items-center justify-between text-3xl font-black italic tracking-tighter uppercase",
+                        "flex items-center justify-between text-2xl font-black italic tracking-tighter uppercase",
                         pathname === link.href
                           ? "text-primary"
                           : "text-foreground",
                       )}
                     >
                       {link.title}
-                      <ArrowRight className="h-6 w-6 opacity-20" />
+                      <ArrowRight className="h-5 w-5 opacity-20" />
                     </Link>
 
-                    {/* Expandable Services for Mobile */}
+                    {/* Expandable Services for Mobile - Refined Grid */}
                     {link.href === "/services" && (
-                      <div className="grid grid-cols-1 gap-4 mt-4 bg-secondary/20 p-6 rounded-3xl border border-border">
-                        {serviceCategories.map((cat, i) => (
-                          <div key={i} className="space-y-3">
-                            <span className="text-primary font-mono text-[9px] font-black uppercase tracking-widest opacity-50">
-                              {cat.title}
-                            </span>
-                            <div className="flex flex-wrap gap-2">
-                              {cat.items.map((item, j) => (
-                                <Link
-                                  key={j}
-                                  href={item.href}
-                                  onClick={closeMenu}
-                                  className="bg-secondary rounded-full px-4 py-2 text-[10px] font-bold text-muted-foreground hover:text-foreground"
-                                >
-                                  {item.title}
-                                </Link>
-                              ))}
-                            </div>
-                          </div>
+                      <div className="grid grid-cols-2 gap-3 mt-2 bg-secondary/10 p-4 rounded-2xl border border-border/50">
+                        {serviceCategories.flatMap(cat => cat.items).slice(0, 6).map((item, j) => (
+                          <Link
+                            key={j}
+                            href={item.href}
+                            onClick={closeMenu}
+                            className="bg-background/50 border border-border/40 rounded-xl px-3 py-3 text-[9px] font-bold text-muted-foreground hover:text-foreground transition-colors"
+                          >
+                            {item.title}
+                          </Link>
                         ))}
                       </div>
                     )}

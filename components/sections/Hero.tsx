@@ -136,14 +136,14 @@ export default function Hero() {
                 sub: "ความมั่นคงของฐานข้อมูลตัวตน",
               },
             ].map((stat, i) => (
-              <div key={i} className="space-y-4">
-                <span className="text-primary/60 block font-mono text-[10px] tracking-[0.5em] uppercase font-black">
+              <div key={i} className="space-y-2 md:space-y-4">
+                <span className="text-primary/60 block font-mono text-[9px] md:text-[10px] tracking-[0.3em] md:tracking-[0.5em] uppercase font-black">
                   {stat.label}
                 </span>
-                <div className="text-foreground text-5xl md:text-6xl font-black tracking-tighter uppercase">
+                <div className="text-foreground text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter uppercase">
                   {stat.value}
                 </div>
-                <p className="text-muted-foreground text-xs font-medium tracking-widest uppercase opacity-60">
+                <p className="text-muted-foreground text-[10px] md:text-xs font-medium tracking-widest uppercase opacity-60">
                   {stat.sub}
                 </p>
               </div>

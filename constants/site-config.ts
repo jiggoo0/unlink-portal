@@ -3,11 +3,10 @@
 import { SiteConfig } from "@unlink/shared/types";
 
 export const siteConfig: SiteConfig = {
-  name: "UNLINK-THAILAND",
-  fullName:
-    "UNLINK-THAILAND | ทางออกคนกู้บ้านไม่ผ่าน รับปั้นสเตทเม้นท์ และลบประวัติเสียออนไลน์",
+  name: "UNLINK THAILAND | Strategic Portal",
+  fullName: "UNLINK THAILAND | Strategic Portal (ศูนย์กลางการจัดการเชิงกลยุทธ์)",
   description:
-    "กู้บ้านไม่ผ่าน ติดบูโร หรือโดนประจานออนไลน์? UNLINK-GLOBAL คือทางออกสุดท้ายที่ช่วยคุณปั้นสเตทเม้นท์ใหม่ ลบชื่อเสียจาก Google และจัดการทุกอุปสรรคที่ขวางโอกาสทางการเงินของคุณ ให้คุณกลับมามีที่ยืนและเริ่มต้นใหม่ได้จริง 100% ปรึกษาลับฟรีครับ",
+    "ศูนย์กลางการจัดการเชิงกลยุทธ์ (Strategic Portal) ภายใต้เครือข่าย UNLINK THAILAND เพื่อการบริหารจัดการชื่อเสียงและสิทธิในการเริ่มต้นใหม่",
 
   url: "https://unlink-th.com",
   ogImage: "/og/og-main.webp",
@@ -24,10 +23,10 @@ export const siteConfig: SiteConfig = {
   // 👑 FOUNDER & AUTHORITY (รักษาความลับหน้าบ้าน ยืนยันตัวตนหลังบ้าน)
   // ------------------------------------------------------------------
   founder: {
-    name: "9mza",
-    nameTh: "นายเอ็มซ่ามากส์ (อลงกรณ์ ยมเกิด)",
+    name: "Alongkorn Yomkerd",
+    nameTh: "นายอลงกรณ์ ยมเกิด",
     nickname: "9mza",
-    alias: "Alongkorn Yomkerd",
+    alias: "เจ้าป่า",
     role: "Lead Infrastructure Architect",
     roleTh: "หัวหน้าฝ่ายสถาปัตยกรรมข้อมูลและการจัดการวิกฤต",
     description:
@@ -62,11 +61,10 @@ export const siteConfig: SiteConfig = {
   // 🎯 SEO & KEYWORDS (ปรับจูนให้ครอบคลุมทั้งกลุ่มบ้านและกลุ่ม VIP)
   // ------------------------------------------------------------------
   seo: {
-    titleTemplate: "UNLINK-GLOBAL | %s",
-    defaultTitle:
-      "UNLINK-GLOBAL | ทางออกคนกู้บ้านไม่ผ่าน รับปั้นสเตทเม้นท์ และลบประวัติเสียออนไลน์",
+    titleTemplate: "UNLINK THAILAND | %s",
+    defaultTitle: "UNLINK THAILAND | Strategic Portal",
     defaultDescription:
-      "ติดปัญหาเรื่องกู้บ้านหรือชื่อเสียออนไลน์? UNLINK-GLOBAL เชี่ยวชาญการปั้นสเตทเม้นท์ ลบประวัติเสียจาก Google และวางโครงสร้างโปรไฟล์การเงินใหม่ เพื่อให้คุณได้รับการอนุมัติสินเชื่อและมีตัวตนที่โปร่งใสในโลกดิจิทัล 100% ครับ",
+      "ศูนย์กลางการจัดการเชิงกลยุทธ์ (Strategic Portal) ภายใต้เครือข่าย UNLINK THAILAND เพื่อการบริหารจัดการชื่อเสียงและสิทธิในการเริ่มต้นใหม่",
     keywords: [
       "UNLINK-GLOBAL",
       "กู้บ้านไม่ผ่านทักมา",

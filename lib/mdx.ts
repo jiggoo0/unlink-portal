@@ -33,7 +33,7 @@ function getContentPath(): string {
   return contentPath;
 }
 
-export type ContentCategory = "blog" | "case-studies" | "services";
+type ContentCategory = "blog" | "case-studies" | "services";
 
 function resolveImagePath(img: string | undefined, category: string): string {
   if (!img) {

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { coreIdentities } from "@/lib/shared-source/identities";
+import { reportAuditLog } from "@/lib/audit";
 
 /**
  * 🛰️ UNLINK-GLOBAL | Institutional Verification API (Registry Node) v2.0
@@ -72,6 +73,9 @@ export async function GET(
       const result = await response.json();
       if (result.success && result.data) {
         const identity = result.data;
+        // 🛡️ COMPLIANCE: Audit Log
+        await reportAuditLog("identity-verification-remote", caseId, { status: "success", type: "identity" });
+
         return NextResponse.json({
           success: true,
           type: "identity",

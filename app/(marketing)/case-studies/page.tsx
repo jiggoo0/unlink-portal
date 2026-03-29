@@ -47,7 +47,7 @@ export default async function CaseStudiesPage() {
       </div>
 
       {/* 3. Confidential Briefing Notice: ช่องทางประสานงานเคสพิเศษ */}
-      <div className="lab-card border-primary/20 bg-muted/5 mt-32 rounded-[3rem] border-dashed p-12 text-center md:p-20">
+      <div className="authority-card border-primary/20 bg-muted/5 mt-32 rounded-[3rem] border-dashed p-12 text-center md:p-20">
         <div className="bg-primary/5 border-primary/10 mx-auto mb-8 flex h-16 w-16 items-center justify-center rounded-2xl border">
           <FileSearch className="text-primary h-8 w-8" />
         </div>

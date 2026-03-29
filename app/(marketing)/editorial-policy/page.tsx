@@ -88,7 +88,7 @@ export default function EditorialPolicyPage() {
           {principles.map((p, idx) => (
             <div
               key={idx}
-              className="lab-card group border-border/40 bg-muted/5 hover:bg-muted/10 p-10 transition-all duration-500"
+              className="authority-card group p-10 transition-all duration-500"
             >
               <div className="bg-primary/5 group-hover:bg-primary/10 mb-8 w-fit rounded-2xl p-3 transition-colors">
                 <p.icon className="text-primary/70 h-8 w-8" />
@@ -162,7 +162,7 @@ export default function EditorialPolicyPage() {
 
       {/* 3. Detailed Policy Framework */}
       <section className="container pb-32">
-        <div className="prose prose-invert prose-h2:text-3xl prose-h2:tracking-tighter prose-h3:text-primary prose-p:text-muted-foreground prose-p:leading-relaxed prose-strong:text-foreground mx-auto max-w-4xl">
+        <div className="prose prose-slate prose-h2:text-3xl prose-h2:tracking-tighter prose-h3:text-primary prose-p:text-muted-foreground prose-p:leading-relaxed prose-strong:text-foreground mx-auto max-w-4xl">
           <h2 className="border-border/10 border-b pb-4 tracking-tighter uppercase">
             Content Management Protocol
           </h2>

@@ -13,6 +13,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { getPaymentConfig, calculateSafeAmount } from "@/lib/payment-utils";
+import { trackEvent } from "@/lib/analytics";
 
 /**
  * 💰 STATEMENT OPTIMIZATION FORM v3.0 (Manual Verification Edition)
@@ -348,6 +349,14 @@ export function StatementOptimizationForm() {
               <div className="flex flex-col gap-4 w-full max-w-sm">
                 <Button
                   asChild
+                  onClick={() => {
+                    // 📊 ANALYTICS: Track Conversion
+                    trackEvent("line_contact_click", {
+                      service_type: "statement-optimization",
+                      case_id: caseId,
+                      value: 12000,
+                    });
+                  }}
                   className="w-full h-16 bg-[#06C755] text-white hover:bg-[#06C755]/90 rounded-2xl uppercase tracking-widest text-xs font-black shadow-[0_0_40px_rgba(6,199,85,0.3)]"
                 >
                   <a
@@ -367,11 +376,12 @@ export function StatementOptimizationForm() {
                 >
                   ย้อนกลับ
                 </Button>
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
-  );
-}
+                </div>
+                </div>
+                )}
+                </div>
+                </div>
+                </div>
+                );
+                }
+

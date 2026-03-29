@@ -186,7 +186,7 @@ export default async function CaseStudyPage({ params }: CasePageProps) {
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary">
                 <Terminal className="h-4 w-4" />
               </div>
-              <h2 className="font-mono text-[11px] font-bold uppercase tracking-[0.3em] text-white">
+              <h2 className="font-mono text-[11px] font-bold uppercase tracking-[0.3em] text-foreground">
                 Operational Case Summary & Strategy
               </h2>
             </div>
@@ -202,7 +202,7 @@ export default async function CaseStudyPage({ params }: CasePageProps) {
                 <div className="bg-primary/10 rounded-full p-2">
                   <ShieldCheck className="text-primary h-5 w-5" />
                 </div>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wider">
+                <h4 className="text-sm font-bold text-foreground uppercase tracking-wider">
                   Operational Audit Log
                 </h4>
               </div>
@@ -231,13 +231,13 @@ export default async function CaseStudyPage({ params }: CasePageProps) {
               </div>
             </div>
 
-            <div className="bg-muted/5 border border-white/5 p-8 rounded-xl flex flex-col gap-6">
+            <div className="bg-muted/5 border border-border p-8 rounded-xl flex flex-col gap-6">
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <div className="bg-white/5 rounded-full p-2">
-                    <Lock className="text-white/40 h-5 w-5" />
+                  <div className="bg-primary/5 rounded-full p-2">
+                    <Lock className="text-primary/40 h-5 w-5" />
                   </div>
-                  <h4 className="text-sm font-bold text-white uppercase tracking-wider">
+                  <h4 className="text-sm font-bold text-foreground uppercase tracking-wider">
                     Verification Guide
                   </h4>
                 </div>
@@ -264,11 +264,11 @@ export default async function CaseStudyPage({ params }: CasePageProps) {
               </div>
 
               {study.legalReference && (
-                <div className="pt-6 border-t border-white/5">
+                <div className="pt-6 border-t border-border">
                   <span className="text-[10px] text-muted-foreground/40 font-bold uppercase tracking-widest block mb-2">
                     Legal/Regulatory Reference
                   </span>
-                  <div className="bg-white/5 p-3 rounded-lg border border-white/5">
+                  <div className="bg-primary/5 p-3 rounded-lg border border-border">
                     <span className="text-[11px] text-primary/80 font-medium italic">
                       {study.legalReference}
                     </span>
@@ -278,7 +278,7 @@ export default async function CaseStudyPage({ params }: CasePageProps) {
             </div>
           </div>
 
-          <div className="prose prose-invert prose-headings:tracking-tight prose-p:leading-relaxed prose-p:text-muted-foreground/90 prose-strong:text-primary prose-blockquote:border-primary/50 prose-a:text-primary prose-a:underline prose-a:underline-offset-4 hover:prose-a:text-primary/80 prose-img:rounded-[2rem] prose-img:shadow-2xl prose-img:border prose-img:border-white/5 max-w-none w-full break-words">
+          <div className="prose prose-headings:tracking-tight prose-p:leading-relaxed prose-p:text-muted-foreground/90 prose-strong:text-primary prose-blockquote:border-primary/50 prose-a:text-primary prose-a:underline prose-a:underline-offset-4 hover:prose-a:text-primary/80 prose-img:rounded-[2rem] prose-img:shadow-2xl prose-img:border prose-img:border-border max-w-none w-full break-words">
             <MDXRemote
               source={study.content ?? ""}
               components={mdxComponents}
@@ -289,7 +289,7 @@ export default async function CaseStudyPage({ params }: CasePageProps) {
         {/* 3. Secure Side Interface */}
         <aside className="lg:col-span-4">
           <div className="sticky top-28 space-y-8">
-            <div className="lab-card border-white/5 bg-white/[0.02] border p-8 shadow-2xl">
+            <div className="authority-card p-8 shadow-2xl">
               <div className="space-y-6">
                 <div className="text-primary/60 flex items-center gap-2 font-mono text-[9px] tracking-[0.3em] uppercase">
                   <Terminal className="h-3 w-3" />
@@ -297,25 +297,25 @@ export default async function CaseStudyPage({ params }: CasePageProps) {
                 </div>
 
                 <div className="space-y-4">
-                  <div className="flex justify-between items-center border-b border-white/5 pb-3">
+                  <div className="flex justify-between items-center border-b border-border pb-3">
                     <span className="text-[10px] text-zinc-500 uppercase tracking-widest">
                       Case Protocol
                     </span>
-                    <span className="text-xs font-mono font-bold text-white">
+                    <span className="text-xs font-mono font-bold text-foreground">
                       {study.id || "CLASSIFIED"}
                     </span>
                   </div>
                   {study.client && (
-                    <div className="flex justify-between items-center border-b border-white/5 pb-3">
+                    <div className="flex justify-between items-center border-b border-border pb-3">
                       <span className="text-[10px] text-zinc-500 uppercase tracking-widest">
                         Client
                       </span>
-                      <span className="text-xs font-bold text-white uppercase">
+                      <span className="text-xs font-bold text-foreground uppercase">
                         {study.client}
                       </span>
                     </div>
                   )}
-                  <div className="flex justify-between items-center border-b border-white/5 pb-3">
+                  <div className="flex justify-between items-center border-b border-border pb-3">
                     <span className="text-[10px] text-zinc-500 uppercase tracking-widest">
                       Outcome
                     </span>

@@ -84,14 +84,14 @@ export default function FaqSection() {
               <AccordionItem
                 key={idx}
                 value={`item-${idx}`}
-                className="lab-card border-border bg-muted/20 hover:bg-muted/30 overflow-hidden rounded-[2rem] border px-10 transition-all duration-500"
+                className="authority-card border-border bg-card overflow-hidden rounded-[2rem] border px-10 transition-all duration-500"
               >
-                <AccordionTrigger className="hover:text-primary group py-10 text-left text-xl font-bold tracking-tight transition-all hover:no-underline">
+                <AccordionTrigger className="hover:text-secondary group py-10 text-left text-xl font-bold tracking-tight transition-all hover:no-underline">
                   <div className="flex items-center gap-6">
-                    <span className="text-primary/20 group-hover:text-primary font-mono text-xs transition-colors duration-500">
+                    <span className="text-secondary/40 group-hover:text-secondary font-mono text-xs transition-colors duration-500">
                       /{(idx + 1).toString().padStart(2, "0")}
                     </span>
-                    <span className="leading-tight">{faq.question}</span>
+                    <span className="leading-tight text-primary">{faq.question}</span>
                   </div>
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground border-border border-t pt-6 pb-10 pl-14 text-lg leading-relaxed font-light">
