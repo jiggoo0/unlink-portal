@@ -1,15 +1,14 @@
 /** @format */
 
 import Link from "next/link";
-import { siteConfig } from "@/constants/site-config";
 import {
   Globe,
   Terminal,
   ShieldCheck,
   ExternalLink,
   Activity,
-  Zap,
   Lock,
+  ArrowRight,
 } from "lucide-react";
 import { footerNav } from "@/constants/navigation";
 import VerifiedBadge from "@/components/shared/VerifiedBadge";

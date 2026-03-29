@@ -12,11 +12,9 @@ import {
   X,
   ArrowRight,
   ChevronDown,
-  Shield,
   Zap,
   Activity,
   Database,
-  Globe,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -25,7 +23,6 @@ import {
   serviceCategories,
 } from "@/constants/navigation";
 import Image from "next/image";
-import { siteConfig } from "@/constants/site-config";
 
 /**
  * 🔒 UNLINK-GLOBAL | EXECUTIVE NAVIGATION SYSTEM (v6.0 - Premium RE)

@@ -2,12 +2,8 @@
 
 import { Metadata } from "next";
 import { 
-  ShieldCheck, 
   HelpCircle, 
   MessageSquare, 
-  Lock, 
-  Activity, 
-  Database,
   ArrowRight
 } from "lucide-react";
 import {
