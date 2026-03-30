@@ -6,8 +6,7 @@ import { sendServiceRequestNotification } from "@/lib/line";
 import { safeErrorLog } from "@/lib/utils";
 import { createServiceRequest } from "@/lib/services/service-request-service";
 import { reportAuditLog } from "@/lib/audit";
-import { syncAuthorityData } from "@/lib/services/authority-sync-service"; // Import the new sync function
-import { getPersonSchema } from "@/lib/seo-schemas"; // Import the schema function
+import { handleCaseUpdateAndSync } from "@/app/actions/cases"; // Import the new server action
 
 /**
  * 🛠️ SERVICE SUBMISSION API (SECURED BY THE SHIELD PROTOCOL)
@@ -36,7 +35,7 @@ export async function POST(req: NextRequest) {
 
     // 🛡️ [SPAM SHIELD]: Honeypot Logic
     if (rawBody.website_url) {
-      console.warn("🚫 [SPAM DETECTED]: Bot submission blocked.");
+      safeErrorLog("SPAM_DETECTED", { reason: "Bot submission blocked" });
       return new Response(JSON.stringify({ error: "Access Denied" }), {
         status: 403,
         headers: { "Content-Type": "application/json" },
@@ -94,27 +93,8 @@ export async function POST(req: NextRequest) {
       status,
     });
 
-    // 6. *** NEW: Sync Authority Data ***
-    // Check if the schema is compatible and proceed with sync
-    const personSchema = getPersonSchema(); // Get the schema data
-    if (personSchema) {
-      try {
-        const syncSuccess = await syncAuthorityData(personSchema);
-        if (syncSuccess) {
-          console.log(`✅ Authority data synced for request ${id}`);
-        } else {
-          console.warn(`⚠️ Authority data sync failed for request ${id}, but submission continues.`);
-          // Optionally, add a specific status or alert for sync failure
-        }
-      } catch (syncError: any) {
-        safeErrorLog("AUTHORITY_SYNC_INIT_ERROR", { requestId: id, error: syncError.message });
-        console.warn(`⚠️ Failed to initiate authority sync for request ${id}. Continuing submission.`);
-        // Decide if sync failure should block the whole process or just be warned
-      }
-    } else {
-      console.warn(`⚠️ Person schema not available or invalid, skipping authority sync for request ${id}.`);
-    }
-    // *** END NEW ***
+    // 6. *** NEW: Trigger Server Action for Sync ***
+    await handleCaseUpdateAndSync(id);
 
     return new Response(
       JSON.stringify({

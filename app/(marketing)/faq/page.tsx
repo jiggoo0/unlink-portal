@@ -1,7 +1,6 @@
 /** @format */
 
 import { Metadata } from "next";
-import Link from "next/link";
 import { 
   HelpCircle, 
   MessageSquare, 
@@ -113,7 +112,7 @@ export default function FAQPage() {
             <div className="flex flex-wrap justify-center gap-4 pt-4">
               <Link 
                 href="/services" 
-                className="bg-primary text-primary-foreground px-10 py-4 rounded-2xl font-black text-[11px] tracking-widest uppercase hover:scale-105 active:scale-95 transition-all shadow-xl shadow-primary/20"
+                className="bg-primary text-primary-foreground px-10 py-4 rounded-2xl font-black text-[11px] tracking-widest uppercase hover:scale-[1.02] transition-all shadow-xl shadow-primary/20"
               >
                 เริ่มโปรเจกต์ของคุณ
               </Link>
